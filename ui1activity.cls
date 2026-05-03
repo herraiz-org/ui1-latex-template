@@ -20,13 +20,14 @@
 \ifui@palatino
 	\RequirePackage{newpxtext}
 	\RequirePackage{newpxmath}
-	\RequirePackage[scaled=0.95]{helvet}
+	\newcommand{\ui@helvetscale}{0.95}
 \fi
 \ifui@times
 	\RequirePackage{newtxtext}
 	\RequirePackage{newtxmath}
-	\RequirePackage[scaled=0.92]{helvet}
+	\newcommand{\ui@helvetscale}{0.92}
 \fi
+\RequirePackage[scaled=\ui@helvetscale]{helvet}
 
 \RequirePackage{titlesec}
 \titleformat{\section}{\sffamily\bfseries\color{black}}{\thesection}{1em}{}
