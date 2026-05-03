@@ -74,6 +74,37 @@
 \alumno{}
 \fecha{}
 
+% Encapsulate the custom cover page
+\newcommand{\makecustomcover}{%
+	\thispagestyle{empty}
+	\vspace*{29mm}
+	{\centering
+		\setlength{\tabcolsep}{4pt}%
+		\setlength{\arrayrulewidth}{0.4pt}%
+		\arrayrulecolor{uitableborder}%
+		\begin{tabularx}{144mm}{|X|}
+			\hline
+			\cellcolor{uired}%
+			\parbox[c][16mm][c]{\dimexpr\linewidth-2\tabcolsep\relax}{%
+				\centering
+				\color{white}\bfseries\fontsize{11}{13}\selectfont
+				\@grado\par\smallskip
+				Curso académico \@cursoacademico\par
+			}                                                                            \\
+			\hline
+			\cellcolor{uigray}\rule{0pt}{8mm}\textbf{Asignatura:} \@asignatura            \\
+			\hline
+			\cellcolor{uigray}\rule{0pt}{8mm}\textbf{Unidad didáctica:} \@unidaddidactica \\
+			\hline
+			\cellcolor{uigray}\rule{0pt}{8mm}\textbf{Alumno:} \@alumno                    \\
+			\hline
+			\cellcolor{uigray}\rule{0pt}{8mm}\textbf{Fecha:} \@fecha                      \\
+			\hline
+		\end{tabularx}
+		\par}
+	\newpage
+}
+
 % Full-page background: portada on page 1, interior on pages 2+
 \AddToShipoutPictureBG{%
   \AtPageLowerLeft{%
