@@ -13,8 +13,8 @@
 ## Phase 2: Implementation (Green Phase)
 - [x] Task: Integrate `babel` package with required Spanish conventions. (b22d37c)
     - [x] Add `\usepackage[spanish,es-tabla,es-nodecimaldot]{babel}` to `plantilla.tex`.
-- [ ] Task: Configure `csquotes` for Spanish.
-    - [ ] Ensure `\usepackage{csquotes}` is properly integrated with `babel` to output angular quotes (« »).
+- [x] Task: Configure `csquotes` for Spanish. (6cd16da)
+    - [x] Ensure `\usepackage{csquotes}` is properly integrated with `babel` to output angular quotes (« »).
 - [ ] Task: Verify functionality and Refactor.
     - [ ] Recompile `test_spanish.tex` (with the updated preamble) and verify all acceptance criteria are met in the PDF.
     - [ ] Compile the main `plantilla.tex` document and ensure it builds without errors and maintains its general style.
