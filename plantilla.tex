@@ -4,20 +4,28 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[spanish]{babel}
-
-% Math support
+% Math support / Soporte para matemáticas
+% Use amsmath environments like equation* for unnumbered equations.
+% Use amssymb for additional mathematical symbols.
+% Use amsfonts for standard math fonts.
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsfonts}
 
-% Bibliography support
+% Bibliography support / Soporte para bibliografía
+% Use \cite{key} for citations and \printbibliography to show the list of references.
+% Configuration: numeric style, backend bibtex (due to environment constraints).
+% Edit 'referencias.bib' to manage your bibliographic entries.
 \usepackage{csquotes}
 \usepackage[backend=bibtex,style=numeric]{biblatex}
 \addbibresource{referencias.bib}
 
-% Code Listings support
+% Code Listings support / Soporte para listados de código
+% Use \begin{lstlisting}[language=...] for code blocks.
+% Branded styles with university colors (uired, uigray) are pre-configured.
 \usepackage{listings}
 \lstset{
+...
   basicstyle=\ttfamily\small,
   keywordstyle=\color{uired}\bfseries,
   commentstyle=\color{uigray}\itshape,
@@ -331,4 +339,22 @@ aprueba prueba prueba prueba prueba prueba prueba pruebaprueba prueba prueba pru
 % Use \newpage to add more pages. All pages after the first
 % automatically use the interior background with the page number
 % in the bottom-right corner.
+
+% EXAMPLE USAGE / EJEMPLO DE USO:
+% \section{Introduction}
+% This is a math equation:
+% \begin{equation*}
+%   E = mc^2
+% \end{equation*}
+%
+% As shown in \cite{sample}, citations are easy.
+%
+% Below is a code snippet:
+% \begin{lstlisting}[language=Python, caption=Sample Code]
+% def hello():
+%     print("Hello, World!")
+% \end{lstlisting}
+%
+% \printbibliography
+
 \end{document}
