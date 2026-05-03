@@ -9,7 +9,7 @@
     - [x] Run the compilation on the test file to confirm it currently fails (Red Phase).
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Diagnostics and Testing' (Protocol in workflow.md)
 
-## Phase 2: Implementation and Fixes
+## Phase 2: Implementation and Fixes [checkpoint: d0e4fd1]
 - [x] Task: Implement bibliography configuration and fix the build. c1a8d94
     - [x] Modify `plantilla.tex` to ensure `biblatex` correctly imports `biber` as backend and `apa` as the style.
     - [x] Add or fix the required Spanish localization packages/settings for APA (e.g., `csquotes` and `babel` settings).
@@ -17,4 +17,4 @@
 - [x] Task: Verify the build succeeds (Green Phase).
     - [x] Run `make clean && make`.
     - [x] Verify the PDF generates successfully, citations appear correctly, and bibliography terms are localized to Spanish.
-- [~] Task: Conductor - User Manual Verification 'Phase 2: Implementation and Fixes' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 2: Implementation and Fixes' (Protocol in workflow.md)
