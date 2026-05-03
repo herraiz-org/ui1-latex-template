@@ -102,7 +102,6 @@
 			\hline
 		\end{tabularx}
 		\par}
-	\newpage
 }
 
 % Encapsulate bibliography
