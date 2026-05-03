@@ -10,11 +10,11 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Diagnostics and Testing' (Protocol in workflow.md)
 
 ## Phase 2: Implementation and Fixes
-- [ ] Task: Implement bibliography configuration and fix the build.
-    - [ ] Modify `plantilla.tex` to ensure `biblatex` correctly imports `biber` as backend and `apa` as the style.
-    - [ ] Add or fix the required Spanish localization packages/settings for APA (e.g., `csquotes` and `babel` settings).
-    - [ ] Apply the necessary fixes identified in Phase 1 to resolve the `make` build failure.
-- [ ] Task: Verify the build succeeds (Green Phase).
+- [x] Task: Implement bibliography configuration and fix the build. c1a8d94
+    - [x] Modify `plantilla.tex` to ensure `biblatex` correctly imports `biber` as backend and `apa` as the style.
+    - [x] Add or fix the required Spanish localization packages/settings for APA (e.g., `csquotes` and `babel` settings).
+    - [x] Apply the necessary fixes identified in Phase 1 to resolve the `make` build failure.
+- [~] Task: Verify the build succeeds (Green Phase).
     - [ ] Run `make clean && make`.
     - [ ] Verify the PDF generates successfully, citations appear correctly, and bibliography terms are localized to Spanish.
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Implementation and Fixes' (Protocol in workflow.md)
