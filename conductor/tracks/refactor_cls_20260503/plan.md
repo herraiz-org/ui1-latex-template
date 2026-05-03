@@ -11,8 +11,8 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Class Initialization & Core Layout' (Protocol in workflow.md) (5578e64)
 
 ## Phase 2: Parametrization & Encapsulation
-- [ ] Task: Define internal variables for cover page data.
-    - [ ] Define variables like `\newcommand{\subject}[1]{\def\@subject{#1}}` for subject, degree, author, date, etc.
+- [x] Task: Define internal variables for cover page data. (8dbe979)
+    - [x] Define variables like `\newcommand{\subject}[1]{\def\@subject{#1}}` for subject, degree, author, date, etc.
 - [ ] Task: Encapsulate the custom cover page.
     - [ ] Extract the cover page TikZ/background and minipage layout from `plantilla.tex`.
     - [ ] Wrap it in a `\makecustomcover` command in `ui1activity.cls` using the internal variables.
