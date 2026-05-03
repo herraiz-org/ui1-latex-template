@@ -2,7 +2,7 @@
 
 ## Phase 1: Setup and Testing
 - [x] Task: Create a test LaTeX file `tests/test_bib_nohang.tex` using the `nohangbib` option and `referencias.bib`. 8601c20
-- [ ] Task: Update the `Makefile` to include `test_bib_nohang` in the `test` build target.
+- [x] Task: Update the `Makefile` to include `test_bib_nohang` in the `test` build target. fb3a5d8
 - [ ] Task: Compile the test suite and verify that `test_bib_nohang.tex` fails to apply the expected flush-left formatting (this is the TDD "Red Phase").
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Setup and Testing' (Protocol in workflow.md)
 
