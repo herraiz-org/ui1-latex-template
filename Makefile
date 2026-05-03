@@ -8,7 +8,7 @@ all: $(MAIN).pdf
 
 $(MAIN).pdf: $(MAIN).tex imgs/portada.png imgs/interior.png
 	$(LATEX) $(FLAGS) $(MAIN).tex
-	bibtex $(MAIN)
+	biber $(MAIN)
 	$(LATEX) $(FLAGS) $(MAIN).tex
 	$(LATEX) $(FLAGS) $(MAIN).tex
 
