@@ -5,9 +5,9 @@
     - [x] Create `ui1activity.cls`.
     - [x] Add `\NeedsTeXFormat{LaTeX2e}` and `\ProvidesClass{ui1activity}`.
     - [x] Inherit from `article` with option passing (`\DeclareOption*...`, `\ProcessOptions\relax`, `\LoadClass{article}`).
-- [ ] Task: Migrate preamble packages to `ui1activity.cls`.
-    - [ ] Extract `\usepackage` lines from `plantilla.tex`.
-    - [ ] Convert them to `\RequirePackage` in `ui1activity.cls`.
+- [x] Task: Migrate preamble packages to `ui1activity.cls`. (7614cf5)
+    - [x] Extract `\usepackage` lines from `plantilla.tex`.
+    - [x] Convert them to `\RequirePackage` in `ui1activity.cls`.
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Class Initialization & Core Layout' (Protocol in workflow.md)
 
 ## Phase 2: Parametrization & Encapsulation
