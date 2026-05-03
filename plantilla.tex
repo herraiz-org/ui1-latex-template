@@ -13,7 +13,7 @@
 \usepackage[autostyle=true]{csquotes}
 \usepackage{caption}
 \usepackage[backend=biber,style=apa]{biblatex}
-%\renewcommand*{\nameyeardelim}{\addcomma\space}
+\let\cite\parencite
 \addbibresource{referencias.bib}
 
 % Font: Raleway (pdflatex-compatible Museo Sans substitute)
@@ -264,7 +264,7 @@ As mentioned in \cite{sample}, LaTeX is powerful.
 %   E = mc^2
 % \end{equation*}
 %
-% As shown in \cite{sample}, citations are easy.
+% As shown in \parencite{sample}, citations are easy.
 %
 % Below is a code snippet:
 % \begin{lstlisting}[language=Python, caption=Sample Code]
