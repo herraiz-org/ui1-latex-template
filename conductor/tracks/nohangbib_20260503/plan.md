@@ -1,10 +1,10 @@
 # Implementation Plan: Configure Bibliography Hanging Indent
 
-## Phase 1: Setup and Testing
+## Phase 1: Setup and Testing [checkpoint: 6e0e947]
 - [x] Task: Create a test LaTeX file `tests/test_bib_nohang.tex` using the `nohangbib` option and `referencias.bib`. 8601c20
 - [x] Task: Update the `Makefile` to include `test_bib_nohang` in the `test` build target. fb3a5d8
 - [x] Task: Compile the test suite and verify that `test_bib_nohang.tex` fails to apply the expected flush-left formatting (this is the TDD "Red Phase"). 25cb8a0
-- [~] Task: Conductor - User Manual Verification 'Phase 1: Setup and Testing' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 1: Setup and Testing' (Protocol in workflow.md) 6e0e947
 
 ## Phase 2: Implementation
 - [ ] Task: Modify `ui1activity.cls` to declare a new option `nohangbib`.
