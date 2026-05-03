@@ -5,7 +5,7 @@ The template should follow a **Bilingual** approach (Spanish/English). All inter
 
 ## Branding and Visual Identity
 Adherence to the University Isabel I visual identity is **Strict**.
-- The background images (`portada.png` and `interior.png`) are mandatory and should not be disabled or significantly modified by the user.
+- The background images (`imgs/portada.png` and `imgs/interior.png`) are mandatory and should not be disabled or significantly modified by the user.
 - The official university colors (`uired`, `uigray`) must be used for all decorative elements (tables, highlights).
 - The document font (Raleway) is mandatory to maintain brand consistency.
 

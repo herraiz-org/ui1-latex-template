@@ -7,7 +7,7 @@
 
 ## Formatting & Layout
 - `geometry`: Used for strict margin control (Top: 7mm, Left: 27.5mm, Right: 25mm, Bottom: 20mm).
-- `eso-pic`: Handles the full-page background underlays (`portada.png` and `interior.png`).
+- `eso-pic`: Handles the full-page background underlays (`imgs/portada.png` and `imgs/interior.png`).
 - `fancyhdr`: Manages custom headers and footers (page numbering).
 - `ifthen`: Provides conditional logic for page-specific backgrounds.
 
