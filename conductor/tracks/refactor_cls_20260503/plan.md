@@ -1,6 +1,6 @@
 # Implementation Plan: Refactor to Document Class (`ui1activity.cls`)
 
-## Phase 1: Class Initialization & Core Layout
+## Phase 1: Class Initialization & Core Layout [checkpoint: 5578e64]
 - [x] Task: Create new `ui1activity.cls` file and setup class definitions. (3c61a7f)
     - [x] Create `ui1activity.cls`.
     - [x] Add `\NeedsTeXFormat{LaTeX2e}` and `\ProvidesClass{ui1activity}`.
@@ -8,7 +8,7 @@
 - [x] Task: Migrate preamble packages to `ui1activity.cls`. (7614cf5)
     - [x] Extract `\usepackage` lines from `plantilla.tex`.
     - [x] Convert them to `\RequirePackage` in `ui1activity.cls`.
-- [ ] Task: Conductor - User Manual Verification 'Phase 1: Class Initialization & Core Layout' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 1: Class Initialization & Core Layout' (Protocol in workflow.md) (5578e64)
 
 ## Phase 2: Parametrization & Encapsulation
 - [ ] Task: Define internal variables for cover page data.
