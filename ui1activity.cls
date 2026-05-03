@@ -3,9 +3,11 @@
 
 \newif\ifui@palatino
 \newif\ifui@times
+\newif\ifui@nohangbib
 
 \DeclareOption{palatino}{\ui@palatinotrue\ui@timesfalse}
 \DeclareOption{times}{\ui@palatinofalse\ui@timestrue}
+\DeclareOption{nohangbib}{\ui@nohangbibtrue}
 
 \ExecuteOptions{palatino}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
@@ -43,6 +45,9 @@
 \RequirePackage[autostyle=true]{csquotes}
 \RequirePackage{caption}
 \RequirePackage[backend=biber,style=apa]{biblatex}
+\ifui@nohangbib
+	\setlength{\bibhang}{0pt}
+\fi
 \let\cite\parencite
 
 % Page layout -- margins converted from docx twips (1 twip = 1/1440 inch)
