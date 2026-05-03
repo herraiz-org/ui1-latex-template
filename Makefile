@@ -11,6 +11,10 @@ all: $(MAIN).pdf
 
 test: $(TEST_PDFS)
 
+$(MAIN).pdf: $(MAIN).tex imgs/portada.png imgs/interior.png
+	$(LATEX) $(FLAGS) $<
+	if grep -q "addbibresource" $<; then biber $(basename $@); $(LATEX) $(FLAGS) $<; $(LATEX) $(FLAGS) $<; fi
+
 %.pdf: tests/%.tex
 	$(LATEX) $(FLAGS) $<
 	if grep -q "addbibresource" $<; then biber $(basename $@); $(LATEX) $(FLAGS) $<; $(LATEX) $(FLAGS) $<; fi
