@@ -1,10 +1,10 @@
 # Implementation Plan: Configurable Fonts (Palatino & Times New Roman)
 
-## Phase 1: Setup and Test Definitions
+## Phase 1: Setup and Test Definitions [checkpoint: 933eb15]
 - [x] Task: Create tests for font options 4ac8cd9
     - [x] Create `test_fonts.tex` to test `palatino`, `times`, and default class options.
     - [x] Ensure the tests fail since the options and packages aren't implemented yet (Red Phase).
-- [ ] Task: Conductor - User Manual Verification 'Phase 1: Setup and Test Definitions' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 1: Setup and Test Definitions' (Protocol in workflow.md)
 
 ## Phase 2: Implementation of Font Options
 - [ ] Task: Implement Font Class Options in `ui1activity.cls`
