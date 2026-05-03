@@ -1,10 +1,10 @@
 # Implementation Plan: Refactor to Document Class (`ui1activity.cls`)
 
 ## Phase 1: Class Initialization & Core Layout
-- [ ] Task: Create new `ui1activity.cls` file and setup class definitions.
-    - [ ] Create `ui1activity.cls`.
-    - [ ] Add `\NeedsTeXFormat{LaTeX2e}` and `\ProvidesClass{ui1activity}`.
-    - [ ] Inherit from `article` with option passing (`\DeclareOption*...`, `\ProcessOptions\relax`, `\LoadClass{article}`).
+- [x] Task: Create new `ui1activity.cls` file and setup class definitions. (3c61a7f)
+    - [x] Create `ui1activity.cls`.
+    - [x] Add `\NeedsTeXFormat{LaTeX2e}` and `\ProvidesClass{ui1activity}`.
+    - [x] Inherit from `article` with option passing (`\DeclareOption*...`, `\ProcessOptions\relax`, `\LoadClass{article}`).
 - [ ] Task: Migrate preamble packages to `ui1activity.cls`.
     - [ ] Extract `\usepackage` lines from `plantilla.tex`.
     - [ ] Convert them to `\RequirePackage` in `ui1activity.cls`.
