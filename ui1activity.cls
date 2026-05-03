@@ -58,6 +58,22 @@
 \RequirePackage{graphicx}
 \RequirePackage{ifthen}
 
+% Cover page data variables
+\newcommand{\grado}[1]{\def\@grado{#1}}
+\newcommand{\cursoacademico}[1]{\def\@cursoacademico{#1}}
+\newcommand{\asignatura}[1]{\def\@asignatura{#1}}
+\newcommand{\unidaddidactica}[1]{\def\@unidaddidactica{#1}}
+\newcommand{\alumno}[1]{\def\@alumno{#1}}
+\newcommand{\fecha}[1]{\def\@fecha{#1}}
+
+% Initialize variables with empty values
+\grado{}
+\cursoacademico{}
+\asignatura{}
+\unidaddidactica{}
+\alumno{}
+\fecha{}
+
 % Full-page background: portada on page 1, interior on pages 2+
 \AddToShipoutPictureBG{%
   \AtPageLowerLeft{%
