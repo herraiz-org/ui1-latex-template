@@ -1,13 +1,13 @@
 # Implementation Plan: Spanish Language Support
 
 ## Phase 1: Test Setup (Red Phase)
-- [ ] Task: Create `test_spanish.tex` to verify Spanish language requirements.
-    - [ ] Create a LaTeX document utilizing the current preamble.
-    - [ ] Add a table to check the caption label (expecting "Table" or "Cuadro" instead of "Tabla").
-    - [ ] Add an inline math block with a decimal comma (e.g., `$3,14$`) to check for unwanted spacing.
-    - [ ] Add text with `csquotes` commands to verify quote formatting.
-    - [ ] Add a bibliography entry and citation to check for English terms.
-    - [ ] Compile `test_spanish.tex` and manually verify the output does not yet meet the Spanish specification (Failing/Red state).
+- [x] Task: Create `test_spanish.tex` to verify Spanish language requirements. (97c06a3)
+    - [x] Create a LaTeX document utilizing the current preamble.
+    - [x] Add a table to check the caption label (expecting "Table" or "Cuadro" instead of "Tabla").
+    - [x] Add an inline math block with a decimal comma (e.g., `$3,14$`) to check for unwanted spacing.
+    - [x] Add text with `csquotes` commands to verify quote formatting.
+    - [x] Add a bibliography entry and citation to check for English terms.
+    - [x] Compile `test_spanish.tex` and manually verify the output does not yet meet the Spanish specification (Failing/Red state).
 - [ ] Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md)
 
 ## Phase 2: Implementation (Green Phase)
