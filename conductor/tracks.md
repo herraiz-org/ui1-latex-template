@@ -4,5 +4,5 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [ ] **Track: Configurable Fonts (Palatino & Times New Roman)**
+- [x] **Track: Configurable Fonts (Palatino & Times New Roman)**
 *Link: [./tracks/configurable_fonts_20260503/](./tracks/configurable_fonts_20260503/)*
