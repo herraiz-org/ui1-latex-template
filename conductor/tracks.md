@@ -4,6 +4,6 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [ ] **Track: Align second line of references with the first line (disable hanging indent)**
+- [x] **Track: Align second line of references with the first line (disable hanging indent)**
 *Link: [./tracks/nohangbib_20260503/](./tracks/nohangbib_20260503/)*
 
