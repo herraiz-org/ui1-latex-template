@@ -10,7 +10,7 @@
     - [x] Convert them to `\RequirePackage` in `ui1activity.cls`.
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Class Initialization & Core Layout' (Protocol in workflow.md) (5578e64)
 
-## Phase 2: Parametrization & Encapsulation
+## Phase 2: Parametrization & Encapsulation [checkpoint: b2da002]
 - [x] Task: Define internal variables for cover page data. (8dbe979)
     - [x] Define variables like `\newcommand{\subject}[1]{\def\@subject{#1}}` for subject, degree, author, date, etc.
 - [x] Task: Encapsulate the custom cover page. (345b929)
@@ -19,7 +19,7 @@
 - [x] Task: Encapsulate bibliography and tables/environments. (cda354e)
     - [x] Wrap bibliography setup in `\makebibliography`.
     - [x] Define standard commands/environments for tables if necessary.
-- [ ] Task: Conductor - User Manual Verification 'Phase 2: Parametrization & Encapsulation' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 2: Parametrization & Encapsulation' (Protocol in workflow.md) (b2da002)
 
 ## Phase 3: Implementation & Clean Up
 - [ ] Task: Refactor `plantilla.tex` (or create `main.tex`) to use the new class.
