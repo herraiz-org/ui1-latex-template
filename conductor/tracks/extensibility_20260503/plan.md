@@ -4,7 +4,7 @@ Implement initial extensibility features (Math, Bibliography, Code Listings)
 
 ## Phase 1: Core Extensibility Packages
 
-- [ ] Task: Integrate Math packages (amsmath, amssymb)
+- [x] Task: Integrate Math packages (amsmath, amssymb) 5cd0ccf
     - [ ] Add packages to `plantilla.tex`
     - [ ] Verify compilation with basic equations
 - [ ] Task: Integrate Bibliography support (biblatex)
