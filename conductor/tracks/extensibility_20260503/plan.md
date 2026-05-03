@@ -7,7 +7,7 @@ Implement initial extensibility features (Math, Bibliography, Code Listings)
 - [x] Task: Integrate Math packages (amsmath, amssymb) 5cd0ccf
     - [ ] Add packages to `plantilla.tex`
     - [ ] Verify compilation with basic equations
-- [ ] Task: Integrate Bibliography support (biblatex)
+- [x] Task: Integrate Bibliography support (biblatex) da34b15
     - [ ] Add `biblatex` package and configuration to `plantilla.tex`
     - [ ] Create `referencias.bib` example file
     - [ ] Update `Makefile` to include `biber` step
