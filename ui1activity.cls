@@ -21,10 +21,6 @@
 \RequirePackage[backend=biber,style=apa]{biblatex}
 \let\cite\parencite
 
-% Font: Raleway (pdflatex-compatible Museo Sans substitute)
-\RequirePackage[sfdefault]{raleway}
-\renewcommand{\familydefault}{\sfdefault}
-
 % Page layout -- margins converted from docx twips (1 twip = 1/1440 inch)
 \RequirePackage[
 	a4paper,
