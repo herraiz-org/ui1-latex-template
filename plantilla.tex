@@ -1,111 +1,21 @@
-\documentclass[a4paper,11pt]{article}
+\documentclass{ui1activity}
 
-% Encoding and language
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[spanish,es-tabla]{babel}
-\usepackage{icomma}
-
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsfonts}
-
-\usepackage[autostyle=true]{csquotes}
-\usepackage{caption}
-\usepackage[backend=biber,style=apa]{biblatex}
-\let\cite\parencite
 \addbibresource{referencias.bib}
-
-% Font: Raleway (pdflatex-compatible Museo Sans substitute)
-\usepackage[sfdefault]{raleway}
-\renewcommand{\familydefault}{\sfdefault}
-
-% Page layout -- margins converted from docx twips (1 twip = 1/1440 inch)
-\usepackage[
-  a4paper,
-  top=18mm,
-  left=27.5mm,
-  right=25mm,
-  bottom=22mm,
-  headheight=8pt,
-  headsep=0pt,
-  footskip=5mm
-]{geometry}
-
-% Colors
-\usepackage[table]{xcolor}   % [table] option loads colortbl automatically
-\definecolor{uired}{HTML}{E4004F}
-\definecolor{uigray}{HTML}{BFBFBF}
-\definecolor{uitableborder}{HTML}{D9D9D9}
-
-% Tables
-\usepackage{tabularx}
-
-% Headers and footers
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhf{}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
-\fancyfoot[R]{\small\thepage}
-
-% Background images
-\usepackage{eso-pic}
-\usepackage{graphicx}
-\usepackage{ifthen}
-
-% Full-page background: portada on page 1, interior on pages 2+
-\AddToShipoutPictureBG{%
-  \AtPageLowerLeft{%
-    \ifthenelse{\value{page}=1}{%
-      \includegraphics[width=\paperwidth,height=\paperheight]{imgs/portada}%
-    }{%
-      \includegraphics[width=\paperwidth,height=\paperheight]{imgs/interior}%
-    }%
-  }%
-}
 
 % ==============================================================
 % FILL IN YOUR DETAILS BELOW
 % ==============================================================
-\newcommand{\grado}{Grado en Administración y Dirección de Empresas}
-\newcommand{\cursoacademico}{2025-2026}
-\newcommand{\asignatura}{Prueba de asignatura}
-\newcommand{\unidaddidactica}{1. Prueba}
-\newcommand{\alumno}{Israel Herraiz Tabernero}
-\newcommand{\fecha}{3 de mayo de 2026}
+\grado{Grado en Administración y Dirección de Empresas}
+\cursoacademico{2025-2026}
+\asignatura{Prueba de asignatura}
+\unidaddidactica{1. Prueba}
+\alumno{Israel Herraiz Tabernero}
+\fecha{3 de mayo de 2026}
 % ==============================================================
 
 \begin{document}
-% ---- Cover page ----
-\thispagestyle{empty}
 
-\vspace*{29mm}
-
-{\centering
-	\setlength{\tabcolsep}{4pt}%
-	\setlength{\arrayrulewidth}{0.4pt}%
-	\arrayrulecolor{uitableborder}%
-	\begin{tabularx}{144mm}{|X|}
-		\hline
-		\cellcolor{uired}%
-		\parbox[c][16mm][c]{\dimexpr\linewidth-2\tabcolsep\relax}{%
-			\centering
-			\color{white}\bfseries\fontsize{11}{13}\selectfont
-			\grado\par\smallskip
-			Curso académico \cursoacademico\par
-		}                                                                            \\
-		\hline
-		\cellcolor{uigray}\rule{0pt}{8mm}\textbf{Asignatura:} \asignatura            \\
-		\hline
-		\cellcolor{uigray}\rule{0pt}{8mm}\textbf{Unidad didáctica:} \unidaddidactica \\
-		\hline
-		\cellcolor{uigray}\rule{0pt}{8mm}\textbf{Alumno:} \alumno                    \\
-		\hline
-		\cellcolor{uigray}\rule{0pt}{8mm}\textbf{Fecha:} \fecha                      \\
-		\hline
-	\end{tabularx}
-	\par}
+\makecustomcover
 
 \tableofcontents
 
@@ -250,28 +160,6 @@ As mentioned in \cite{sample}, LaTeX is powerful.
 As mentioned in \cite{sample}, LaTeX is powerful.
 
 
-\printbibliography
-
-% ---- Write your content here ----
-% Use \newpage to add more pages. All pages after the first
-% automatically use the interior background with the page number
-% in the bottom-right corner.
-
-% EXAMPLE USAGE / EJEMPLO DE USO:
-% \section{Introduction}
-% This is a math equation:
-% \begin{equation*}
-%   E = mc^2
-% \end{equation*}
-%
-% As shown in \parencite{sample}, citations are easy.
-%
-% Below is a code snippet:
-% \begin{lstlisting}[language=Python, caption=Sample Code]
-% def hello():
-%     print("Hello, World!")
-% \end{lstlisting}
-%
-% \printbibliography
+\makebibliography
 
 \end{document}
