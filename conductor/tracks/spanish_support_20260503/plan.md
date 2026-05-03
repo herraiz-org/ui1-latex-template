@@ -10,7 +10,7 @@
     - [x] Compile `test_spanish.tex` and manually verify the output does not yet meet the Spanish specification (Failing/Red state).
 - [x] Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md) (e0d0b71)
 
-## Phase 2: Implementation (Green Phase)
+## Phase 2: Implementation (Green Phase) [checkpoint: 7902f77]
 - [x] Task: Integrate `babel` package with required Spanish conventions. (b22d37c)
     - [x] Add `\usepackage[spanish,es-tabla,es-nodecimaldot]{babel}` to `plantilla.tex`.
 - [x] Task: Configure `csquotes` for Spanish. (6cd16da)
@@ -18,4 +18,4 @@
 - [x] Task: Verify functionality and Refactor. (cc4e281)
     - [x] Recompile `test_spanish.tex` (with the updated preamble) and verify all acceptance criteria are met in the PDF.
     - [x] Compile the main `plantilla.tex` document and ensure it builds without errors and maintains its general style.
-- [ ] Task: Conductor - User Manual Verification 'Phase 2' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 2' (Protocol in workflow.md) (7902f77)
