@@ -7,9 +7,9 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Setup and Testing' (Protocol in workflow.md) 6e0e947
 
 ## Phase 2: Implementation
-- [ ] Task: Modify `ui1activity.cls` to declare a new option `nohangbib`.
-- [ ] Task: Process the `nohangbib` option in `ui1activity.cls` using `ifthen` or similar boolean logic.
-- [ ] Task: Add configuration for `biblatex` to set `\bibhang` to `0pt` when the `nohangbib` option is enabled.
+- [x] Task: Modify `ui1activity.cls` to declare a new option `nohangbib`. 2a2d370
+- [x] Task: Process the `nohangbib` option in `ui1activity.cls` using `ifthen` or similar boolean logic. 2a2d370
+- [x] Task: Add configuration for `biblatex` to set `\bibhang` to `0pt` when the `nohangbib` option is enabled. 2a2d370
 - [ ] Task: Re-run the test suite and ensure `test_bib_nohang.tex` compiles with flush-left references (the TDD "Green Phase").
 - [ ] Task: Verify that existing tests (e.g., `tests/test_bib.tex`) continue to pass with default hanging indent.
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Implementation' (Protocol in workflow.md)
