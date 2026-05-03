@@ -105,6 +105,11 @@
 	\newpage
 }
 
+% Encapsulate bibliography
+\newcommand{\makebibliography}{%
+	\printbibliography[heading=bibintoc]
+}
+
 % Full-page background: portada on page 1, interior on pages 2+
 \AddToShipoutPictureBG{%
   \AtPageLowerLeft{%
