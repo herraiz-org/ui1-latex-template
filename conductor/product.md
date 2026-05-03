@@ -1,7 +1,7 @@
 # Product Guide
 
 ## Project Goal
-Produce a LaTeX template that visually matches the Universidad Isabel I branded activity template for the Grado en Administración y Dirección de Empresas.
+Produce a professional, modular LaTeX Document Class (`ui1activity.cls`) that visually matches the Universidad Isabel I branded activity template for the Grado en Administración y Dirección de Empresas.
 
 ## Target Users
 The primary users of this template will be **students** who are submitting activities and assignments for their degree.
@@ -11,6 +11,7 @@ The main advantage of this LaTeX template over the original Word document is **C
 
 ## Key Features
 To support a wide range of academic assignments, the template includes:
+- **Modular Document Class:** Encapsulates complex logic into `ui1activity.cls`, allowing for clean and minimal implementation files.
 - **Branded Visual Identity:** Strict enforcement of university colors, fonts, and backgrounds.
 - **Math Support:** Pre-configured `amsmath` and `amssymb` environments for complex equations.
 - **Bibliography Management:** Integrated `biblatex` support for academic citations and references (APA style).

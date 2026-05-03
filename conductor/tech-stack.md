@@ -2,6 +2,7 @@
 
 ## Core
 - **Language:** LaTeX
+- **Document Class:** `ui1activity.cls` (Custom class inheriting from `article`)
 - **Compilers:** `pdflatex` (Version 3.141592653 or newer), `biber`
 - **Encoding:** UTF-8
 
