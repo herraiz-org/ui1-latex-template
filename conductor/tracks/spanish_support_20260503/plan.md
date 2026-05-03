@@ -15,7 +15,7 @@
     - [x] Add `\usepackage[spanish,es-tabla,es-nodecimaldot]{babel}` to `plantilla.tex`.
 - [x] Task: Configure `csquotes` for Spanish. (6cd16da)
     - [x] Ensure `\usepackage{csquotes}` is properly integrated with `babel` to output angular quotes (« »).
-- [ ] Task: Verify functionality and Refactor.
-    - [ ] Recompile `test_spanish.tex` (with the updated preamble) and verify all acceptance criteria are met in the PDF.
-    - [ ] Compile the main `plantilla.tex` document and ensure it builds without errors and maintains its general style.
+- [x] Task: Verify functionality and Refactor. (cc4e281)
+    - [x] Recompile `test_spanish.tex` (with the updated preamble) and verify all acceptance criteria are met in the PDF.
+    - [x] Compile the main `plantilla.tex` document and ensure it builds without errors and maintains its general style.
 - [ ] Task: Conductor - User Manual Verification 'Phase 2' (Protocol in workflow.md)
