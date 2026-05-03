@@ -1,6 +1,6 @@
 # Implementation Plan: Spanish Language Support
 
-## Phase 1: Test Setup (Red Phase)
+## Phase 1: Test Setup (Red Phase) [checkpoint: e0d0b71]
 - [x] Task: Create `test_spanish.tex` to verify Spanish language requirements. (97c06a3)
     - [x] Create a LaTeX document utilizing the current preamble.
     - [x] Add a table to check the caption label (expecting "Table" or "Cuadro" instead of "Tabla").
@@ -8,7 +8,7 @@
     - [x] Add text with `csquotes` commands to verify quote formatting.
     - [x] Add a bibliography entry and citation to check for English terms.
     - [x] Compile `test_spanish.tex` and manually verify the output does not yet meet the Spanish specification (Failing/Red state).
-- [ ] Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md) (e0d0b71)
 
 ## Phase 2: Implementation (Green Phase)
 - [ ] Task: Integrate `babel` package with required Spanish conventions.
