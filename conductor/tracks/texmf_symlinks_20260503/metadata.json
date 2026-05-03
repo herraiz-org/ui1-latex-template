@@ -1,0 +1,8 @@
+{
+  "track_id": "texmf_symlinks_20260503",
+  "type": "chore",
+  "status": "new",
+  "created_at": "2026-05-03T12:00:00Z",
+  "updated_at": "2026-05-03T12:00:00Z",
+  "description": "Setup global texmf symlinks for ui1activity.cls and images"
+}
