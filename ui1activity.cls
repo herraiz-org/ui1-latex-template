@@ -14,6 +14,7 @@
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
 \RequirePackage{amsfonts}
+\RequirePackage{parskip}
 
 \RequirePackage[autostyle=true]{csquotes}
 \RequirePackage{caption}
@@ -26,14 +27,14 @@
 
 % Page layout -- margins converted from docx twips (1 twip = 1/1440 inch)
 \RequirePackage[
-  a4paper,
-  top=18mm,
-  left=27.5mm,
-  right=25mm,
-  bottom=22mm,
-  headheight=8pt,
-  headsep=0pt,
-  footskip=5mm
+	a4paper,
+	top=18mm,
+	left=27.5mm,
+	right=25mm,
+	bottom=22mm,
+	headheight=8pt,
+	headsep=0pt,
+	footskip=5mm
 ]{geometry}
 
 % Colors
@@ -80,7 +81,7 @@
 	\vspace*{29mm}
 	{\centering
 		\setlength{\tabcolsep}{4pt}%
-		\setlength{\arrayrulewidth}{0.4pt}%
+		\setlength{\arrayrulewidth}{0.8pt}%
 		\arrayrulecolor{uitableborder}%
 		\begin{tabularx}{144mm}{|X|}
 			\hline
@@ -90,15 +91,15 @@
 				\color{white}\bfseries\fontsize{11}{13}\selectfont
 				\@grado\par\smallskip
 				Curso académico \@cursoacademico\par
-			}                                                                            \\
+			}                                                                             \\
 			\hline
-			\cellcolor{uigray}\rule{0pt}{8mm}\textbf{Asignatura:} \@asignatura            \\
+			\cellcolor{uigray}\rule{0pt}{5mm}\textbf{Asignatura:} \@asignatura            \\
 			\hline
-			\cellcolor{uigray}\rule{0pt}{8mm}\textbf{Unidad didáctica:} \@unidaddidactica \\
+			\cellcolor{uigray}\rule{0pt}{5mm}\textbf{Unidad didáctica:} \@unidaddidactica \\
 			\hline
-			\cellcolor{uigray}\rule{0pt}{8mm}\textbf{Alumno:} \@alumno                    \\
+			\cellcolor{uigray}\rule{0pt}{5mm}\textbf{Alumno:} \@alumno                    \\
 			\hline
-			\cellcolor{uigray}\rule{0pt}{8mm}\textbf{Fecha:} \@fecha                      \\
+			\cellcolor{uigray}\rule{0pt}{5mm}\textbf{Fecha:} \@fecha                      \\
 			\hline
 		\end{tabularx}
 		\par}
@@ -111,11 +112,11 @@
 
 % Full-page background: portada on page 1, interior on pages 2+
 \AddToShipoutPictureBG{%
-  \AtPageLowerLeft{%
-    \ifthenelse{\value{page}=1}{%
-      \includegraphics[width=\paperwidth,height=\paperheight]{imgs/portada}%
-    }{%
-      \includegraphics[width=\paperwidth,height=\paperheight]{imgs/interior}%
-    }%
-  }%
+	\AtPageLowerLeft{%
+		\ifthenelse{\value{page}=1}{%
+			\includegraphics[width=\paperwidth,height=\paperheight]{imgs/portada}%
+		}{%
+			\includegraphics[width=\paperwidth,height=\paperheight]{imgs/interior}%
+		}%
+	}%
 }
