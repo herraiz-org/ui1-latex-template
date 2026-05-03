@@ -12,7 +12,7 @@ Implement initial extensibility features (Math, Bibliography, Code Listings)
     - [ ] Create `referencias.bib` example file
     - [ ] Update `Makefile` to include `biber` step
     - [ ] Verify compilation with a sample citation
-- [ ] Task: Integrate Code Listings support (listings)
+- [x] Task: Integrate Code Listings support (listings) abac8c5
     - [ ] Add `listings` package to `plantilla.tex`
     - [ ] Define branded code styles using `uired` and `uigray`
     - [ ] Verify compilation with a sample code block
