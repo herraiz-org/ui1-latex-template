@@ -13,9 +13,9 @@
 ## Phase 2: Parametrization & Encapsulation
 - [x] Task: Define internal variables for cover page data. (8dbe979)
     - [x] Define variables like `\newcommand{\subject}[1]{\def\@subject{#1}}` for subject, degree, author, date, etc.
-- [ ] Task: Encapsulate the custom cover page.
-    - [ ] Extract the cover page TikZ/background and minipage layout from `plantilla.tex`.
-    - [ ] Wrap it in a `\makecustomcover` command in `ui1activity.cls` using the internal variables.
+- [x] Task: Encapsulate the custom cover page. (345b929)
+    - [x] Extract the cover page TikZ/background and minipage layout from `plantilla.tex`.
+    - [x] Wrap it in a `\makecustomcover` command in `ui1activity.cls` using the internal variables.
 - [ ] Task: Encapsulate bibliography and tables/environments.
     - [ ] Wrap bibliography setup in `\makebibliography`.
     - [ ] Define standard commands/environments for tables if necessary.
