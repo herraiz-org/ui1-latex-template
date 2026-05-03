@@ -15,3 +15,4 @@ To support a wide range of academic assignments, the template includes:
 - **Math Support:** Pre-configured `amsmath` and `amssymb` environments for complex equations.
 - **Bibliography Management:** Integrated `biblatex` support for academic citations and references.
 - **Code Listings:** Styled `listings` environments for high-quality source code snippets.
+- **Spanish Language Support:** Full localization for hyphenation, table labels ("Tabla"), and math decimal separators (comma).
