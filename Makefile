@@ -4,13 +4,16 @@ FLAGS = -interaction=nonstopmode
 
 .PHONY: all clean
 
+TESTS = $(wildcard tests/*.tex)
+TEST_PDFS = $(patsubst tests/%.tex, %.pdf, $(TESTS))
+
 all: $(MAIN).pdf
 
-$(MAIN).pdf: $(MAIN).tex imgs/portada.png imgs/interior.png
-	$(LATEX) $(FLAGS) $(MAIN).tex
-	biber $(MAIN)
-	$(LATEX) $(FLAGS) $(MAIN).tex
-	$(LATEX) $(FLAGS) $(MAIN).tex
+test: $(TEST_PDFS)
+
+%.pdf: tests/%.tex
+	$(LATEX) $(FLAGS) $<
+	if grep -q "addbibresource" $<; then biber $(basename $@); $(LATEX) $(FLAGS) $<; $(LATEX) $(FLAGS) $<; fi
 
 clean:
-	rm -f $(MAIN).aux $(MAIN).log $(MAIN).out $(MAIN).pdf $(MAIN).bbl $(MAIN).bcf $(MAIN).blg $(MAIN).run.xml
+	rm -f *.aux *.log *.out *.pdf *.bbl *.bcf *.blg *.run.xml *.toc
