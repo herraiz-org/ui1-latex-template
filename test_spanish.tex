@@ -1,0 +1,50 @@
+\documentclass[a4paper,11pt]{article}
+
+% Encoding and language
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+
+\usepackage{csquotes}
+\usepackage[backend=bibtex,style=numeric]{biblatex}
+\addbibresource{referencias.bib}
+
+\usepackage{listings}
+\usepackage[sfdefault]{raleway}
+\renewcommand{\familydefault}{\sfdefault}
+
+\usepackage{tabularx}
+
+\begin{document}
+
+\section{Table Label Test}
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+A & B \\
+\hline
+\end{tabular}
+\caption{Prueba de tabla}
+\end{table}
+% Expectation: Label should be "Tabla", not "Cuadro" or "Table".
+
+\section{Math Decimal Separator Test}
+Inline math: $3,1415$ (should not have extra space after the comma).
+% Expectation: No space after comma in math mode.
+
+\section{Quotation Marks Test}
+\enquote{Esto es una cita en español.}
+% Expectation: Should use angular quotes « » by default.
+
+\section{Bibliography Test}
+Citando a \cite{sample}.
+% Expectation: Bibliography should use Spanish terms (e.g., "y" instead of "and").
+
+\printbibliography
+
+\end{document}
