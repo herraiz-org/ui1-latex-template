@@ -18,8 +18,8 @@ Implement initial extensibility features (Math, Bibliography, Code Listings)
     - [x] Verify compilation with a sample code block
 - [x] Task: Conductor - User Manual Verification 'Core Extensibility Packages' (Protocol in workflow.md) 0d94960
 
-## Phase 2: Documentation and Cleanup
+## Phase 2: Documentation and Cleanup [checkpoint: eca2499]
 
 - [x] Task: Add bilingual usage instructions for new features 3a56397
-    - [ ] Add comments/docs in `plantilla.tex` (Spanish/English)
-- [ ] Task: Conductor - User Manual Verification 'Documentation and Cleanup' (Protocol in workflow.md)
+    - [x] Add comments/docs in `plantilla.tex` (Spanish/English)
+- [x] Task: Conductor - User Manual Verification 'Documentation and Cleanup' (Protocol in workflow.md) eca2499
