@@ -6,7 +6,7 @@ FLAGS = -interaction=nonstopmode
 
 all: $(MAIN).pdf
 
-$(MAIN).pdf: $(MAIN).tex portada.png interior.png
+$(MAIN).pdf: $(MAIN).tex imgs/portada.png imgs/interior.png
 	$(LATEX) $(FLAGS) $(MAIN).tex
 	bibtex $(MAIN)
 	$(LATEX) $(FLAGS) $(MAIN).tex
