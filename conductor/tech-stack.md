@@ -29,7 +29,7 @@
 
 ## Academic Features
 - `amsmath`: Robust support for mathematical notation.
-- `biblatex`, `csquotes`: Advanced bibliography management (APA style).
+- `biblatex`, `csquotes`: Advanced bibliography management (APA style) with support for disabling hanging indents.
 - `listings`: High-quality source code rendering with branded styles.
 
 ## Build Tools
