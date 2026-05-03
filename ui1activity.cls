@@ -1,6 +1,13 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{ui1activity}[2026/05/03 UI1 Activity Class]
 
+\newif\ifui@palatino
+\newif\ifui@times
+
+\DeclareOption{palatino}{\ui@palatinotrue\ui@timesfalse}
+\DeclareOption{times}{\ui@palatinofalse\ui@timestrue}
+
+\ExecuteOptions{palatino}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
 \LoadClass{article}
@@ -8,12 +15,28 @@
 % Encoding and language
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[T1]{fontenc}
+
+% Fonts
+\ifui@palatino
+	\RequirePackage{newpxtext}
+	\RequirePackage{newpxmath}
+	\RequirePackage[scaled=0.95]{helvet}
+\fi
+\ifui@times
+	\RequirePackage{newtxtext}
+	\RequirePackage{newtxmath}
+	\RequirePackage[scaled=0.92]{helvet}
+\fi
+
+\RequirePackage{titlesec}
+\titleformat{\section}{\sffamily\bfseries\color{black}}{\thesection}{1em}{}
+\titleformat{\subsection}{\sffamily\bfseries\color{black}}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\sffamily\bfseries\color{black}}{\thesubsubsection}{1em}{}
+
 \RequirePackage[spanish,es-tabla]{babel}
 \RequirePackage{icomma}
 
 \RequirePackage{amsmath}
-\RequirePackage{amssymb}
-\RequirePackage{amsfonts}
 \RequirePackage{parskip}
 
 \RequirePackage[autostyle=true]{csquotes}
