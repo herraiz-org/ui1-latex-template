@@ -16,9 +16,9 @@
 - [x] Task: Encapsulate the custom cover page. (345b929)
     - [x] Extract the cover page TikZ/background and minipage layout from `plantilla.tex`.
     - [x] Wrap it in a `\makecustomcover` command in `ui1activity.cls` using the internal variables.
-- [ ] Task: Encapsulate bibliography and tables/environments.
-    - [ ] Wrap bibliography setup in `\makebibliography`.
-    - [ ] Define standard commands/environments for tables if necessary.
+- [x] Task: Encapsulate bibliography and tables/environments. (cda354e)
+    - [x] Wrap bibliography setup in `\makebibliography`.
+    - [x] Define standard commands/environments for tables if necessary.
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Parametrization & Encapsulation' (Protocol in workflow.md)
 
 ## Phase 3: Implementation & Clean Up
