@@ -15,6 +15,30 @@
 \usepackage[backend=bibtex,style=numeric]{biblatex}
 \addbibresource{referencias.bib}
 
+% Code Listings support
+\usepackage{listings}
+\lstset{
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{uired}\bfseries,
+  commentstyle=\color{uigray}\itshape,
+  stringstyle=\color{uired},
+  numbers=left,
+  numberstyle=\tiny\color{uigray},
+  stepnumber=1,
+  numbersep=5pt,
+  backgroundcolor=\color{white},
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  frame=single,
+  rulecolor=\color{uitableborder},
+  tabsize=2,
+  captionpos=b,
+  breaklines=true,
+  breakatwhitespace=false,
+  title=\lstname
+}
+
 % Font: Raleway (pdflatex-compatible Museo Sans substitute)
 \usepackage[sfdefault]{raleway}
 \renewcommand{\familydefault}{\sfdefault}
