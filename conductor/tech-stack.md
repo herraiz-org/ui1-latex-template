@@ -14,9 +14,12 @@
 - `fancyhdr`: Manages custom headers and footers (page numbering).
 - `ifthen`: Provides conditional logic for page-specific backgrounds.
 - `caption`: Standardizes caption handling and resolves conflicts with advanced bibliography styles.
+- `titlesec`: Used for consistent formatting of section headers in sans-serif bold.
 
 ## Branding & Aesthetics
-- `raleway`: The official typeface substitute (Raleway Bold/Regular).
+- `newpxtext`, `newpxmath`: Palatino-based fonts for body and math (default).
+- `newtxtext`, `newtxmath`: Times-based fonts for body and math (optional).
+- `helvet`: Helvetica font for headers, scaled for visual harmony.
 - `xcolor`: Defines university colors (`uired`: #E4004F, `uigray`: #BFBFBF).
 - `graphicx`: Essential for including the PNG background assets.
 
@@ -25,7 +28,7 @@
 - `colortbl`: Used for branded table headers and row backgrounds.
 
 ## Academic Features
-- `amsmath`, `amssymb`, `amsfonts`: Robust support for mathematical notation and symbols.
+- `amsmath`: Robust support for mathematical notation.
 - `biblatex`, `csquotes`: Advanced bibliography management (APA style).
 - `listings`: High-quality source code rendering with branded styles.
 
