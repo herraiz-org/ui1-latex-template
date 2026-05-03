@@ -20,6 +20,6 @@ Implement initial extensibility features (Math, Bibliography, Code Listings)
 
 ## Phase 2: Documentation and Cleanup
 
-- [ ] Task: Add bilingual usage instructions for new features
+- [x] Task: Add bilingual usage instructions for new features 3a56397
     - [ ] Add comments/docs in `plantilla.tex` (Spanish/English)
 - [ ] Task: Conductor - User Manual Verification 'Documentation and Cleanup' (Protocol in workflow.md)
