@@ -13,6 +13,6 @@ The main advantage of this LaTeX template over the original Word document is **C
 To support a wide range of academic assignments, the template includes:
 - **Branded Visual Identity:** Strict enforcement of university colors, fonts, and backgrounds.
 - **Math Support:** Pre-configured `amsmath` and `amssymb` environments for complex equations.
-- **Bibliography Management:** Integrated `biblatex` support for academic citations and references.
+- **Bibliography Management:** Integrated `biblatex` support for academic citations and references (APA style).
 - **Code Listings:** Styled `listings` environments for high-quality source code snippets.
 - **Spanish Language Support:** Full localization for hyphenation, table labels ("Tabla"), and math decimal separators (comma).

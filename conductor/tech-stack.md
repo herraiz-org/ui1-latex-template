@@ -2,7 +2,7 @@
 
 ## Core
 - **Language:** LaTeX
-- **Compilers:** `pdflatex` (Version 3.141592653 or newer), `bibtex`
+- **Compilers:** `pdflatex` (Version 3.141592653 or newer), `biber`
 - **Encoding:** UTF-8
 
 ## Formatting & Layout
@@ -12,6 +12,7 @@
 - `eso-pic`: Handles the full-page background underlays (`imgs/portada.png` and `imgs/interior.png`).
 - `fancyhdr`: Manages custom headers and footers (page numbering).
 - `ifthen`: Provides conditional logic for page-specific backgrounds.
+- `caption`: Standardizes caption handling and resolves conflicts with advanced bibliography styles.
 
 ## Branding & Aesthetics
 - `raleway`: The official typeface substitute (Raleway Bold/Regular).
@@ -24,7 +25,7 @@
 
 ## Academic Features
 - `amsmath`, `amssymb`, `amsfonts`: Robust support for mathematical notation and symbols.
-- `biblatex`, `csquotes`: Advanced bibliography management (numeric style).
+- `biblatex`, `csquotes`: Advanced bibliography management (APA style).
 - `listings`: High-quality source code rendering with branded styles.
 
 ## Build Tools
