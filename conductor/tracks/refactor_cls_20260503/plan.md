@@ -22,11 +22,11 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 2: Parametrization & Encapsulation' (Protocol in workflow.md) (b2da002)
 
 ## Phase 3: Implementation & Clean Up
-- [ ] Task: Refactor `plantilla.tex` (or create `main.tex`) to use the new class.
-    - [ ] Change `\documentclass{article}` to `\documentclass{ui1activity}`.
-    - [ ] Remove the old preamble and cover page code.
-    - [ ] Insert variable definitions (e.g., `\subject{...}`).
-    - [ ] Call `\makecustomcover` and other custom commands.
+- [x] Task: Refactor `plantilla.tex` (or create `main.tex`) to use the new class. (7cb0145)
+    - [x] Change `\documentclass{article}` to `\documentclass{ui1activity}`.
+    - [x] Remove the old preamble and cover page code.
+    - [x] Insert variable definitions (e.g., `\subject{...}`).
+    - [x] Call `\makecustomcover` and other custom commands.
 - [ ] Task: Verify PDF compilation.
     - [ ] Compile the new `.tex` file to ensure the output matches the original visually.
 - [ ] Task: Conductor - User Manual Verification 'Phase 3: Implementation & Clean Up' (Protocol in workflow.md)
