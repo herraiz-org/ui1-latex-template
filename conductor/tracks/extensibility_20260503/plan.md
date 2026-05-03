@@ -2,21 +2,21 @@
 
 Implement initial extensibility features (Math, Bibliography, Code Listings)
 
-## Phase 1: Core Extensibility Packages
+## Phase 1: Core Extensibility Packages [checkpoint: 0d94960]
 
 - [x] Task: Integrate Math packages (amsmath, amssymb) 5cd0ccf
-    - [ ] Add packages to `plantilla.tex`
-    - [ ] Verify compilation with basic equations
+    - [x] Add packages to `plantilla.tex`
+    - [x] Verify compilation with basic equations
 - [x] Task: Integrate Bibliography support (biblatex) da34b15
-    - [ ] Add `biblatex` package and configuration to `plantilla.tex`
-    - [ ] Create `referencias.bib` example file
-    - [ ] Update `Makefile` to include `biber` step
-    - [ ] Verify compilation with a sample citation
+    - [x] Add `biblatex` package and configuration to `plantilla.tex`
+    - [x] Create `referencias.bib` example file
+    - [x] Update `Makefile` to include `biber` step
+    - [x] Verify compilation with a sample citation
 - [x] Task: Integrate Code Listings support (listings) abac8c5
-    - [ ] Add `listings` package to `plantilla.tex`
-    - [ ] Define branded code styles using `uired` and `uigray`
-    - [ ] Verify compilation with a sample code block
-- [ ] Task: Conductor - User Manual Verification 'Core Extensibility Packages' (Protocol in workflow.md)
+    - [x] Add `listings` package to `plantilla.tex`
+    - [x] Define branded code styles using `uired` and `uigray`
+    - [x] Verify compilation with a sample code block
+- [x] Task: Conductor - User Manual Verification 'Core Extensibility Packages' (Protocol in workflow.md) 0d94960
 
 ## Phase 2: Documentation and Cleanup
 
