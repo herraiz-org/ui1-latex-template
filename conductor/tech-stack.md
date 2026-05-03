@@ -2,7 +2,7 @@
 
 ## Core
 - **Language:** LaTeX
-- **Compiler:** `pdflatex` (Version 3.141592653 or newer)
+- **Compilers:** `pdflatex` (Version 3.141592653 or newer), `bibtex`
 - **Encoding:** UTF-8
 
 ## Formatting & Layout
@@ -20,5 +20,10 @@
 - `tabularx`: Provides fixed-width tables with auto-scaling columns.
 - `colortbl`: Used for branded table headers and row backgrounds.
 
+## Academic Features
+- `amsmath`, `amssymb`, `amsfonts`: Robust support for mathematical notation and symbols.
+- `biblatex`, `csquotes`: Advanced bibliography management (numeric style).
+- `listings`: High-quality source code rendering with branded styles.
+
 ## Build Tools
-- `Makefile`: Automates the dual-pass compilation required for table alignment and references.
+- `Makefile`: Automates the multi-pass compilation required for table alignment and bibliographic references.

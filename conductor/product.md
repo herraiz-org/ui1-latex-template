@@ -9,8 +9,9 @@ The primary users of this template will be **students** who are submitting activ
 ## Primary Benefit
 The main advantage of this LaTeX template over the original Word document is **Consistency**. It ensures strict enforcement of the university's visual identity, preventing formatting errors and guaranteeing a professional appearance across all student submissions.
 
-## Future Extensibility
-To support a wide range of academic assignments, the template is designed to easily accommodate future enhancements, including:
-- **Math Packages:** Pre-configured environments for complex equations and theorems.
-- **Custom Bibliography:** University-specific citation styles (e.g., APA formatting).
-- **Code Listings:** Styled environments for rendering source code snippets in technical assignments.
+## Key Features
+To support a wide range of academic assignments, the template includes:
+- **Branded Visual Identity:** Strict enforcement of university colors, fonts, and backgrounds.
+- **Math Support:** Pre-configured `amsmath` and `amssymb` environments for complex equations.
+- **Bibliography Management:** Integrated `biblatex` support for academic citations and references.
+- **Code Listings:** Styled `listings` environments for high-quality source code snippets.
