@@ -11,8 +11,8 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md) (e0d0b71)
 
 ## Phase 2: Implementation (Green Phase)
-- [ ] Task: Integrate `babel` package with required Spanish conventions.
-    - [ ] Add `\usepackage[spanish,es-tabla,es-nodecimaldot]{babel}` to `plantilla.tex`.
+- [x] Task: Integrate `babel` package with required Spanish conventions. (b22d37c)
+    - [x] Add `\usepackage[spanish,es-tabla,es-nodecimaldot]{babel}` to `plantilla.tex`.
 - [ ] Task: Configure `csquotes` for Spanish.
     - [ ] Ensure `\usepackage{csquotes}` is properly integrated with `babel` to output angular quotes (« »).
 - [ ] Task: Verify functionality and Refactor.
