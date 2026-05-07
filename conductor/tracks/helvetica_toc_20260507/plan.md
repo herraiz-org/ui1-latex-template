@@ -15,7 +15,7 @@
 ## Phase 2: Implementation
 - [x] Task: Load `titletoc` package in `ui1activity.cls` `a87e401`
     - [ ] Add `\RequirePackage{titletoc}` after the `titlesec` require line.
-- [ ] Task: Style section TOC entries
+- [x] Task: Style section TOC entries `ab5dc85`
     - [ ] Use `\titlecontents{section}` to apply `\sffamily\bfseries` to the
           entry text, preserving indentation and dot leaders.
 - [ ] Task: Style subsection TOC entries
