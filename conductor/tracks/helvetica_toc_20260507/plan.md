@@ -1,6 +1,6 @@
 # Implementation Plan: Apply Helvetica to Table of Contents Entries
 
-## Phase 1: Test Updates
+## Phase 1: Test Updates [checkpoint: dc952b0]
 - [x] Task: Write failing tests for TOC Helvetica typography `836d4ce`
     - [ ] Create `tests/test_toc.tex` — a minimal document with sections,
           subsections, subsubsections, and `\tableofcontents`.
@@ -10,7 +10,7 @@
           - Greps for `\sffamily` applied to subsection/subsubsection TOC entries.
           - Compiles `tests/test_toc.tex` and confirms a PDF is produced.
     - [ ] Run the script and confirm all grep assertions fail (Red phase).
-- [ ] Task: Conductor - User Manual Verification 'Test Updates' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Test Updates' (Protocol in workflow.md) `dc952b0`
 
 ## Phase 2: Implementation
 - [ ] Task: Load `titletoc` package in `ui1activity.cls`
