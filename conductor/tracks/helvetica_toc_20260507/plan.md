@@ -1,7 +1,7 @@
 # Implementation Plan: Apply Helvetica to Table of Contents Entries
 
 ## Phase 1: Test Updates
-- [x] Task: Write failing tests for TOC Helvetica typography `836d4ce`
+- [ ] Task: Write failing tests for TOC Helvetica typography
     - [ ] Create `tests/test_toc.tex` — a minimal document with sections,
           subsections, subsubsections, and `\tableofcontents`.
     - [ ] Create `tests/test_helvetica_toc.sh` — a shell script that:
