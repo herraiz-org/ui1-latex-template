@@ -33,4 +33,4 @@
 - `listings`: High-quality source code rendering with branded styles.
 
 ## Build Tools
-- `Makefile`: Automates the multi-pass compilation required for table alignment and bibliographic references.
+- `Makefile`: Automates multi-pass compilation for table alignment and bibliographic references; provides `install`/`uninstall` targets to manage symlinks in the user's local texmf tree.

@@ -18,3 +18,4 @@ To support a wide range of academic assignments, the template includes:
 - **Bibliography Management:** Integrated `biblatex` support for academic citations and references (APA style) with configurable hanging indents.
 - **Code Listings:** Styled `listings` environments for high-quality source code snippets.
 - **Spanish Language Support:** Full localization for hyphenation, table labels ("Tabla"), and math decimal separators (comma).
+- **Easy Installation:** A `make install` / `make uninstall` workflow creates and removes symlinks in the user's local texmf tree, making the class globally available to any LaTeX document on the system without moving files.
