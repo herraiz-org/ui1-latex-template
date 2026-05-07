@@ -20,7 +20,7 @@
           entry text, preserving indentation and dot leaders.
 - [x] Task: Style subsection TOC entries `855c79e`
     - [ ] Use `\titlecontents{subsection}` to apply `\sffamily` (no bold).
-- [x] Task: Style subsubsection TOC entries `ffc4106`
+- [ ] Task: Style subsubsection TOC entries
     - [ ] Use `\titlecontents{subsubsection}` to apply `\sffamily` (no bold).
 - [ ] Task: Local manual verification
     - [ ] Compile `tests/test_toc.tex` and visually verify that section entries
