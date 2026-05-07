@@ -22,7 +22,7 @@
     - [ ] Use `\titlecontents{subsection}` to apply `\sffamily` (no bold).
 - [x] Task: Style subsubsection TOC entries `ffc4106`
     - [ ] Use `\titlecontents{subsubsection}` to apply `\sffamily` (no bold).
-- [x] Task: Local manual verification `74cbcb0`
+- [~] Task: Local manual verification
     - [ ] Compile `tests/test_toc.tex` and visually verify that section entries
           are bold Helvetica and subsection/subsubsection entries are regular
           Helvetica, with all spacing and leaders unchanged.
