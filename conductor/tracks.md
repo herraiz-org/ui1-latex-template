@@ -4,7 +4,7 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [ ] **Track: Setup global texmf symlinks for ui1activity.cls and images**
+- [x] **Track: Setup global texmf symlinks for ui1activity.cls and images**
 *Link: [./tracks/texmf_symlinks_20260503/](./tracks/texmf_symlinks_20260503/)*
 
 ---
