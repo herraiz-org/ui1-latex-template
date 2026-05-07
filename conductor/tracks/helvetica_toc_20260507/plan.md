@@ -13,7 +13,7 @@
 - [x] Task: Conductor - User Manual Verification 'Test Updates' (Protocol in workflow.md) `dc952b0`
 
 ## Phase 2: Implementation
-- [ ] Task: Load `titletoc` package in `ui1activity.cls`
+- [x] Task: Load `titletoc` package in `ui1activity.cls` `a87e401`
     - [ ] Add `\RequirePackage{titletoc}` after the `titlesec` require line.
 - [ ] Task: Style section TOC entries
     - [ ] Use `\titlecontents{section}` to apply `\sffamily\bfseries` to the
