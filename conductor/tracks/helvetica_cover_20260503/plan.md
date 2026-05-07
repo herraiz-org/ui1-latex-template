@@ -14,6 +14,6 @@
 - [x] Task: Update field labels typography in `ui1activity.cls` [1fe998a]
     - [x] Apply `\textsf{\textbf{...}}` (or equivalent) to the labels (e.g., "Asignatura:") in the gray cells.
     - [x] Ensure the corresponding values (`\@asignatura`, etc.) remain outside the sans-serif scope.
-- [ ] Task: Local manual verification
-    - [ ] Compile the test files and visually verify the PDF output to ensure correct font families and visual balance.
+- [x] Task: Local manual verification
+    - [x] Compile the test files and visually verify the PDF output to ensure correct font families and visual balance.
 - [ ] Task: Conductor - User Manual Verification 'Implementation' (Protocol in workflow.md)
