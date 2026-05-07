@@ -18,7 +18,7 @@
 - [x] Task: Style section TOC entries `ab5dc85`
     - [ ] Use `\titlecontents{section}` to apply `\sffamily\bfseries` to the
           entry text, preserving indentation and dot leaders.
-- [x] Task: Style subsection TOC entries `855c79e`
+- [ ] Task: Style subsection TOC entries
     - [ ] Use `\titlecontents{subsection}` to apply `\sffamily` (no bold).
 - [ ] Task: Style subsubsection TOC entries
     - [ ] Use `\titlecontents{subsubsection}` to apply `\sffamily` (no bold).
