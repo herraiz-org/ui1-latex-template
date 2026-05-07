@@ -32,7 +32,6 @@
 \RequirePackage[scaled=\ui@helvetscale]{helvet}
 
 \RequirePackage{titlesec}
-\RequirePackage{titletoc}
 \titleformat{\section}{\sffamily\bfseries\color{black}}{\thesection}{1em}{}
 \titleformat{\subsection}{\sffamily\bfseries\color{black}}{\thesubsection}{1em}{}
 \titleformat{\subsubsection}{\sffamily\bfseries\color{black}}{\thesubsubsection}{1em}{}
