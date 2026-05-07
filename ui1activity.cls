@@ -113,18 +113,18 @@
 			\cellcolor{uired}%
 			\parbox[c][16mm][c]{\dimexpr\linewidth-2\tabcolsep\relax}{%
 				\centering
-				\color{white}\bfseries\fontsize{11}{13}\selectfont
+				\color{white}\sffamily\bfseries\fontsize{11}{13}\selectfont
 				\@grado\par\smallskip
 				Curso académico \@cursoacademico\par
 			}                                                                             \\
 			\hline
-			\cellcolor{uigray}\rule{0pt}{5mm}\textbf{Asignatura:} \@asignatura            \\
+			\cellcolor{uigray}\rule{0pt}{5mm}\textsf{\textbf{Asignatura:}} \@asignatura            \\
 			\hline
-			\cellcolor{uigray}\rule{0pt}{5mm}\textbf{Unidad didáctica:} \@unidaddidactica \\
+			\cellcolor{uigray}\rule{0pt}{5mm}\textsf{\textbf{Unidad didáctica:}} \@unidaddidactica \\
 			\hline
-			\cellcolor{uigray}\rule{0pt}{5mm}\textbf{Alumno:} \@alumno                    \\
+			\cellcolor{uigray}\rule{0pt}{5mm}\textsf{\textbf{Alumno:}} \@alumno                    \\
 			\hline
-			\cellcolor{uigray}\rule{0pt}{5mm}\textbf{Fecha:} \@fecha                      \\
+			\cellcolor{uigray}\rule{0pt}{5mm}\textsf{\textbf{Fecha:}} \@fecha                      \\
 			\hline
 		\end{tabularx}
 		\par}
