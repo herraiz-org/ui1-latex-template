@@ -1,9 +1,9 @@
 # Implementation Plan: Use Helvetica in Cover Table
 
 ## Phase 1: Test Updates
-- [ ] Task: Write/Update failing tests for Cover Table
-    - [ ] Review existing tests (e.g., `tests/test_cover.tex`) and ensure they fully exercise the `\makecustomcover` command.
-    - [ ] Add assertions or compilation checks to ensure the document builds successfully with the font changes.
+- [x] Task: Write/Update failing tests for Cover Table [b09b470]
+    - [x] Review existing tests (e.g., `tests/test_cover.tex`) and ensure they fully exercise the `\makecustomcover` command.
+    - [x] Add assertions or compilation checks to ensure the document builds successfully with the font changes.
 - [ ] Task: Conductor - User Manual Verification 'Test Updates' (Protocol in workflow.md)
 
 ## Phase 2: Implementation
