@@ -37,7 +37,6 @@
 \titleformat{\subsection}{\sffamily\bfseries\color{black}}{\thesubsection}{1em}{}
 \titleformat{\subsubsection}{\sffamily\bfseries\color{black}}{\thesubsubsection}{1em}{}
 \titlecontents{section}[1.5em]{\addvspace{1em plus 1pt}\sffamily\bfseries}{\contentslabel{2.3em}}{\hspace*{-2.3em}}{\hfill\thecontentspage}
-\titlecontents{subsection}[3.8em]{\sffamily}{\contentslabel{3.2em}}{\hspace*{-3.2em}}{\titlerule*[1pc]{.}\contentspage}
 
 \RequirePackage[spanish,es-tabla]{babel}
 \RequirePackage{icomma}
