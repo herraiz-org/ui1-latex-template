@@ -52,10 +52,10 @@
   - [x] Sub-task: Test `make install` is idempotent (running twice does not duplicate PATH line)
   - [x] Sub-task: Test `make uninstall` removes `new-activity` from `~/bin/`
   - [x] Sub-task: Confirm all tests fail (Red phase)
-- [ ] Task: Add `install` / `uninstall` targets to project `Makefile`
-  - [ ] Sub-task: Add `install` target: copy script + chmod + idempotent `~/.zshrc` update
-  - [ ] Sub-task: Add `uninstall` target: remove `~/bin/new-activity`
-  - [ ] Sub-task: Run tests and confirm all pass (Green phase)
+- [x] Task: Add `install` / `uninstall` targets to project `Makefile` [ade1839]
+  - [x] Sub-task: Add `install` target: copy script + chmod + idempotent `~/.zshrc` update
+  - [x] Sub-task: Add `uninstall` target: remove `~/bin/new-activity`
+  - [x] Sub-task: Run tests and confirm all pass (Green phase)
 - [ ] Task: Create Claude Code skill file
   - [ ] Sub-task: Create `.claude/skills/new-activity.md`
   - [ ] Sub-task: Document trigger conditions and all CLI flags
