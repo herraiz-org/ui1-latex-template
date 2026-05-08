@@ -38,14 +38,14 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 2: Implementation
       (Green Phase)' (Protocol in workflow.md)
 
-## [ ] Phase 3: Regression & Final Verification
+## [~] Phase 3: Regression & Final Verification
 
-- [ ] Task: Run the full existing BATS test suite
-  - [ ] Sub-task: Execute `bash tests/run_tests.sh tests/shell/*.bats`
-  - [ ] Sub-task: Confirm all pre-existing tests still pass
+- [x] Task: Run the full existing BATS test suite
+  - [x] Sub-task: Execute `bash tests/run_tests.sh tests/shell/*.bats`
+  - [x] Sub-task: Confirm all pre-existing tests still pass
 
-- [ ] Task: Visual regression check
-  - [ ] Sub-task: Compile a complete test activity PDF
+- [~] Task: Visual regression check
+  - [x] Sub-task: Compile a complete test activity PDF
   - [ ] Sub-task: Open in a PDF viewer and confirm bookmarks appear in
         the outline/sidebar at all three section levels
   - [ ] Sub-task: Confirm no colored links or boxes appear in the
@@ -53,5 +53,5 @@
   - [ ] Sub-task: Confirm PDF Document Properties shows the correct
         Title, Author, and Subject
 
-- [ ] Task: Conductor - User Manual Verification 'Phase 3: Regression &
+- [~] Task: Conductor - User Manual Verification 'Phase 3: Regression &
       Final Verification' (Protocol in workflow.md)
