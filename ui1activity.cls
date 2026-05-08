@@ -130,6 +130,11 @@
 			\hline
 		\end{tabularx}
 		\par}
+	\AddToHook{shipout/after}[ui1activity/coverreset]{%
+		\setcounter{page}{0}%
+		\ui@coverpagefalse
+		\RemoveFromHook{shipout/after}[ui1activity/coverreset]%
+	}%
 }
 
 % Encapsulate bibliography
