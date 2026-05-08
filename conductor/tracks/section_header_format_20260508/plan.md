@@ -1,10 +1,10 @@
 # Implementation Plan: Adjust Section Header Formatting
 
-## Phase 1: Test Updates
+## Phase 1: Test Updates [checkpoint: b9d6922]
 - [x] Task: Write Failing Tests (Red Phase) 815ceca
     - [x] Identify or create test file (e.g., `tests/latex/test_section_formatting.tex`) to verify section header size and spacing.
     - [x] Identify or create corresponding shell test (e.g., `tests/shell/formatting.bats`) to compile the LaTeX and potentially verify output, ensuring it fails with the current `ui1activity.cls`.
-- [ ] Task: Conductor - User Manual Verification 'Phase 1: Test Updates' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 1: Test Updates' (Protocol in workflow.md) b9d6922
 
 ## Phase 2: Implementation
 - [ ] Task: Implement Formatting Changes (Green Phase)
