@@ -162,7 +162,7 @@ pdf:
 clean:
 	rm -f *.aux *.log *.out *.pdf *.bbl *.bcf *.blg *.run.xml *.toc
 
-open:
+open: pdf
 	xdg-open $(MAIN).pdf
 MAKEFILE
 
