@@ -17,13 +17,13 @@
         section entry records page `1`
   - [x] Run the test suite and confirm the new test **fails** (Red confirmed)
 
-- [~] Task: Replace page-counter background condition with a boolean flag
-  - [ ] Add `\newif\ifui@coverpage` and `\ui@coverpagetrue` near the top of
+- [x] Task: Replace page-counter background condition with a boolean flag 97728f5
+  - [x] Add `\newif\ifui@coverpage` and `\ui@coverpagetrue` near the top of
         `ui1activity.cls`
-  - [ ] Replace `\ifthenelse{\value{page}=1}{...portada...}{...interior...}`
+  - [x] Replace `\ifthenelse{\value{page}=1}{...portada...}{...interior...}`
         with `\ifui@coverpage ... \else ... \fi`
 
-- [ ] Task: Register one-shot shipout hook inside `\makecustomcover` to reset
+- [~] Task: Register one-shot shipout hook inside `\makecustomcover` to reset
   the page counter after the cover page ships
   - [ ] Inside `\makecustomcover`, add
         `\AddToHook{shipout/after}[ui1activity/coverreset]{...}` that:
