@@ -4,6 +4,8 @@
 \newif\ifui@palatino
 \newif\ifui@times
 \newif\ifui@nohangbib
+\newif\ifui@coverpage
+\ui@coverpagetrue
 
 \DeclareOption{palatino}{\ui@palatinotrue\ui@timesfalse}
 \DeclareOption{times}{\ui@palatinofalse\ui@timestrue}
@@ -138,10 +140,10 @@
 % Full-page background: portada on page 1, interior on pages 2+
 \AddToShipoutPictureBG{%
 	\AtPageLowerLeft{%
-		\ifthenelse{\value{page}=1}{%
+		\ifui@coverpage
 			\includegraphics[width=\paperwidth,height=\paperheight]{imgs/portada}%
-		}{%
+		\else
 			\includegraphics[width=\paperwidth,height=\paperheight]{imgs/interior}%
-		}%
+		\fi
 	}%
 }
