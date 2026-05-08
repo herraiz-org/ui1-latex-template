@@ -56,9 +56,9 @@
   - [x] Sub-task: Add `install` target: copy script + chmod + idempotent `~/.zshrc` update
   - [x] Sub-task: Add `uninstall` target: remove `~/bin/new-activity`
   - [x] Sub-task: Run tests and confirm all pass (Green phase)
-- [ ] Task: Create Claude Code skill file
-  - [ ] Sub-task: Create `.claude/skills/new-activity.md`
-  - [ ] Sub-task: Document trigger conditions and all CLI flags
-  - [ ] Sub-task: Add example invocations and expected output
-  - [ ] Sub-task: Verify skill is discoverable (appears in `/skills` list)
+- [x] Task: Create Claude Code skill file [4f64d6e]
+  - [x] Sub-task: Create `.claude/skills/new-activity.md`
+  - [x] Sub-task: Document trigger conditions and all CLI flags
+  - [x] Sub-task: Add example invocations and expected output
+  - [x] Sub-task: Verify skill is discoverable (appears in `/skills` list)
 - [ ] Task: Conductor - User Manual Verification 'Phase 4: Installation & Claude Code Skill' (Protocol in workflow.md)
