@@ -90,6 +90,16 @@
 \RequirePackage{graphicx}
 \RequirePackage{ifthen}
 
+% PDF bookmarks and metadata — must be loaded last
+\RequirePackage[hidelinks,bookmarksdepth=3]{hyperref}
+\AtBeginDocument{%
+	\hypersetup{%
+		pdftitle={\@unidaddidactica},%
+		pdfauthor={\@alumno},%
+		pdfsubject={\@asignatura}%
+	}%
+}
+
 % Cover page data variables
 \newcommand{\grado}[1]{\def\@grado{#1}}
 \newcommand{\cursoacademico}[1]{\def\@cursoacademico{#1}}

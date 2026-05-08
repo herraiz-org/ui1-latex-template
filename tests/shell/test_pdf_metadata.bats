@@ -31,5 +31,5 @@ teardown() {
 @test "PDF contains bookmark/outline data" {
   pdflatex -interaction=nonstopmode test.tex > /dev/null 2>&1
   pdflatex -interaction=nonstopmode test.tex > /dev/null 2>&1
-  python3 -c "data=open('test.pdf','rb').read(); exit(0 if b'/Outlines' in data else 1)"
+  python3 -c "from pypdf import PdfReader; r=PdfReader('test.pdf'); exit(0 if len(r.outline)>0 else 1)"
 }
