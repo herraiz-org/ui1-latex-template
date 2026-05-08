@@ -9,7 +9,7 @@
     and confirm it passes — establishes the harness works
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Test Infrastructure Setup' (Protocol in workflow.md) [3d66e9e]
 
-## Phase 2: CLI Argument Parsing & Validation (TDD)
+## Phase 2: CLI Argument Parsing & Validation (TDD) [checkpoint: 532f259]
 
 - [x] Task: Write failing tests for argument parsing [aefd38d]
   - [x] Sub-task: Test `--help` prints usage and exits 0
@@ -24,7 +24,7 @@
   - [x] Sub-task: Implement required-flag validation with usage message
   - [x] Sub-task: Implement default values for optional flags
   - [x] Sub-task: Run tests and confirm all pass (Green phase)
-- [ ] Task: Conductor - User Manual Verification 'Phase 2: CLI Argument Parsing & Validation' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 2: CLI Argument Parsing & Validation' (Protocol in workflow.md) [532f259]
 
 ## Phase 3: File Generation (TDD)
 
