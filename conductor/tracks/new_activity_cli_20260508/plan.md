@@ -46,12 +46,12 @@
 
 ## Phase 4: Installation & Claude Code Skill (TDD)
 
-- [ ] Task: Write failing tests for install/uninstall behaviour
-  - [ ] Sub-task: Test `make install` copies `new-activity` to `~/bin/` and makes it executable
-  - [ ] Sub-task: Test `make install` appends `PATH` export to `~/.zshrc` when not present
-  - [ ] Sub-task: Test `make install` is idempotent (running twice does not duplicate PATH line)
-  - [ ] Sub-task: Test `make uninstall` removes `new-activity` from `~/bin/`
-  - [ ] Sub-task: Confirm all tests fail (Red phase)
+- [x] Task: Write failing tests for install/uninstall behaviour [9308a2a]
+  - [x] Sub-task: Test `make install` copies `new-activity` to `~/bin/` and makes it executable
+  - [x] Sub-task: Test `make install` appends `PATH` export to `~/.zshrc` when not present
+  - [x] Sub-task: Test `make install` is idempotent (running twice does not duplicate PATH line)
+  - [x] Sub-task: Test `make uninstall` removes `new-activity` from `~/bin/`
+  - [x] Sub-task: Confirm all tests fail (Red phase)
 - [ ] Task: Add `install` / `uninstall` targets to project `Makefile`
   - [ ] Sub-task: Add `install` target: copy script + chmod + idempotent `~/.zshrc` update
   - [ ] Sub-task: Add `uninstall` target: remove `~/bin/new-activity`
