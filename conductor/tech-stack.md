@@ -27,6 +27,9 @@
 - `tabularx`: Provides fixed-width tables with auto-scaling columns.
 - `colortbl`: Used for branded table headers and row backgrounds.
 
+## PDF Output
+- `hyperref`: Embeds the table of contents as navigable PDF bookmarks (outline/sidebar) and auto-populates PDF document properties (Title from `\unidaddidactica`, Author from `\alumno`, Subject from `\asignatura`). Loaded last to avoid conflicts; configured with `hidelinks` and `bookmarksdepth=3`.
+
 ## Academic Features
 - `amsmath`: Robust support for mathematical notation.
 - `biblatex`, `csquotes`: Advanced bibliography management (APA style) with support for disabling hanging indents.
