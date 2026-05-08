@@ -2,23 +2,23 @@
 
 ## Phase 1: Fix Immediate Issues and Migrate Legacy Docs
 
-- [ ] Task 1.1: Remove `imgs/imgs` circular symlink
-  - [ ] Run `git rm imgs/imgs` to remove the symlink from git tracking
-  - [ ] Verify `imgs/` contains only `portada.png`, `interior.png`, `.gitkeep`
+- [x] Task 1.1: Remove `imgs/imgs` circular symlink [58fe35c]
+  - [x] Run `git rm imgs/imgs` to remove the symlink from git tracking
+  - [x] Verify `imgs/` contains only `portada.png`, `interior.png`, `.gitkeep`
 
-- [ ] Task 1.2: Add "Design Constraints" section to `conductor/product-guidelines.md`
-  - [ ] Append section documenting cover table width = 144mm (8154 docx twips)
-  - [ ] Append note that page margins were derived from docx twip measurements
-  - [ ] Append background image source paths from the original docx:
+- [x] Task 1.2: Add "Design Constraints" section to `conductor/product-guidelines.md` [58fe35c]
+  - [x] Append section documenting cover table width = 144mm (8154 docx twips)
+  - [x] Append note that page margins were derived from docx twip measurements
+  - [x] Append background image source paths from the original docx:
         `word/media/image2.png` → `imgs/portada.png`,
         `word/media/image1.png` → `imgs/interior.png`
 
-- [ ] Task 1.3: Delete `docs/` directory
-  - [ ] Run `git rm -r docs/` to remove from git tracking
+- [x] Task 1.3: Delete `docs/` directory [58fe35c]
+  - [x] Run `git rm -r docs/` to remove from git tracking
 
-- [ ] Task 1.4: Commit Phase 1 changes
-  - [ ] Commit: `chore(structure): remove circular symlink, migrate legacy docs, delete docs/`
-  - [ ] Attach git note with task summary
+- [x] Task 1.4: Commit Phase 1 changes [58fe35c]
+  - [x] Commit: `chore(structure): remove circular symlink, migrate legacy docs, delete docs/`
+  - [x] Attach git note with task summary
 
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Fix Immediate Issues and Migrate Legacy Docs' (Protocol in workflow.md)
 
