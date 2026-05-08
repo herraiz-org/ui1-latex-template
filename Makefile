@@ -10,8 +10,8 @@ ZSHRC ?= $(HOME)/.zshrc
 
 .PHONY: all clean install uninstall
 
-TESTS = $(wildcard tests/*.tex)
-TEST_PDFS = $(patsubst tests/%.tex, %.pdf, $(TESTS))
+TESTS = $(wildcard tests/latex/*.tex)
+TEST_PDFS = $(patsubst tests/latex/%.tex, %.pdf, $(TESTS))
 
 all: $(MAIN).pdf
 
@@ -21,7 +21,7 @@ $(MAIN).pdf: $(MAIN).tex imgs/portada.png imgs/interior.png
 	$(LATEX) -output-directory $(MAIN_DIR) $(FLAGS) $<
 	if grep -q "addbibresource" $<; then (cd $(MAIN_DIR) && biber $(notdir $(basename $<))); $(LATEX) -output-directory $(MAIN_DIR) $(FLAGS) $<; $(LATEX) -output-directory $(MAIN_DIR) $(FLAGS) $<; fi
 
-%.pdf: tests/%.tex
+%.pdf: tests/latex/%.tex
 	$(LATEX) $(FLAGS) $<
 	if grep -q "addbibresource" $<; then biber $(basename $@); $(LATEX) $(FLAGS) $<; $(LATEX) $(FLAGS) $<; fi
 

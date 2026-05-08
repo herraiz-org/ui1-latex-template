@@ -1,6 +1,6 @@
 #!/usr/bin/env bats
 
-PROJECT_ROOT="$(cd "$(dirname "$BATS_TEST_FILENAME")/.." && pwd)"
+PROJECT_ROOT="$(cd "$(dirname "$BATS_TEST_FILENAME")/../.." && pwd)"
 
 setup() {
   FAKE_HOME=$(mktemp -d)

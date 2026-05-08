@@ -1,6 +1,6 @@
 #!/usr/bin/env bats
 
-SCRIPT="$(cd "$(dirname "$BATS_TEST_FILENAME")/.." && pwd)/new-activity"
+SCRIPT="$(cd "$(dirname "$BATS_TEST_FILENAME")/../.." && pwd)/bin/new-activity"
 
 @test "--help prints usage and exits 0" {
   run "$SCRIPT" --help

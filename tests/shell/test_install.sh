@@ -5,7 +5,7 @@
 set -euo pipefail
 PASS=0
 FAIL=0
-PROJECT_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+PROJECT_ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
 MOCK_TEXMF="$(mktemp -d)"
 TEXMF_TARGET="${MOCK_TEXMF}/tex/latex/ui1_template"
 

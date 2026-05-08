@@ -34,7 +34,7 @@ check "Fecha label uses \\textsf" '\\textsf\{.*Fecha'
 # Compile test_cover.tex and confirm it produces a PDF
 echo ""
 echo "Compiling tests/test_cover.tex ..."
-pdflatex -interaction=nonstopmode tests/test_cover.tex > /dev/null 2>&1
+pdflatex -interaction=nonstopmode tests/latex/test_cover.tex > /dev/null 2>&1
 if [ -f test_cover.pdf ]; then
     echo "PASS: test_cover.tex compiles to PDF"
     PASS=$((PASS + 1))

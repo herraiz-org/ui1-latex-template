@@ -1,6 +1,6 @@
 #!/usr/bin/env bats
 
-SCRIPT="$(cd "$(dirname "$BATS_TEST_FILENAME")/.." && pwd)/new-activity"
+SCRIPT="$(cd "$(dirname "$BATS_TEST_FILENAME")/../.." && pwd)/bin/new-activity"
 
 setup() {
   TMPDIR=$(mktemp -d)
