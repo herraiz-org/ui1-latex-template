@@ -44,7 +44,7 @@
   - [x] Sub-task: Run tests and confirm all pass (Green phase)
 - [x] Task: Conductor - User Manual Verification 'Phase 3: File Generation' (Protocol in workflow.md) [a6e1def]
 
-## Phase 4: Installation & Claude Code Skill (TDD)
+## Phase 4: Installation & Claude Code Skill (TDD) [checkpoint: a914336]
 
 - [x] Task: Write failing tests for install/uninstall behaviour [9308a2a]
   - [x] Sub-task: Test `make install` copies `new-activity` to `~/bin/` and makes it executable
@@ -61,4 +61,4 @@
   - [x] Sub-task: Document trigger conditions and all CLI flags
   - [x] Sub-task: Add example invocations and expected output
   - [x] Sub-task: Verify skill is discoverable (appears in `/skills` list)
-- [ ] Task: Conductor - User Manual Verification 'Phase 4: Installation & Claude Code Skill' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 4: Installation & Claude Code Skill' (Protocol in workflow.md) [a914336]
