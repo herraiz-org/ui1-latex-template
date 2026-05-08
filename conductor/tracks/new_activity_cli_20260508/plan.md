@@ -1,13 +1,13 @@
 # Plan: New Activity CLI + Claude Code Skill
 
-## Phase 1: Test Infrastructure Setup
+## Phase 1: Test Infrastructure Setup [checkpoint: 3d66e9e]
 
 - [x] Task: Install and configure BATS (Bash Automated Testing System) [402b507]
   - [x] Sub-task: Add `bats-core` as a git submodule under `tests/bats`
   - [x] Sub-task: Create `tests/` directory with a `run_tests.sh` helper
   - [x] Sub-task: Write a smoke test (`tests/smoke.bats`) that asserts `true`
     and confirm it passes — establishes the harness works
-- [ ] Task: Conductor - User Manual Verification 'Phase 1: Test Infrastructure Setup' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 1: Test Infrastructure Setup' (Protocol in workflow.md) [3d66e9e]
 
 ## Phase 2: CLI Argument Parsing & Validation (TDD)
 
