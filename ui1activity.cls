@@ -34,9 +34,11 @@
 \RequirePackage[scaled=\ui@helvetscale]{helvet}
 
 \RequirePackage{titlesec}
-\titleformat{\section}{\sffamily\bfseries\color{black}}{\thesection}{1em}{}
+\titleformat{\section}{\sffamily\bfseries\large\color{black}}{\thesection}{1em}{}
 \titleformat{\subsection}{\sffamily\bfseries\color{black}}{\thesubsection}{1em}{}
 \titleformat{\subsubsection}{\sffamily\bfseries\color{black}}{\thesubsubsection}{1em}{}
+
+\titlespacing*{\section}{0pt}{3.5ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 
 \RequirePackage[spanish,es-tabla]{babel}
 \RequirePackage{icomma}
