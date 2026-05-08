@@ -1,0 +1,8 @@
+{
+  "track_id": "new_activity_cli_20260508",
+  "type": "feature",
+  "status": "new",
+  "created_at": "2026-05-08T00:00:00Z",
+  "updated_at": "2026-05-08T00:00:00Z",
+  "description": "CLI utility to scaffold new LaTeX activity directories using ui1activity class, plus a Claude Code skill"
+}
