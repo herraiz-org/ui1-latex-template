@@ -36,7 +36,7 @@
 
 - [x] Task: Conductor - User Manual Verification 'Phase 2: Implement Caption Styling' (Protocol in workflow.md) [4539ad8]
 
-## Phase 3: Regression & Final Verification
+## Phase 3: Regression & Final Verification [checkpoint: 26fd871]
 
 - [x] Task: Run full test suite
   - [x] Execute `bash tests/run_tests.sh tests/shell/*.bats`
@@ -50,4 +50,4 @@
   - [x] Verify: List of Figures / List of Tables entries are visually unchanged
   - [x] Repeat compilation with the Times New Roman font option and confirm same style
 
-- [~] Task: Conductor - User Manual Verification 'Phase 3: Regression & Final Verification' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 3: Regression & Final Verification' (Protocol in workflow.md) [26fd871]
