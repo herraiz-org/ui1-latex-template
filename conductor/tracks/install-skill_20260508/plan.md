@@ -10,8 +10,8 @@
 
 ## Phase 2: Implement Makefile Changes
 
-- [ ] Task: Add `INSTALL_SKILLS ?= $(HOME)/.claude/skills` variable to Makefile
-- [ ] Task: Update `install` target — add `mkdir -p` and `cp` steps for the skill file
-- [ ] Task: Update `uninstall` target — add `rm -f` step for the skill file
-- [ ] Task: Run full BATS test suite and confirm all tests pass (Green phase)
+- [x] Task: Add `INSTALL_SKILLS ?= $(HOME)/.claude/skills` variable to Makefile <!-- 1742eb5 -->
+- [x] Task: Update `install` target — add `mkdir -p` and `cp` steps for the skill file <!-- 1742eb5 -->
+- [x] Task: Update `uninstall` target — add `rm -f` step for the skill file <!-- 1742eb5 -->
+- [x] Task: Run full BATS test suite and confirm all tests pass (Green phase) <!-- 1742eb5 -->
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Implement Makefile Changes' (Protocol in workflow.md)
