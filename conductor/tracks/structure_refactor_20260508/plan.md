@@ -55,7 +55,7 @@
 
 - [x] Task: Conductor - User Manual Verification 'Phase 2: Reorganize Source Files' [3a2be23]
 
-## Phase 3: Reorganize Tests
+## Phase 3: Reorganize Tests [checkpoint: 1b3a832]
 
 - [x] Task 3.1: Establish baseline — run all BATS tests (Red baseline) — 5/19 pass (14 fail due to Phase 2 new-activity path change; fixed in 3.7)
   - [x] Run all `.bats` files and record current pass/fail state
@@ -87,7 +87,7 @@
   - [x] Commit: `chore(structure): reorganize tests into shell/ and latex/ subdirectories`
   - [x] Attach git note with task summary
 
-- [ ] Task: Conductor - User Manual Verification 'Phase 3: Reorganize Tests' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 3: Reorganize Tests' [1b3a832]
 
 ## Phase 4: Add README
 
