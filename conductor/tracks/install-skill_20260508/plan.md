@@ -3,9 +3,9 @@
 ## Phase 1: Write Failing Tests
 
 - [x] Task: Examine existing BATS tests to determine naming conventions and test structure
-- [~] Task: Write — BATS test that asserts `make install` copies `new-activity.md` to `$(INSTALL_SKILLS)/`
-- [ ] Task: Write — BATS test that asserts `make uninstall` removes `$(INSTALL_SKILLS)/new-activity.md`
-- [ ] Task: Run tests and confirm they fail (Red phase)
+- [x] Task: Write — BATS test that asserts `make install` copies `new-activity.md` to `$(INSTALL_SKILLS)/` <!-- 549feb3 -->
+- [x] Task: Write — BATS test that asserts `make uninstall` removes `$(INSTALL_SKILLS)/new-activity.md` <!-- 549feb3 -->
+- [x] Task: Run tests and confirm they fail (Red phase) <!-- 549feb3 -->
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Write Failing Tests' (Protocol in workflow.md)
 
 ## Phase 2: Implement Makefile Changes
