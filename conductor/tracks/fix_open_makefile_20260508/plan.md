@@ -1,6 +1,6 @@
 # Plan: Fix `open` Makefile Target to Depend on `pdf`
 
-## [ ] Phase 1: Fix Generated Activity Makefile
+## [x] Phase 1: Fix Generated Activity Makefile [checkpoint: 852ede7]
 
 - [x] Task: Write failing BATS test — verify the `open` target in the generated `Makefile` lists `pdf` as a prerequisite (Red) [71605e5]
   - [ ] Sub-task: Inspect existing BATS tests in `tests/shell/` to match naming and style conventions
@@ -9,7 +9,7 @@
 - [x] Task: Update `bin/new-activity` to declare `open: pdf` in the generated `Makefile` (Green) [62d06a3]
   - [ ] Sub-task: Change `open:` to `open: pdf` in the heredoc Makefile template inside `bin/new-activity`
   - [ ] Sub-task: Run the full BATS test suite and confirm all tests pass
-- [ ] Task: Conductor - User Manual Verification 'Phase 1: Fix Generated Activity Makefile' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 1: Fix Generated Activity Makefile' (Protocol in workflow.md) [852ede7]
 
 ## [ ] Phase 2: Fix Root Makefile
 
