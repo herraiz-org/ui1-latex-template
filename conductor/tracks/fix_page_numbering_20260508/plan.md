@@ -23,21 +23,21 @@
   - [x] Replace `\ifthenelse{\value{page}=1}{...portada...}{...interior...}`
         with `\ifui@coverpage ... \else ... \fi`
 
-- [~] Task: Register one-shot shipout hook inside `\makecustomcover` to reset
-  the page counter after the cover page ships
-  - [ ] Inside `\makecustomcover`, add
+- [x] Task: Register one-shot shipout hook inside `\makecustomcover` to reset
+  the page counter after the cover page ships 0d89d10
+  - [x] Inside `\makecustomcover`, add
         `\AddToHook{shipout/after}[ui1activity/coverreset]{...}` that:
         calls `\setcounter{page}{1}`, calls `\ui@coverpagefalse`, and
         removes itself via `\RemoveFromHook`
 
-- [ ] Task: Run full test suite and confirm Green Phase
-  - [ ] Run `bash tests/run_tests.sh tests/shell/*.bats`
-  - [ ] Confirm new test passes and all existing tests still pass
+- [x] Task: Run full test suite and confirm Green Phase 0d89d10
+  - [x] Run `bash tests/run_tests.sh tests/shell/*.bats`
+  - [x] Confirm new test passes and all existing tests still pass
 
-- [ ] Task: Commit implementation
-  - [ ] Stage `ui1activity.cls` and new test/fixture files
-  - [ ] Commit with message `fix(cls): Reset page counter after cover page so content starts at page 1`
-  - [ ] Attach git note with task summary
+- [x] Task: Commit implementation 0d89d10
+  - [x] Stage `ui1activity.cls` and new test/fixture files
+  - [x] Commit with message `fix(cls): Reset page counter after cover page so content starts at page 1`
+  - [x] Attach git note with task summary
 
-- [ ] Task: Conductor - User Manual Verification 'Phase 1: Fix Page Counter
+- [~] Task: Conductor - User Manual Verification 'Phase 1: Fix Page Counter
   Reset' (Protocol in workflow.md)
