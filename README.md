@@ -11,6 +11,7 @@ The class (`ui1activity.cls`) enforces the university's visual identity (cover p
 - **TeX Live** (Linux) or **MacTeX** (macOS) with the following packages:
   - `geometry`, `eso-pic`, `graphicx`, `raleway`, `xcolor`, `colortbl`, `tabularx`
   - `fancyhdr`, `ifthen`, `amsmath`, `biblatex`, `listings`, `babel` (Spanish)
+  - `hyperref` — PDF bookmarks and metadata
 - **biber** — bibliography processor (included with TeX Live / MacTeX)
 - **BATS** — only needed to run the test suite (included as a git submodule at `tests/bats/`)
 
@@ -119,7 +120,7 @@ Inside `<directory>/`:
 bash tests/run_tests.sh tests/shell/*.bats
 ```
 
-All 36 tests should pass. The suite covers argument parsing, file generation, bibliography spacing, install/uninstall behavior (Claude Code and Gemini CLI skills), and a smoke test for the BATS harness.
+All 40 tests should pass. The suite covers argument parsing, file generation, bibliography spacing, install/uninstall behavior (Claude Code and Gemini CLI skills), PDF metadata and bookmark verification, and a smoke test for the BATS harness.
 
 ---
 
