@@ -4,7 +4,7 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [ ] **Track: Implement paragraph-like spacing between references in the bibliography.**
+- [x] **Track: Implement paragraph-like spacing between references in the bibliography.**
 *Link: [./tracks/bib_spacing_20260508/](./tracks/bib_spacing_20260508/)*
 
 ---
