@@ -7,10 +7,10 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Test Updates' (Protocol in workflow.md) b9d6922
 
 ## Phase 2: Implementation
-- [ ] Task: Implement Formatting Changes (Green Phase)
-    - [ ] Modify `ui1activity.cls` to update the `titlesec` configuration for `\section`.
-    - [ ] Increase the font size parameter slightly.
-    - [ ] Reduce the after-spacing parameter slightly in the `\titlespacing` command for `\section`.
-- [ ] Task: Verify Tests Pass
-    - [ ] Run the test suite to confirm all formatting tests pass.
+- [x] Task: Implement Formatting Changes (Green Phase) c90b0e0
+    - [x] Modify `ui1activity.cls` to update the `titlesec` configuration for `\section`.
+    - [x] Increase the font size parameter slightly.
+    - [x] Reduce the after-spacing parameter slightly in the `\titlespacing` command for `\section`.
+- [x] Task: Verify Tests Pass c90b0e0
+    - [x] Run the test suite to confirm all formatting tests pass.
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Implementation' (Protocol in workflow.md)
