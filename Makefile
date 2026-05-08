@@ -7,6 +7,7 @@ PROJECT_ROOT := $(shell pwd)
 TEXMF_DIR ?= $(HOME)/texmf/tex/latex/ui1_template
 INSTALL_BIN ?= $(HOME)/bin
 INSTALL_SKILLS ?= $(HOME)/.claude/skills
+INSTALL_GEMINI_SKILLS ?= $(HOME)/.gemini/skills
 ZSHRC ?= $(HOME)/.zshrc
 
 .PHONY: all clean install uninstall
@@ -39,12 +40,15 @@ install:
 	fi
 	mkdir -p "$(INSTALL_SKILLS)/new-activity"
 	cp "$(PROJECT_ROOT)/.claude/skills/new-activity.md" "$(INSTALL_SKILLS)/new-activity/SKILL.md"
+	mkdir -p "$(INSTALL_GEMINI_SKILLS)/new-activity"
+	cp "$(PROJECT_ROOT)/.claude/skills/new-activity.md" "$(INSTALL_GEMINI_SKILLS)/new-activity/SKILL.md"
 
 uninstall:
 	rm -f "$(TEXMF_DIR)/ui1activity.cls"
 	rm -f "$(TEXMF_DIR)/imgs"
 	rm -f "$(INSTALL_BIN)/new-activity"
 	rm -rf "$(INSTALL_SKILLS)/new-activity"
+	rm -rf "$(INSTALL_GEMINI_SKILLS)/new-activity"
 
 clean:
 	rm -f *.aux *.log *.out *.pdf *.bbl *.bcf *.blg *.run.xml *.toc
