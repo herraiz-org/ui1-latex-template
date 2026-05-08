@@ -38,9 +38,9 @@
 
 ## Phase 3: Regression & Final Verification
 
-- [ ] Task: Run full test suite
-  - [ ] Execute `bash tests/run_tests.sh tests/shell/*.bats`
-  - [ ] Confirm all existing and new tests pass
+- [x] Task: Run full test suite
+  - [x] Execute `bash tests/run_tests.sh tests/shell/*.bats`
+  - [x] Confirm all existing and new tests pass
 
 - [ ] Task: Manual PDF verification
   - [ ] Compile a document with figure, table, and lstlisting captions using the
