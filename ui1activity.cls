@@ -48,6 +48,7 @@
 
 \RequirePackage[autostyle=true]{csquotes}
 \RequirePackage{caption}
+\captionsetup{font={small,it},labelfont=bf,margin=1cm}
 \RequirePackage[backend=biber,style=apa]{biblatex}
 \setlength{\bibitemsep}{\parskip}
 \ifui@nohangbib
