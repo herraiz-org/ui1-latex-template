@@ -16,7 +16,7 @@
 - [x] Task: Write failing BATS test — verify the root `Makefile` contains an `open` target that depends on `$(MAIN).pdf` (Red) [b978a29]
   - [ ] Sub-task: Write a test that inspects the root `Makefile` and asserts an `open` target exists with the correct prerequisite and `xdg-open` command
   - [ ] Sub-task: Run tests and confirm the new test fails (Red phase confirmed)
-- [ ] Task: Add `open` target to root `Makefile` (Green)
+- [x] Task: Add `open` target to root `Makefile` (Green) [dbe51c5]
   - [ ] Sub-task: Add `open` to the `.PHONY` declaration
   - [ ] Sub-task: Add `open: $(MAIN).pdf` target with `xdg-open $(MAIN).pdf` recipe
   - [ ] Sub-task: Run the full BATS test suite and confirm all tests pass
