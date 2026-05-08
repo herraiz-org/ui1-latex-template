@@ -21,7 +21,7 @@
 
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Write Failing Tests' (Protocol in workflow.md) [d995b44]
 
-## Phase 2: Implement Caption Styling
+## Phase 2: Implement Caption Styling [checkpoint: 4539ad8]
 
 - [x] Task: Update `ui1activity.cls` with `\captionsetup`
   - [x] Set `font={small,it}` — applies italic + small size to the full caption
@@ -34,7 +34,7 @@
   - [x] Confirm all new tests pass
   - [x] Run full test suite to check for regressions
 
-- [~] Task: Conductor - User Manual Verification 'Phase 2: Implement Caption Styling' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 2: Implement Caption Styling' (Protocol in workflow.md) [4539ad8]
 
 ## Phase 3: Regression & Final Verification
 
