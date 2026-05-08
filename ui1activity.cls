@@ -132,7 +132,7 @@
 		\par}
 	\AddToHook{shipout/after}[ui1activity/coverreset]{%
 		\setcounter{page}{0}%
-		\ui@coverpagefalse
+		\global\ui@coverpagefalse
 		\RemoveFromHook{shipout/after}[ui1activity/coverreset]%
 	}%
 }
