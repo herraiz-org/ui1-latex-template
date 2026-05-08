@@ -15,7 +15,7 @@
       `<tmp_dir>` does not pre-exist.
   - [ ] Sub-task: Run tests and confirm they fail as expected (Red).
 
-- [ ] Task 1.2: Implement Makefile Changes (Green Phase)
+- [x] Task 1.2: Implement Makefile Changes (Green Phase) [51cbb7e]
   - [ ] Sub-task: Add `INSTALL_GEMINI_SKILLS ?= $(HOME)/.gemini/skills` variable
         to `Makefile`, following the `INSTALL_SKILLS` pattern.
   - [ ] Sub-task: Append two lines to the `install` target:
