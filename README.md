@@ -2,7 +2,7 @@
 
 A LaTeX document class and CLI tool for producing branded activity submissions for the **Universidad Isabel I** — Grado en Administración y Dirección de Empresas.
 
-The class (`ui1activity.cls`) enforces the university's visual identity (cover page, fonts, colors, backgrounds) so every submission looks correct without manual formatting.
+The class (`ui1activity.cls`) enforces the university's visual identity (cover page, fonts, colors, backgrounds, and bibliography spacing) so every submission looks correct without manual formatting.
 
 ---
 
@@ -119,7 +119,7 @@ Inside `<directory>/`:
 bash tests/run_tests.sh tests/shell/*.bats
 ```
 
-All 30 tests should pass. The suite covers argument parsing, file generation, install/uninstall behavior (Claude Code and Gemini CLI skills), and a smoke test for the BATS harness.
+All 31 tests should pass. The suite covers argument parsing, file generation, bibliography spacing, install/uninstall behavior (Claude Code and Gemini CLI skills), and a smoke test for the BATS harness.
 
 ---
 
