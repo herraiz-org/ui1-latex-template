@@ -8,7 +8,7 @@
 - [x] Task: Run tests and confirm they fail (Red phase) <!-- 549feb3 -->
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Write Failing Tests' (Protocol in workflow.md) <!-- fd5830b -->
 
-## Phase 2: Implement Makefile Changes
+## Phase 2: Implement Makefile Changes [checkpoint: fcc27c6]
 
 - [x] Task: Add `INSTALL_SKILLS ?= $(HOME)/.claude/skills` variable to Makefile <!-- 1742eb5 -->
 - [x] Task: Update `install` target — add `mkdir -p` and `cp` steps for the skill file <!-- 1742eb5 -->
