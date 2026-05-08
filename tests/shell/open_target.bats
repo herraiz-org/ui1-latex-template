@@ -19,3 +19,15 @@ teardown() {
   grep -q "^open: pdf" "$TMPDIR/my-dir/Makefile"
 }
 
+@test "root Makefile contains open target depending on \$(MAIN).pdf" {
+  grep -q "^open:.*\$(MAIN)\.pdf" "$ROOT_MAKEFILE"
+}
+
+@test "root Makefile open target uses xdg-open" {
+  grep -q "xdg-open.*\$(MAIN)\.pdf" "$ROOT_MAKEFILE"
+}
+
+@test "root Makefile declares open as PHONY" {
+  grep -qE "\.PHONY.*open" "$ROOT_MAKEFILE"
+}
+
