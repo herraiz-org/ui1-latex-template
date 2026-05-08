@@ -1,0 +1,112 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+USAGE="Usage: new-activity [OPTIONS] <directory>
+
+Scaffold a new LaTeX activity directory using the ui1activity document class.
+
+Required flags:
+  --asignatura  SUBJECT    Subject name
+  --alumno      NAME       Student name
+
+Optional flags:
+  --grado       PROGRAM    Degree program
+                           (default: \"Grado en Administración y Dirección de Empresas\")
+  --curso       YEAR       Academic year (e.g., 2025-2026)
+  --unidad      UNIT       Didactic unit
+  --fecha       DATE       Date in Spanish format (default: today)
+  --options     OPTS       Document class options (default: \"palatino,nohangbib\")
+  --dry-run                Print resolved values without creating files
+  --help                   Show this help and exit"
+
+GRADO="Grado en Administración y Dirección de Empresas"
+CURSO=""
+ASIGNATURA=""
+UNIDAD=""
+ALUMNO=""
+FECHA=""
+OPTIONS="palatino,nohangbib"
+DRY_RUN=false
+TARGET_DIR=""
+
+usage_error() {
+  echo "Error: $1" >&2
+  echo "" >&2
+  echo "$USAGE" >&2
+  exit 1
+}
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --help)
+      echo "$USAGE"
+      exit 0
+      ;;
+    --grado)
+      GRADO="${2:?$(usage_error "--grado requires a value")}"
+      shift 2
+      ;;
+    --curso)
+      CURSO="${2:?$(usage_error "--curso requires a value")}"
+      shift 2
+      ;;
+    --asignatura)
+      ASIGNATURA="${2:?$(usage_error "--asignatura requires a value")}"
+      shift 2
+      ;;
+    --unidad)
+      UNIDAD="${2:?$(usage_error "--unidad requires a value")}"
+      shift 2
+      ;;
+    --alumno)
+      ALUMNO="${2:?$(usage_error "--alumno requires a value")}"
+      shift 2
+      ;;
+    --fecha)
+      FECHA="${2:?$(usage_error "--fecha requires a value")}"
+      shift 2
+      ;;
+    --options)
+      OPTIONS="${2:?$(usage_error "--options requires a value")}"
+      shift 2
+      ;;
+    --dry-run)
+      DRY_RUN=true
+      shift
+      ;;
+    --*)
+      usage_error "Unknown flag: $1"
+      ;;
+    *)
+      if [[ -n "$TARGET_DIR" ]]; then
+        usage_error "Unexpected argument: $1"
+      fi
+      TARGET_DIR="$1"
+      shift
+      ;;
+  esac
+done
+
+[[ -n "$ASIGNATURA" ]] || usage_error "--asignatura is required"
+[[ -n "$ALUMNO" ]]     || usage_error "--alumno is required"
+[[ -n "$TARGET_DIR" ]] || usage_error "positional directory argument is required"
+
+if [[ -z "$FECHA" ]]; then
+  FECHA=$(LC_ALL=es_ES.UTF-8 date "+%-d de %B de %Y" 2>/dev/null || date "+%Y-%m-%d")
+fi
+
+if "$DRY_RUN"; then
+  echo "Dry run — resolved values:"
+  echo "  grado:      $GRADO"
+  echo "  curso:      $CURSO"
+  echo "  asignatura: $ASIGNATURA"
+  echo "  unidad:     $UNIDAD"
+  echo "  alumno:     $ALUMNO"
+  echo "  fecha:      $FECHA"
+  echo "  options:    $OPTIONS"
+  echo "  directory:  $TARGET_DIR"
+  exit 0
+fi
+
+# File generation handled in Phase 3
+echo "Creating activity in '$TARGET_DIR'..."
