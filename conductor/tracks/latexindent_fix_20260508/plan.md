@@ -1,6 +1,6 @@
 # Plan: Fix latexindent Extra Tab on Multiline Command Arguments
 
-## Phase 1: Diagnose and Prepare Test Case
+## Phase 1: Diagnose and Prepare Test Case [checkpoint: b6153d1]
 
 - [x] Task: Write Failing Test — create a minimal `.tex` snippet containing
       multiline `\textbf{...}`, `\emph{...}`, `\textit{...}`, `\textsf{...}`,
@@ -10,7 +10,7 @@
 - [x] Task: Locate the user-global `latexindent` config entry point
       (`~/.indentconfig.yaml`) and identify the active settings file, or
       determine that a new one must be created — neither exists; new files required
-- [~] Task: Conductor - User Manual Verification 'Phase 1: Diagnose and Prepare Test Case' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 1: Diagnose and Prepare Test Case' (Protocol in workflow.md) (b6153d1)
 
 ## Phase 2: Implement Fix
 
