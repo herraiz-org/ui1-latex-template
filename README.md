@@ -119,7 +119,7 @@ Inside `<directory>/`:
 bash tests/run_tests.sh tests/shell/*.bats
 ```
 
-All 33 tests should pass. The suite covers argument parsing, file generation, bibliography spacing, install/uninstall behavior (Claude Code and Gemini CLI skills), and a smoke test for the BATS harness.
+All 36 tests should pass. The suite covers argument parsing, file generation, bibliography spacing, install/uninstall behavior (Claude Code and Gemini CLI skills), and a smoke test for the BATS harness.
 
 ---
 
