@@ -35,13 +35,13 @@
   - [x] Sub-task: Test `referencias.bib` is created (empty)
   - [x] Sub-task: Test generated `Makefile` contains `pdf`, `clean`, and `open` targets
   - [x] Sub-task: Confirm all tests fail (Red phase)
-- [ ] Task: Implement file generation
-  - [ ] Sub-task: Implement directory creation with existence check
-  - [ ] Sub-task: Implement `.tex` file generation via heredoc
-  - [ ] Sub-task: Implement `referencias.bib` generation (empty file)
-  - [ ] Sub-task: Implement `Makefile` generation with all three targets
-  - [ ] Sub-task: Implement success message with next-steps instructions
-  - [ ] Sub-task: Run tests and confirm all pass (Green phase)
+- [x] Task: Implement file generation [0858e90]
+  - [x] Sub-task: Implement directory creation with existence check
+  - [x] Sub-task: Implement `.tex` file generation via heredoc
+  - [x] Sub-task: Implement `referencias.bib` generation (empty file)
+  - [x] Sub-task: Implement `Makefile` generation with all three targets
+  - [x] Sub-task: Implement success message with next-steps instructions
+  - [x] Sub-task: Run tests and confirm all pass (Green phase)
 - [ ] Task: Conductor - User Manual Verification 'Phase 3: File Generation' (Protocol in workflow.md)
 
 ## Phase 4: Installation & Claude Code Skill (TDD)
