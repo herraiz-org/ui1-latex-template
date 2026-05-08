@@ -1,0 +1,8 @@
+{
+  "track_id": "install-skill_20260508",
+  "type": "chore",
+  "status": "new",
+  "created_at": "2026-05-08T00:00:00Z",
+  "updated_at": "2026-05-08T00:00:00Z",
+  "description": "Add Makefile install/uninstall support for the Claude skill at .claude/skills/new-activity.md so it gets copied to ~/.claude/skills/ during make install and removed during make uninstall"
+}
