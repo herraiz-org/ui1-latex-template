@@ -17,8 +17,8 @@
 - [x] Task: Add `noAdditionalIndent` rules for `\textbf`, `\emph`, `\textit`,
       `\textsf`, `\texttt`, and `\underline` to the user-global latexindent
       settings YAML file — created ~/.indentconfig.yaml + ~/.latexindent_user.yaml
-- [ ] Task: Run `latexindent` on the test snippet and confirm that no extra tabs
-      appear on continuation lines (Green phase — expected to pass)
-- [ ] Task: Verify that block environments and section commands still indent
-      correctly (regression check)
-- [ ] Task: Conductor - User Manual Verification 'Phase 2: Implement Fix' (Protocol in workflow.md)
+- [x] Task: Run `latexindent` on the test snippet and confirm that no extra tabs
+      appear on continuation lines (Green phase — expected to pass) (ec3a4a3)
+- [x] Task: Verify that block environments and section commands still indent
+      correctly (regression check) (ec3a4a3)
+- [~] Task: Conductor - User Manual Verification 'Phase 2: Implement Fix' (Protocol in workflow.md)
