@@ -6,7 +6,7 @@
   - [ ] Sub-task: Inspect existing BATS tests in `tests/shell/` to match naming and style conventions
   - [ ] Sub-task: Write a test that scaffolds an activity with `new-activity` and parses the generated `Makefile` to assert `open` depends on `pdf`
   - [ ] Sub-task: Run tests and confirm the new test fails (Red phase confirmed)
-- [ ] Task: Update `bin/new-activity` to declare `open: pdf` in the generated `Makefile` (Green)
+- [x] Task: Update `bin/new-activity` to declare `open: pdf` in the generated `Makefile` (Green) [62d06a3]
   - [ ] Sub-task: Change `open:` to `open: pdf` in the heredoc Makefile template inside `bin/new-activity`
   - [ ] Sub-task: Run the full BATS test suite and confirm all tests pass
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Fix Generated Activity Makefile' (Protocol in workflow.md)
