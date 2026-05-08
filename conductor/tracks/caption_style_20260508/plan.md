@@ -23,18 +23,18 @@
 
 ## Phase 2: Implement Caption Styling
 
-- [ ] Task: Update `ui1activity.cls` with `\captionsetup`
-  - [ ] Set `font={small,it}` — applies italic + small size to the full caption
-  - [ ] Set `labelfont={bf}` — adds bold to the label, yielding bold-italic
-  - [ ] Set `margin=1cm` — indents caption 1 cm on each side
-  - [ ] Confirm settings are global (no per-environment overrides needed)
+- [x] Task: Update `ui1activity.cls` with `\captionsetup`
+  - [x] Set `font={small,it}` — applies italic + small size to the full caption
+  - [x] Set `labelfont={bf}` — adds bold to the label, yielding bold-italic
+  - [x] Set `margin=1cm` — indents caption 1 cm on each side
+  - [x] Confirm settings are global (no per-environment overrides needed)
 
-- [ ] Task: Verify tests pass (Green Phase)
-  - [ ] Run the new BATS test file
-  - [ ] Confirm all new tests pass
-  - [ ] Run full test suite to check for regressions
+- [x] Task: Verify tests pass (Green Phase) [3aafa6a]
+  - [x] Run the new BATS test file
+  - [x] Confirm all new tests pass
+  - [x] Run full test suite to check for regressions
 
-- [ ] Task: Conductor - User Manual Verification 'Phase 2: Implement Caption Styling' (Protocol in workflow.md)
+- [~] Task: Conductor - User Manual Verification 'Phase 2: Implement Caption Styling' (Protocol in workflow.md)
 
 ## Phase 3: Regression & Final Verification
 
