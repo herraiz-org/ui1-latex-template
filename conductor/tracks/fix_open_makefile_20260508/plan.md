@@ -11,7 +11,7 @@
   - [ ] Sub-task: Run the full BATS test suite and confirm all tests pass
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Fix Generated Activity Makefile' (Protocol in workflow.md) [852ede7]
 
-## [ ] Phase 2: Fix Root Makefile
+## [x] Phase 2: Fix Root Makefile [checkpoint: 79c46dd]
 
 - [x] Task: Write failing BATS test — verify the root `Makefile` contains an `open` target that depends on `$(MAIN).pdf` (Red) [b978a29]
   - [ ] Sub-task: Write a test that inspects the root `Makefile` and asserts an `open` target exists with the correct prerequisite and `xdg-open` command
@@ -20,4 +20,4 @@
   - [ ] Sub-task: Add `open` to the `.PHONY` declaration
   - [ ] Sub-task: Add `open: $(MAIN).pdf` target with `xdg-open $(MAIN).pdf` recipe
   - [ ] Sub-task: Run the full BATS test suite and confirm all tests pass
-- [ ] Task: Conductor - User Manual Verification 'Phase 2: Fix Root Makefile' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 2: Fix Root Makefile' (Protocol in workflow.md) [79c46dd]
