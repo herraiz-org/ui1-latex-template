@@ -108,5 +108,68 @@ if "$DRY_RUN"; then
   exit 0
 fi
 
-# File generation handled in Phase 3
-echo "Creating activity in '$TARGET_DIR'..."
+if [[ -d "$TARGET_DIR" ]]; then
+  echo "Error: directory '$TARGET_DIR' already exists" >&2
+  exit 1
+fi
+
+mkdir -p "$TARGET_DIR"
+
+BASENAME=$(basename "$TARGET_DIR")
+
+cat > "$TARGET_DIR/${BASENAME}.tex" <<TEX
+\\documentclass[12pt,${OPTIONS}]{ui1activity}
+
+\\addbibresource{referencias.bib}
+
+% ==============================================================
+% FILL IN YOUR DETAILS BELOW
+% ==============================================================
+\\grado{${GRADO}}
+\\cursoacademico{${CURSO}}
+\\asignatura{${ASIGNATURA}}
+\\unidaddidactica{${UNIDAD}}
+\\alumno{${ALUMNO}}
+\\fecha{${FECHA}}
+% ==============================================================
+
+\\begin{document}
+
+\\makecustomcover
+\\tableofcontents
+\\newpage
+
+\\section{Introducción}
+
+\\makebibliography
+
+\\end{document}
+TEX
+
+touch "$TARGET_DIR/referencias.bib"
+
+cat > "$TARGET_DIR/Makefile" <<'MAKEFILE'
+MAIN    := $(shell basename $(CURDIR))
+LATEX   := pdflatex
+FLAGS   := -interaction=nonstopmode
+
+.PHONY: pdf clean open
+
+pdf:
+	$(LATEX) $(FLAGS) $(MAIN).tex
+	if grep -q "addbibresource" $(MAIN).tex; then biber $(MAIN); $(LATEX) $(FLAGS) $(MAIN).tex; $(LATEX) $(FLAGS) $(MAIN).tex; fi
+
+clean:
+	rm -f *.aux *.log *.out *.pdf *.bbl *.bcf *.blg *.run.xml *.toc
+
+open:
+	xdg-open $(MAIN).pdf
+MAKEFILE
+
+echo "Activity created in '$TARGET_DIR'."
+echo ""
+echo "Next steps:"
+echo "  cd $TARGET_DIR"
+echo "  make pdf     # compile"
+echo "  make open    # open PDF"
+echo "  make clean   # remove auxiliary files"
