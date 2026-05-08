@@ -18,12 +18,12 @@
   - [x] Sub-task: Test missing positional directory argument exits 1
   - [x] Sub-task: Test default values are applied for `--grado`, `--fecha`, `--options`
   - [x] Sub-task: Confirm all tests fail (Red phase)
-- [ ] Task: Implement argument parsing in `new-activity`
-  - [ ] Sub-task: Create `new-activity` bash script with `#!/usr/bin/env bash`
-  - [ ] Sub-task: Implement flag parsing (manual loop over `"$@"`)
-  - [ ] Sub-task: Implement required-flag validation with usage message
-  - [ ] Sub-task: Implement default values for optional flags
-  - [ ] Sub-task: Run tests and confirm all pass (Green phase)
+- [x] Task: Implement argument parsing in `new-activity` [805fdef]
+  - [x] Sub-task: Create `new-activity` bash script with `#!/usr/bin/env bash`
+  - [x] Sub-task: Implement flag parsing (manual loop over `"$@"`)
+  - [x] Sub-task: Implement required-flag validation with usage message
+  - [x] Sub-task: Implement default values for optional flags
+  - [x] Sub-task: Run tests and confirm all pass (Green phase)
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: CLI Argument Parsing & Validation' (Protocol in workflow.md)
 
 ## Phase 3: File Generation (TDD)
