@@ -10,7 +10,7 @@ INSTALL_SKILLS ?= $(HOME)/.claude/skills
 INSTALL_GEMINI_SKILLS ?= $(HOME)/.gemini/skills
 ZSHRC ?= $(HOME)/.zshrc
 
-.PHONY: all clean install uninstall
+.PHONY: all clean install uninstall open
 
 TESTS = $(wildcard tests/latex/*.tex)
 TEST_PDFS = $(patsubst tests/latex/%.tex, %.pdf, $(TESTS))
@@ -49,6 +49,9 @@ uninstall:
 	rm -f "$(INSTALL_BIN)/new-activity"
 	rm -rf "$(INSTALL_SKILLS)/new-activity"
 	rm -rf "$(INSTALL_GEMINI_SKILLS)/new-activity"
+
+open: $(MAIN).pdf
+	xdg-open $(MAIN).pdf
 
 clean:
 	rm -f *.aux *.log *.out *.pdf *.bbl *.bcf *.blg *.run.xml *.toc
