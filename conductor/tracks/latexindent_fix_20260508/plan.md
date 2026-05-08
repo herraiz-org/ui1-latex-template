@@ -1,0 +1,24 @@
+# Plan: Fix latexindent Extra Tab on Multiline Command Arguments
+
+## Phase 1: Diagnose and Prepare Test Case
+
+- [~] Task: Write Failing Test — create a minimal `.tex` snippet containing
+      multiline `\textbf{...}`, `\emph{...}`, `\textit{...}`, `\textsf{...}`,
+      `\texttt{...}`, and `\underline{...}` arguments
+- [ ] Task: Run `latexindent` on the test snippet and confirm that continuation
+      lines receive an extra tab (Red phase — expected to fail)
+- [ ] Task: Locate the user-global `latexindent` config entry point
+      (`~/.indentconfig.yaml`) and identify the active settings file, or
+      determine that a new one must be created
+- [ ] Task: Conductor - User Manual Verification 'Phase 1: Diagnose and Prepare Test Case' (Protocol in workflow.md)
+
+## Phase 2: Implement Fix
+
+- [ ] Task: Add `noAdditionalIndent` rules for `\textbf`, `\emph`, `\textit`,
+      `\textsf`, `\texttt`, and `\underline` to the user-global latexindent
+      settings YAML file
+- [ ] Task: Run `latexindent` on the test snippet and confirm that no extra tabs
+      appear on continuation lines (Green phase — expected to pass)
+- [ ] Task: Verify that block environments and section commands still indent
+      correctly (regression check)
+- [ ] Task: Conductor - User Manual Verification 'Phase 2: Implement Fix' (Protocol in workflow.md)
