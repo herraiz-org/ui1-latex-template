@@ -57,35 +57,35 @@
 
 ## Phase 3: Reorganize Tests
 
-- [ ] Task 3.1: Establish baseline — run all BATS tests (Red baseline)
-  - [ ] Run all `.bats` files and record current pass/fail state
+- [x] Task 3.1: Establish baseline — run all BATS tests (Red baseline) — 5/19 pass (14 fail due to Phase 2 new-activity path change; fixed in 3.7)
+  - [x] Run all `.bats` files and record current pass/fail state
 
-- [ ] Task 3.2: Create `tests/shell/` and `tests/latex/` subdirectories
+- [~] Task 3.2: Create `tests/shell/` and `tests/latex/` subdirectories
 
-- [ ] Task 3.3: Move shell test files to `tests/shell/`
+- [~] Task 3.3: Move shell test files to `tests/shell/`
   - [ ] `git mv` all `.bats` files from `tests/` to `tests/shell/`
   - [ ] `git mv` all `.sh` files (except `run_tests.sh`) to `tests/shell/`
 
-- [ ] Task 3.4: Move LaTeX fixture files to `tests/latex/`
+- [~] Task 3.4: Move LaTeX fixture files to `tests/latex/`
   - [ ] `git mv` all `.tex` files in `tests/` to `tests/latex/`
 
-- [ ] Task 3.5: Update `tests/run_tests.sh` for new paths
-  - [ ] Update any hardcoded file paths
+- [x] Task 3.5: Update `tests/run_tests.sh` for new paths — no changes needed (uses $@)
+  - [x] Update any hardcoded file paths
 
-- [ ] Task 3.6: Update `Makefile` test target
+- [~] Task 3.6: Update `Makefile` test target
   - [ ] Update `TESTS = $(wildcard tests/*.tex)` → `tests/latex/*.tex`
   - [ ] Update `TEST_PDFS` pattern accordingly
 
-- [ ] Task 3.7: Audit `.bats` files for hardcoded paths referencing old locations
-  - [ ] Grep for paths and update any broken references
+- [x] Task 3.7: Audit `.bats` files for hardcoded paths referencing old locations
+  - [x] Grep for paths and update any broken references
 
-- [ ] Task 3.8: Run all BATS tests to verify (Green)
-  - [ ] Run all files in `tests/shell/`
-  - [ ] All previously passing tests must still pass
+- [x] Task 3.8: Run all BATS tests to verify (Green) — 19/19 pass
+  - [x] Run all files in `tests/shell/`
+  - [x] All previously passing tests must still pass
 
-- [ ] Task 3.9: Commit Phase 3 changes
-  - [ ] Commit: `chore(structure): reorganize tests into shell/ and latex/ subdirectories`
-  - [ ] Attach git note with task summary
+- [x] Task 3.9: Commit Phase 3 changes [2d27b43]
+  - [x] Commit: `chore(structure): reorganize tests into shell/ and latex/ subdirectories`
+  - [x] Attach git note with task summary
 
 - [ ] Task: Conductor - User Manual Verification 'Phase 3: Reorganize Tests' (Protocol in workflow.md)
 
