@@ -22,7 +22,7 @@
 
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Fix Immediate Issues and Migrate Legacy Docs' [fa90ee6]
 
-## Phase 2: Reorganize Source Files
+## Phase 2: Reorganize Source Files [checkpoint: 3a2be23]
 
 - [x] Task 2.1: Establish baseline — run install BATS tests (Red baseline) — 4/4 pass
   - [x] Run `bash tests/run_tests.sh tests/install.bats` and confirm current state
@@ -53,7 +53,7 @@
   - [x] Commit: `chore(structure): move new-activity to bin/, move examples to examples/`
   - [x] Attach git note with task summary
 
-- [ ] Task: Conductor - User Manual Verification 'Phase 2: Reorganize Source Files' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 2: Reorganize Source Files' [3a2be23]
 
 ## Phase 3: Reorganize Tests
 
