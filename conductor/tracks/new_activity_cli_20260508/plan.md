@@ -26,7 +26,7 @@
   - [x] Sub-task: Run tests and confirm all pass (Green phase)
 - [x] Task: Conductor - User Manual Verification 'Phase 2: CLI Argument Parsing & Validation' (Protocol in workflow.md) [532f259]
 
-## Phase 3: File Generation (TDD)
+## Phase 3: File Generation (TDD) [checkpoint: a6e1def]
 
 - [x] Task: Write failing tests for file generation [a7f2238]
   - [x] Sub-task: Test target directory is created
@@ -42,7 +42,7 @@
   - [x] Sub-task: Implement `Makefile` generation with all three targets
   - [x] Sub-task: Implement success message with next-steps instructions
   - [x] Sub-task: Run tests and confirm all pass (Green phase)
-- [ ] Task: Conductor - User Manual Verification 'Phase 3: File Generation' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 3: File Generation' (Protocol in workflow.md) [a6e1def]
 
 ## Phase 4: Installation & Claude Code Skill (TDD)
 
