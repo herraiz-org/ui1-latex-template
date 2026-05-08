@@ -34,7 +34,7 @@
 
 ## Build Tools
 - `Makefile`: Automates multi-pass compilation for table alignment and bibliographic references; provides `install`/`uninstall` targets to manage symlinks in the user's local texmf tree, and `install`/`uninstall` targets to copy the `new-activity` CLI to `~/bin/` with idempotent `~/.zshrc` PATH setup.
-- `new-activity`: A POSIX-compatible Bash CLI script that scaffolds new activity directories. Flags: `--asignatura`, `--alumno` (required); `--grado`, `--curso`, `--unidad`, `--fecha`, `--options` (optional with defaults).
+- `bin/new-activity`: A POSIX-compatible Bash CLI script that scaffolds new activity directories. Flags: `--asignatura`, `--alumno` (required); `--grado`, `--curso`, `--unidad`, `--fecha`, `--options` (optional with defaults).
 
 ## Testing
-- **BATS (bats-core):** Bash Automated Testing System, added as a git submodule under `tests/bats`. Test files live in `tests/*.bats`; run via `bash tests/run_tests.sh <file.bats>`.
+- **BATS (bats-core):** Bash Automated Testing System, added as a git submodule under `tests/bats`. Shell test files live in `tests/shell/`; LaTeX fixture files live in `tests/latex/`; run via `bash tests/run_tests.sh tests/shell/*.bats`.
