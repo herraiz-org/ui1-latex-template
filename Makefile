@@ -6,6 +6,7 @@ FLAGS = -interaction=nonstopmode
 PROJECT_ROOT := $(shell pwd)
 TEXMF_DIR ?= $(HOME)/texmf/tex/latex/ui1_template
 INSTALL_BIN ?= $(HOME)/bin
+INSTALL_SKILLS ?= $(HOME)/.claude/skills
 ZSHRC ?= $(HOME)/.zshrc
 
 .PHONY: all clean install uninstall
@@ -36,11 +37,14 @@ install:
 	@if ! grep -qF 'export PATH="$$HOME/bin:$$PATH"' "$(ZSHRC)" 2>/dev/null; then \
 		echo 'export PATH="$$HOME/bin:$$PATH"' >> "$(ZSHRC)"; \
 	fi
+	mkdir -p "$(INSTALL_SKILLS)"
+	cp "$(PROJECT_ROOT)/.claude/skills/new-activity.md" "$(INSTALL_SKILLS)/new-activity.md"
 
 uninstall:
 	rm -f "$(TEXMF_DIR)/ui1activity.cls"
 	rm -f "$(TEXMF_DIR)/imgs"
 	rm -f "$(INSTALL_BIN)/new-activity"
+	rm -f "$(INSTALL_SKILLS)/new-activity.md"
 
 clean:
 	rm -f *.aux *.log *.out *.pdf *.bbl *.bcf *.blg *.run.xml *.toc
