@@ -1,6 +1,6 @@
 # Plan: Styled Captions for Float Environments
 
-## Phase 1: Write Failing Tests
+## Phase 1: Write Failing Tests [checkpoint: d995b44]
 
 - [x] Task: Analyze existing test structure
   - [x] Read existing BATS test files in `tests/shell/`
@@ -19,7 +19,7 @@
   - [x] Write test: PDF output is produced
   - [x] Run tests and confirm they fail as expected (caption style not yet applied)
 
-- [~] Task: Conductor - User Manual Verification 'Phase 1: Write Failing Tests' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 1: Write Failing Tests' (Protocol in workflow.md) [d995b44]
 
 ## Phase 2: Implement Caption Styling
 
