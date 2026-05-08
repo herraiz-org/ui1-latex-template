@@ -42,12 +42,12 @@
   - [x] Execute `bash tests/run_tests.sh tests/shell/*.bats`
   - [x] Confirm all existing and new tests pass
 
-- [ ] Task: Manual PDF verification
-  - [ ] Compile a document with figure, table, and lstlisting captions using the
+- [x] Task: Manual PDF verification
+  - [x] Compile a document with figure, table, and lstlisting captions using the
         Palatino option
-  - [ ] Verify: bold-italic label + italic descriptive text in PDF
-  - [ ] Verify: caption is visually narrower than body paragraphs (1 cm each side)
-  - [ ] Verify: List of Figures / List of Tables entries are visually unchanged
-  - [ ] Repeat compilation with the Times New Roman font option and confirm same style
+  - [x] Verify: bold-italic label + italic descriptive text in PDF
+  - [x] Verify: caption is visually narrower than body paragraphs (1 cm each side)
+  - [x] Verify: List of Figures / List of Tables entries are visually unchanged
+  - [x] Repeat compilation with the Times New Roman font option and confirm same style
 
-- [ ] Task: Conductor - User Manual Verification 'Phase 3: Regression & Final Verification' (Protocol in workflow.md)
+- [~] Task: Conductor - User Manual Verification 'Phase 3: Regression & Final Verification' (Protocol in workflow.md)
