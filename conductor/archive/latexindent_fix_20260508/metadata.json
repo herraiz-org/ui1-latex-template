@@ -1,0 +1,8 @@
+{
+  "track_id": "latexindent_fix_20260508",
+  "type": "bug",
+  "status": "new",
+  "created_at": "2026-05-08T00:00:00Z",
+  "updated_at": "2026-05-08T00:00:00Z",
+  "description": "Fix latexindent adding extra tab on continuation lines inside multiline inline text commands (\\textbf, \\emph, etc.) when formatting via apheleia"
+}
