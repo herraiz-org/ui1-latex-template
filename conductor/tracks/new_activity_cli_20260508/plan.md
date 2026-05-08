@@ -28,13 +28,13 @@
 
 ## Phase 3: File Generation (TDD)
 
-- [ ] Task: Write failing tests for file generation
-  - [ ] Sub-task: Test target directory is created
-  - [ ] Sub-task: Test script aborts if target directory already exists
-  - [ ] Sub-task: Test `.tex` file is created and contains the correct metadata fields
-  - [ ] Sub-task: Test `referencias.bib` is created (empty)
-  - [ ] Sub-task: Test generated `Makefile` contains `pdf`, `clean`, and `open` targets
-  - [ ] Sub-task: Confirm all tests fail (Red phase)
+- [x] Task: Write failing tests for file generation [a7f2238]
+  - [x] Sub-task: Test target directory is created
+  - [x] Sub-task: Test script aborts if target directory already exists
+  - [x] Sub-task: Test `.tex` file is created and contains the correct metadata fields
+  - [x] Sub-task: Test `referencias.bib` is created (empty)
+  - [x] Sub-task: Test generated `Makefile` contains `pdf`, `clean`, and `open` targets
+  - [x] Sub-task: Confirm all tests fail (Red phase)
 - [ ] Task: Implement file generation
   - [ ] Sub-task: Implement directory creation with existence check
   - [ ] Sub-task: Implement `.tex` file generation via heredoc
