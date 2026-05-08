@@ -17,3 +17,13 @@ This template is optimized for **Expert** users.
 - Comments are minimized to avoid clutter.
 - The code structure prioritizes clean implementation and ease of programmatic extension.
 - Users are expected to have a solid understanding of LaTeX environments and `pdflatex` compilation workflows.
+
+## Design Constraints
+
+These constraints are derived from the original `ADE. Plantilla actividades 2026.docx` and must be preserved to maintain pixel-accurate fidelity with the University Isabel I branded template.
+
+- **Cover table width:** 144mm (8154 docx twips). This exact value matches the original docx cover table and must not be changed.
+- **Page margins** were derived from the original docx twip measurements: Top 7mm, Left 27.5mm, Right 25mm, Bottom 20mm, Footer skip 7mm.
+- **Background image sources** from the original docx:
+  - `word/media/image2.png` → `imgs/portada.png` (cover page background)
+  - `word/media/image1.png` → `imgs/interior.png` (interior pages background)
