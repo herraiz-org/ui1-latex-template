@@ -1,6 +1,6 @@
 # Plan: Install new-activity Skill for Gemini CLI
 
-## Phase 1: Implement Makefile Changes (TDD)
+## Phase 1: Implement Makefile Changes (TDD) [checkpoint: 535b7cd]
 
 - [x] Task 1.1: Write Failing Tests (Red Phase) [0b2fd86]
   - [ ] Sub-task: Examine existing BATS tests in `tests/shell/` to understand
@@ -25,4 +25,4 @@
     - `rm -rf "$(INSTALL_GEMINI_SKILLS)/new-activity"`
   - [ ] Sub-task: Run tests and confirm all pass (Green).
 
-- [ ] Task 1.3: Conductor - User Manual Verification 'Phase 1: Implement Makefile Changes (TDD)' (Protocol in workflow.md)
+- [x] Task 1.3: Conductor - User Manual Verification 'Phase 1: Implement Makefile Changes (TDD)' (Protocol in workflow.md) [535b7cd]
