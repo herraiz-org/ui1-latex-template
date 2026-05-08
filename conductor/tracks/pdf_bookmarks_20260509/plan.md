@@ -18,7 +18,7 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Test
       Infrastructure (Red Phase)' (Protocol in workflow.md)
 
-## [~] Phase 2: Implementation (Green Phase)
+## [x] Phase 2: Implementation (Green Phase) [checkpoint: 5d38332]
 
 - [x] Task: Update `tech-stack.md` — document `hyperref` addition [d4cd3f4]
   - [x] Sub-task: Add `hyperref` entry with a one-line description of its
@@ -35,7 +35,7 @@
   - [x] Sub-task: Execute `bash tests/run_tests.sh tests/shell/test_pdf_metadata.bats`
   - [x] Sub-task: Confirm all new assertions pass
 
-- [~] Task: Conductor - User Manual Verification 'Phase 2: Implementation
+- [x] Task: Conductor - User Manual Verification 'Phase 2: Implementation
       (Green Phase)' (Protocol in workflow.md)
 
 ## [ ] Phase 3: Regression & Final Verification
