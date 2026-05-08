@@ -14,4 +14,4 @@
 - [x] Task: Update `install` target — add `mkdir -p` and `cp` steps for the skill file <!-- 1742eb5 -->
 - [x] Task: Update `uninstall` target — add `rm -f` step for the skill file <!-- 1742eb5 -->
 - [x] Task: Run full BATS test suite and confirm all tests pass (Green phase) <!-- 1742eb5 -->
-- [ ] Task: Conductor - User Manual Verification 'Phase 2: Implement Makefile Changes' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 2: Implement Makefile Changes' (Protocol in workflow.md)
