@@ -1,0 +1,11 @@
+\documentclass{ui1activity}
+\usepackage[savepos]{zref}
+\begin{document}
+\makeatletter
+\typeout{NORMALSZ: \f@size}
+\section{\typeout{SECTIONSZ: \f@size}Test Section}
+\zsaveposy{sec-pos}
+First line\zsaveposy{text-pos}
+\typeout{SECTIONSPACING: \the\numexpr\zposy{sec-pos}-\zposy{text-pos}\relax}
+\makeatother
+\end{document}
