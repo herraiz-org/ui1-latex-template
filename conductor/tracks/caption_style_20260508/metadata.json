@@ -1,0 +1,8 @@
+{
+  "track_id": "caption_style_20260508",
+  "type": "feature",
+  "status": "new",
+  "created_at": "2026-05-08T00:00:00Z",
+  "updated_at": "2026-05-08T00:00:00Z",
+  "description": "Update ui1activity.cls to style captions for all float environments: 1 pt smaller font, italic text, bold-italic label, and 1 cm left/right margin indentation."
+}
