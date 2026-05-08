@@ -89,7 +89,7 @@
 
 - [x] Task: Conductor - User Manual Verification 'Phase 3: Reorganize Tests' [1b3a832]
 
-## Phase 4: Add README
+## Phase 4: Add README [checkpoint: 40bbc9c]
 
 - [x] Task 4.1: Write `README.md` at project root with all required sections:
   - [x] Project overview and purpose
@@ -105,4 +105,4 @@
   - [x] Commit: `docs: add comprehensive README.md`
   - [x] Attach git note with task summary
 
-- [ ] Task: Conductor - User Manual Verification 'Phase 4: Add README' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 4: Add README' [40bbc9c]
