@@ -11,13 +11,13 @@
 
 ## Phase 2: CLI Argument Parsing & Validation (TDD)
 
-- [ ] Task: Write failing tests for argument parsing
-  - [ ] Sub-task: Test `--help` prints usage and exits 0
-  - [ ] Sub-task: Test missing `--asignatura` exits 1 with error message
-  - [ ] Sub-task: Test missing `--alumno` exits 1 with error message
-  - [ ] Sub-task: Test missing positional directory argument exits 1
-  - [ ] Sub-task: Test default values are applied for `--grado`, `--fecha`, `--options`
-  - [ ] Sub-task: Confirm all tests fail (Red phase)
+- [x] Task: Write failing tests for argument parsing [aefd38d]
+  - [x] Sub-task: Test `--help` prints usage and exits 0
+  - [x] Sub-task: Test missing `--asignatura` exits 1 with error message
+  - [x] Sub-task: Test missing `--alumno` exits 1 with error message
+  - [x] Sub-task: Test missing positional directory argument exits 1
+  - [x] Sub-task: Test default values are applied for `--grado`, `--fecha`, `--options`
+  - [x] Sub-task: Confirm all tests fail (Red phase)
 - [ ] Task: Implement argument parsing in `new-activity`
   - [ ] Sub-task: Create `new-activity` bash script with `#!/usr/bin/env bash`
   - [ ] Sub-task: Implement flag parsing (manual loop over `"$@"`)
