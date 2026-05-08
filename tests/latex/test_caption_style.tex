@@ -1,0 +1,26 @@
+\documentclass{ui1activity}
+\usepackage{listings}
+\begin{document}
+\makeatletter
+\typeout{NORMALSZ: \f@size}
+
+\begin{figure}[h]
+  \centering
+  \rule{2cm}{1cm}
+  \caption{\typeout{CAPTIONSZ: \f@size}Sample figure caption for style test}
+\end{figure}
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|c|}
+    \hline data \\ \hline
+  \end{tabular}
+  \caption{Sample table caption for style test}
+\end{table}
+
+\begin{lstlisting}[caption={Sample code caption for style test}, float=h]
+print("Hello, world!")
+\end{lstlisting}
+
+\makeatother
+\end{document}
