@@ -13,7 +13,7 @@
 - `eso-pic`: Handles the full-page background underlays (`imgs/portada.png` and `imgs/interior.png`).
 - `fancyhdr`: Manages custom headers and footers (page numbering).
 - `ifthen`: Provides conditional logic for page-specific backgrounds.
-- `caption`: Standardizes caption handling and resolves conflicts with advanced bibliography styles.
+- `caption`: Standardizes caption handling, enforces global caption style (bold-italic label, italic small-size text, 1 cm lateral margin via `\captionsetup`), and resolves conflicts with advanced bibliography styles.
 - `titlesec`: Used for consistent formatting of section headers in sans-serif bold.
 
 ## Branding & Aesthetics
