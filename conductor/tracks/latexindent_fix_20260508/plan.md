@@ -2,10 +2,10 @@
 
 ## Phase 1: Diagnose and Prepare Test Case
 
-- [~] Task: Write Failing Test — create a minimal `.tex` snippet containing
+- [x] Task: Write Failing Test — create a minimal `.tex` snippet containing
       multiline `\textbf{...}`, `\emph{...}`, `\textit{...}`, `\textsf{...}`,
-      `\texttt{...}`, and `\underline{...}` arguments
-- [ ] Task: Run `latexindent` on the test snippet and confirm that continuation
+      `\texttt{...}`, and `\underline{...}` arguments (8d5e017)
+- [~] Task: Run `latexindent` on the test snippet and confirm that continuation
       lines receive an extra tab (Red phase — expected to fail)
 - [ ] Task: Locate the user-global `latexindent` config entry point
       (`~/.indentconfig.yaml`) and identify the active settings file, or
