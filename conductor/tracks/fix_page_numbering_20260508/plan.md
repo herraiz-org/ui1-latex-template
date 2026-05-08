@@ -1,6 +1,6 @@
 # Plan: Fix Page Numbering for First Content Page
 
-## Phase 1: Fix Page Counter Reset [checkpoint: ]
+## Phase 1: Fix Page Counter Reset [checkpoint: 7ae0b14]
 
 - [x] Task: Inspect existing tests to determine fixture location and naming
   conventions
@@ -39,5 +39,5 @@
   - [x] Commit with message `fix(cls): Reset page counter after cover page so content starts at page 1`
   - [x] Attach git note with task summary
 
-- [~] Task: Conductor - User Manual Verification 'Phase 1: Fix Page Counter
-  Reset' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 1: Fix Page Counter
+  Reset' (Protocol in workflow.md) 7ae0b14
