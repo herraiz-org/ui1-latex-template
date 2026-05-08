@@ -91,18 +91,18 @@
 
 ## Phase 4: Add README
 
-- [ ] Task 4.1: Write `README.md` at project root with all required sections:
-  - [ ] Project overview and purpose
-  - [ ] Prerequisites (TeX Live / MacTeX with required packages, biber, BATS)
-  - [ ] Installation (`make install`)
-  - [ ] Quick start — full `new-activity` example command
-  - [ ] Project structure table (post-refactor layout)
-  - [ ] All CLI flags — required and optional, with descriptions and defaults
-  - [ ] Running the BATS test suite
-  - [ ] Contributing notes
+- [x] Task 4.1: Write `README.md` at project root with all required sections:
+  - [x] Project overview and purpose
+  - [x] Prerequisites (TeX Live / MacTeX with required packages, biber, BATS)
+  - [x] Installation (`make install`)
+  - [x] Quick start — full `new-activity` example command
+  - [x] Project structure table (post-refactor layout)
+  - [x] All CLI flags — required and optional, with descriptions and defaults
+  - [x] Running the BATS test suite
+  - [x] Contributing notes
 
-- [ ] Task 4.2: Commit Phase 4
-  - [ ] Commit: `docs: add comprehensive README.md`
-  - [ ] Attach git note with task summary
+- [x] Task 4.2: Commit Phase 4 [034ef82]
+  - [x] Commit: `docs: add comprehensive README.md`
+  - [x] Attach git note with task summary
 
 - [ ] Task: Conductor - User Manual Verification 'Phase 4: Add README' (Protocol in workflow.md)
