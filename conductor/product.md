@@ -16,7 +16,7 @@ To support a wide range of academic assignments, the template includes:
 - **Branded Visual Identity:** Strict enforcement of university colors, fonts, and backgrounds.
 - **Configurable Typography:** Support for Palatino (default) and Times New Roman for body text, paired with Helvetica sans-serif headers.
 - **Math Support:** Pre-configured `amsmath` and math font support for complex equations.
-- **Bibliography Management:** Integrated `biblatex` support for academic citations and references (APA style) with configurable hanging indents.
+- **Bibliography Management:** Integrated `biblatex` support for academic citations and references (APA style) with paragraph-like spacing between entries and configurable hanging indents.
 - **Code Listings:** Styled `listings` environments for high-quality source code snippets.
 - **Spanish Language Support:** Full localization for hyphenation, table labels ("Tabla"), and math decimal separators (comma).
 - **Easy Installation:** A `make install` / `make uninstall` workflow creates and removes symlinks in the user's local texmf tree, making the class globally available to any LaTeX document on the system without moving files.
