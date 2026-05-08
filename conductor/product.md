@@ -11,7 +11,7 @@ The main advantage of this LaTeX template over the original Word document is **C
 
 ## Key Features
 To support a wide range of academic assignments, the template includes:
-- **Activity Scaffolding CLI:** A `new-activity` Bash script that generates a ready-to-compile LaTeX activity directory (`.tex` pre-filled with metadata, empty `referencias.bib`, and a `Makefile` with `pdf`/`clean`/`open` targets) from a single command. A companion Claude Code skill enables easy invocation from within Claude Code sessions.
+- **Activity Scaffolding CLI:** A `new-activity` Bash script that generates a ready-to-compile LaTeX activity directory (`.tex` pre-filled with metadata, empty `referencias.bib`, and a `Makefile` with `pdf`/`clean`/`open` targets) from a single command. Companion AI skills enable easy invocation from within Claude Code and Gemini CLI sessions.
 - **Modular Document Class:** Encapsulates complex logic into `ui1activity.cls`, allowing for clean and minimal implementation files.
 - **Branded Visual Identity:** Strict enforcement of university colors, fonts, and backgrounds.
 - **Configurable Typography:** Support for Palatino (default) and Times New Roman for body text, paired with Helvetica sans-serif headers.

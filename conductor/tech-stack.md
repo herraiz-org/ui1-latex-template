@@ -33,7 +33,7 @@
 - `listings`: High-quality source code rendering with branded styles.
 
 ## Build Tools
-- `Makefile`: Automates multi-pass compilation for table alignment and bibliographic references; provides `install`/`uninstall` targets to manage symlinks in the user's local texmf tree, copy the `new-activity` CLI to `~/bin/` with idempotent `~/.zshrc` PATH setup, and install the `new-activity` Claude Code skill to `~/.claude/skills/new-activity/SKILL.md` for global availability across all project directories.
+- `Makefile`: Automates multi-pass compilation for table alignment and bibliographic references; provides `install`/`uninstall` targets to manage symlinks in the user's local texmf tree, copy the `new-activity` CLI to `~/bin/` with idempotent `~/.zshrc` PATH setup, and install the `new-activity` skill to `~/.claude/skills/new-activity/SKILL.md` (Claude Code) and `~/.gemini/skills/new-activity/SKILL.md` (Gemini CLI) for global availability across all project directories.
 - `bin/new-activity`: A POSIX-compatible Bash CLI script that scaffolds new activity directories. Flags: `--asignatura`, `--alumno` (required); `--grado`, `--curso`, `--unidad`, `--fecha`, `--options` (optional with defaults).
 
 ## Testing
