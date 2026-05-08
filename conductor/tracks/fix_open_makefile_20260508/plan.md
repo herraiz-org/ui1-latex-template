@@ -13,7 +13,7 @@
 
 ## [ ] Phase 2: Fix Root Makefile
 
-- [ ] Task: Write failing BATS test — verify the root `Makefile` contains an `open` target that depends on `$(MAIN).pdf` (Red)
+- [x] Task: Write failing BATS test — verify the root `Makefile` contains an `open` target that depends on `$(MAIN).pdf` (Red) [b978a29]
   - [ ] Sub-task: Write a test that inspects the root `Makefile` and asserts an `open` target exists with the correct prerequisite and `xdg-open` command
   - [ ] Sub-task: Run tests and confirm the new test fails (Red phase confirmed)
 - [ ] Task: Add `open` target to root `Makefile` (Green)
