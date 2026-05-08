@@ -1,6 +1,6 @@
 # Plan: PDF Bookmarks and Metadata via hyperref
 
-## [~] Phase 1: Test Infrastructure (Red Phase)
+## [x] Phase 1: Test Infrastructure (Red Phase) [checkpoint: 1bb31c5]
 
 - [x] Task: Write failing BATS test — PDF metadata
   - [x] Sub-task: Create `tests/shell/test_pdf_metadata.bats`
@@ -15,7 +15,7 @@
         (e.g. via `pdfinfo` reporting bookmarks or `mutool show` output)
   - [x] Sub-task: Confirm the test fails (Red phase verified)
 
-- [~] Task: Conductor - User Manual Verification 'Phase 1: Test
+- [x] Task: Conductor - User Manual Verification 'Phase 1: Test
       Infrastructure (Red Phase)' (Protocol in workflow.md)
 
 ## [ ] Phase 2: Implementation (Green Phase)
