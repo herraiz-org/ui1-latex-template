@@ -12,7 +12,7 @@
       determine that a new one must be created — neither exists; new files required
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Diagnose and Prepare Test Case' (Protocol in workflow.md) (b6153d1)
 
-## Phase 2: Implement Fix
+## Phase 2: Implement Fix [checkpoint: db95404]
 
 - [x] Task: Add `noAdditionalIndent` rules for `\textbf`, `\emph`, `\textit`,
       `\textsf`, `\texttt`, and `\underline` to the user-global latexindent
@@ -21,4 +21,4 @@
       appear on continuation lines (Green phase — expected to pass) (ec3a4a3)
 - [x] Task: Verify that block environments and section commands still indent
       correctly (regression check) (ec3a4a3)
-- [~] Task: Conductor - User Manual Verification 'Phase 2: Implement Fix' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 2: Implement Fix' (Protocol in workflow.md) (db95404)
