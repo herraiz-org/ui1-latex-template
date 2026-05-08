@@ -10,7 +10,7 @@
 - [x] Task: Locate the user-global `latexindent` config entry point
       (`~/.indentconfig.yaml`) and identify the active settings file, or
       determine that a new one must be created — neither exists; new files required
-- [ ] Task: Conductor - User Manual Verification 'Phase 1: Diagnose and Prepare Test Case' (Protocol in workflow.md)
+- [~] Task: Conductor - User Manual Verification 'Phase 1: Diagnose and Prepare Test Case' (Protocol in workflow.md)
 
 ## Phase 2: Implement Fix
 
