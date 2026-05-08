@@ -1,6 +1,6 @@
 # Plan: Project Structure Refactor
 
-## Phase 1: Fix Immediate Issues and Migrate Legacy Docs
+## Phase 1: Fix Immediate Issues and Migrate Legacy Docs [checkpoint: fa90ee6]
 
 - [x] Task 1.1: Remove `imgs/imgs` circular symlink [58fe35c]
   - [x] Run `git rm imgs/imgs` to remove the symlink from git tracking
@@ -20,7 +20,7 @@
   - [x] Commit: `chore(structure): remove circular symlink, migrate legacy docs, delete docs/`
   - [x] Attach git note with task summary
 
-- [ ] Task: Conductor - User Manual Verification 'Phase 1: Fix Immediate Issues and Migrate Legacy Docs' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 1: Fix Immediate Issues and Migrate Legacy Docs' [fa90ee6]
 
 ## Phase 2: Reorganize Source Files
 
