@@ -24,34 +24,34 @@
 
 ## Phase 2: Reorganize Source Files
 
-- [ ] Task 2.1: Establish baseline — run install BATS tests (Red baseline)
-  - [ ] Run `bash tests/run_tests.sh tests/install.bats` and confirm current state
+- [x] Task 2.1: Establish baseline — run install BATS tests (Red baseline) — 4/4 pass
+  - [x] Run `bash tests/run_tests.sh tests/install.bats` and confirm current state
 
-- [ ] Task 2.2: Move `new-activity` to `bin/`
-  - [ ] Create `bin/` directory
-  - [ ] `git mv new-activity bin/new-activity`
+- [x] Task 2.2: Move `new-activity` to `bin/`
+  - [x] Create `bin/` directory
+  - [x] `git mv new-activity bin/new-activity`
 
-- [ ] Task 2.3: Update `Makefile` install/uninstall targets for `bin/` path
-  - [ ] Update `$(PROJECT_ROOT)/new-activity` → `$(PROJECT_ROOT)/bin/new-activity`
+- [x] Task 2.3: Update `Makefile` install/uninstall targets for `bin/` path
+  - [x] Update `$(PROJECT_ROOT)/new-activity` → `$(PROJECT_ROOT)/bin/new-activity`
 
-- [ ] Task 2.4: Check `.claude/skills/new-activity.md` for any root-path references and update
+- [x] Task 2.4: Check `.claude/skills/new-activity.md` for any root-path references and update
 
-- [ ] Task 2.5: Move example files to `examples/`
-  - [ ] `git mv plantilla.tex examples/plantilla.tex`
-  - [ ] `git mv referencias.bib examples/referencias.bib`
+- [x] Task 2.5: Move example files to `examples/`
+  - [x] `git mv plantilla.tex examples/plantilla.tex`
+  - [x] `git mv referencias.bib examples/referencias.bib`
 
-- [ ] Task 2.6: Update `Makefile` for `examples/` path
-  - [ ] Update `MAIN` and compilation targets to reference `examples/plantilla.tex`
-  - [ ] Update `clean` target if it produces artifacts relative to root
-  - [ ] Verify `make all` compiles successfully
+- [x] Task 2.6: Update `Makefile` for `examples/` path
+  - [x] Update `MAIN` and compilation targets to reference `examples/plantilla.tex`
+  - [x] Update `clean` target if it produces artifacts relative to root
+  - [x] Verify `make all` compiles successfully
 
-- [ ] Task 2.7: Run install BATS tests to verify (Green)
-  - [ ] Run `bash tests/run_tests.sh tests/install.bats`
-  - [ ] All tests must pass before proceeding
+- [x] Task 2.7: Run install BATS tests to verify (Green) — 4/4 pass
+  - [x] Run `bash tests/run_tests.sh tests/install.bats`
+  - [x] All tests must pass before proceeding
 
-- [ ] Task 2.8: Commit Phase 2 changes
-  - [ ] Commit: `chore(structure): move new-activity to bin/, move examples to examples/`
-  - [ ] Attach git note with task summary
+- [x] Task 2.8: Commit Phase 2 changes [cfa06e4]
+  - [x] Commit: `chore(structure): move new-activity to bin/, move examples to examples/`
+  - [x] Attach git note with task summary
 
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Reorganize Source Files' (Protocol in workflow.md)
 
