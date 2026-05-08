@@ -55,16 +55,16 @@ _run_make_uninstall() {
   [ ! -f "$FAKE_HOME/bin/new-activity" ]
 }
 
-@test "make install copies new-activity.md skill to ~/.claude/skills/" {
+@test "make install copies new-activity.md skill to ~/.claude/skills/new-activity/SKILL.md" {
   run _run_make_install
   [ "$status" -eq 0 ]
-  [ -f "$FAKE_HOME/.claude/skills/new-activity.md" ]
+  [ -f "$FAKE_HOME/.claude/skills/new-activity/SKILL.md" ]
 }
 
-@test "make uninstall removes new-activity.md skill from ~/.claude/skills/" {
+@test "make uninstall removes new-activity skill directory from ~/.claude/skills/" {
   _run_make_install
-  [ -f "$FAKE_HOME/.claude/skills/new-activity.md" ]
+  [ -f "$FAKE_HOME/.claude/skills/new-activity/SKILL.md" ]
   run _run_make_uninstall
   [ "$status" -eq 0 ]
-  [ ! -f "$FAKE_HOME/.claude/skills/new-activity.md" ]
+  [ ! -d "$FAKE_HOME/.claude/skills/new-activity" ]
 }

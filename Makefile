@@ -37,14 +37,14 @@ install:
 	@if ! grep -qF 'export PATH="$$HOME/bin:$$PATH"' "$(ZSHRC)" 2>/dev/null; then \
 		echo 'export PATH="$$HOME/bin:$$PATH"' >> "$(ZSHRC)"; \
 	fi
-	mkdir -p "$(INSTALL_SKILLS)"
-	cp "$(PROJECT_ROOT)/.claude/skills/new-activity.md" "$(INSTALL_SKILLS)/new-activity.md"
+	mkdir -p "$(INSTALL_SKILLS)/new-activity"
+	cp "$(PROJECT_ROOT)/.claude/skills/new-activity.md" "$(INSTALL_SKILLS)/new-activity/SKILL.md"
 
 uninstall:
 	rm -f "$(TEXMF_DIR)/ui1activity.cls"
 	rm -f "$(TEXMF_DIR)/imgs"
 	rm -f "$(INSTALL_BIN)/new-activity"
-	rm -f "$(INSTALL_SKILLS)/new-activity.md"
+	rm -rf "$(INSTALL_SKILLS)/new-activity"
 
 clean:
 	rm -f *.aux *.log *.out *.pdf *.bbl *.bcf *.blg *.run.xml *.toc
