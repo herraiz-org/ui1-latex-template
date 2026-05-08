@@ -22,7 +22,7 @@ The class (`ui1activity.cls`) enforces the university's visual identity (cover p
 make install
 ```
 
-This creates symlinks in your local texmf tree so `ui1activity.cls` is available to any LaTeX document on the system, and copies the `new-activity` script to `~/bin/`.
+This creates symlinks in your local texmf tree so `ui1activity.cls` is available to any LaTeX document on the system, copies the `new-activity` script to `~/bin/`, and installs the `new-activity` skill to `~/.claude/skills/` (Claude Code) and `~/.gemini/skills/` (Gemini CLI).
 
 To remove:
 
@@ -77,7 +77,7 @@ ui1_template/
 ├── ui1activity.cls           # LaTeX document class
 ├── Makefile                  # Build, install, and test targets
 └── .claude/skills/
-    └── new-activity.md       # Claude Code skill for invoking the CLI
+    └── new-activity.md       # AI skill for invoking the CLI (Claude Code + Gemini CLI)
 ```
 
 ---
@@ -119,7 +119,7 @@ Inside `<directory>/`:
 bash tests/run_tests.sh tests/shell/*.bats
 ```
 
-All 19 tests should pass. The suite covers argument parsing, file generation, install/uninstall behavior, and a smoke test for the BATS harness.
+All 25 tests should pass. The suite covers argument parsing, file generation, install/uninstall behavior (Claude Code and Gemini CLI skills), and a smoke test for the BATS harness.
 
 ---
 
