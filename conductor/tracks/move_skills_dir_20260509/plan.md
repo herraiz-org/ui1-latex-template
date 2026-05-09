@@ -13,7 +13,7 @@
 ## Phase 2: Implement Changes (Green Phase)
 
 - [x] Task: Move skill file — `git mv .claude/skills/new-activity.md skills/new-activity/SKILL.md` [7746287]
-- [ ] Task: Remove `.claude/skills/` directory
+- [x] Task: Remove `.claude/skills/` directory [e350a1c]
 - [ ] Task: Update `Makefile` install target — change source path from
   `.claude/skills/new-activity.md` to `skills/new-activity/SKILL.md`
 - [ ] Task: Update `README.md` — replace `.claude/skills/new-activity.md` with
