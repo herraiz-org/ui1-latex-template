@@ -39,7 +39,7 @@ _run_make_uninstall() {
 @test "make install copies correct content to SKILL.md" {
   run _run_make_install
   [ "$status" -eq 0 ]
-  diff "$PROJECT_ROOT/.claude/skills/new-activity.md" \
+  diff "$PROJECT_ROOT/skills/new-activity/SKILL.md" \
     "$FAKE_GEMINI_SKILLS/new-activity/SKILL.md"
 }
 
