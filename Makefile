@@ -39,9 +39,9 @@ install:
 		echo 'export PATH="$$HOME/bin:$$PATH"' >> "$(ZSHRC)"; \
 	fi
 	mkdir -p "$(INSTALL_SKILLS)/new-activity"
-	cp "$(PROJECT_ROOT)/.claude/skills/new-activity.md" "$(INSTALL_SKILLS)/new-activity/SKILL.md"
+	cp "$(PROJECT_ROOT)/skills/new-activity/SKILL.md" "$(INSTALL_SKILLS)/new-activity/SKILL.md"
 	mkdir -p "$(INSTALL_GEMINI_SKILLS)/new-activity"
-	cp "$(PROJECT_ROOT)/.claude/skills/new-activity.md" "$(INSTALL_GEMINI_SKILLS)/new-activity/SKILL.md"
+	cp "$(PROJECT_ROOT)/skills/new-activity/SKILL.md" "$(INSTALL_GEMINI_SKILLS)/new-activity/SKILL.md"
 
 uninstall:
 	rm -f "$(TEXMF_DIR)/ui1activity.cls"
