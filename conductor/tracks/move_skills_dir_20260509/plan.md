@@ -14,8 +14,8 @@
 
 - [x] Task: Move skill file — `git mv .claude/skills/new-activity.md skills/new-activity/SKILL.md` [7746287]
 - [x] Task: Remove `.claude/skills/` directory [e350a1c]
-- [ ] Task: Update `Makefile` install target — change source path from
-  `.claude/skills/new-activity.md` to `skills/new-activity/SKILL.md`
+- [x] Task: Update `Makefile` install target — change source path from
+  `.claude/skills/new-activity.md` to `skills/new-activity/SKILL.md` [a03c2e5]
 - [ ] Task: Update `README.md` — replace `.claude/skills/new-activity.md` with
   `skills/new-activity/SKILL.md` in Project Structure section
 - [ ] Task: Update `conductor/tech-stack.md` — replace repo-side `.claude/skills/`
