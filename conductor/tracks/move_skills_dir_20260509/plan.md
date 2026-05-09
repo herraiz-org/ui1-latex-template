@@ -6,7 +6,7 @@
   `.claude/skills/new-activity.md` to `skills/new-activity/SKILL.md` [41953f3]
 - [x] Task: Update `tests/shell/test_install_gemini_skill.bats` — change all assertions
   referencing `.claude/skills/` to `skills/new-activity/SKILL.md` [79d92f4]
-- [ ] Task: Run test suite and confirm updated tests now fail as expected (Red)
+- [x] Task: Run test suite and confirm updated tests now fail as expected (Red) [0bb237c]
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Update Tests (Red Phase)'
   (Protocol in workflow.md)
 
