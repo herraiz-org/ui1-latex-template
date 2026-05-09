@@ -64,6 +64,14 @@ make pdf
 ui1_template/
 ├── bin/
 │   └── new-activity          # CLI script — scaffolds a new activity directory
+├── conductor/                # Spec-driven development workflow (Conductor)
+│   ├── archive/              # Completed and archived tracks
+│   ├── code_styleguides/     # Coding style guidelines
+│   ├── tracks/               # Active track specs and plans
+│   ├── tracks.md             # Track registry
+│   ├── product.md            # Product vision and goals
+│   ├── product-guidelines.md # Design and quality guidelines
+│   └── tech-stack.md         # Technology stack reference
 ├── examples/
 │   ├── plantilla.tex         # Example LaTeX source using ui1activity
 │   └── referencias.bib       # Example bibliography file
@@ -77,8 +85,9 @@ ui1_template/
 │   └── run_tests.sh          # Test runner wrapper
 ├── ui1activity.cls           # LaTeX document class
 ├── Makefile                  # Build, install, and test targets
-└── .claude/skills/
-    └── new-activity.md       # AI skill for invoking the CLI (Claude Code + Gemini CLI)
+└── skills/
+    └── new-activity/
+        └── SKILL.md          # AI skill for invoking the CLI (Claude Code + Gemini CLI)
 ```
 
 ---
