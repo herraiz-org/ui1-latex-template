@@ -1,0 +1,8 @@
+{
+  "track_id": "move_skills_dir_20260509",
+  "type": "chore",
+  "status": "new",
+  "created_at": "2026-05-09T00:00:00Z",
+  "updated_at": "2026-05-09T00:00:00Z",
+  "description": "Move .claude/skills/ to a top-level skills/ directory and update all references"
+}
