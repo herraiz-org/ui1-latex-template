@@ -55,7 +55,7 @@ _run_make_uninstall() {
   [ ! -f "$FAKE_HOME/bin/new-activity" ]
 }
 
-@test "make install copies new-activity.md skill to ~/.claude/skills/new-activity/SKILL.md" {
+@test "make install copies skills/new-activity/SKILL.md to ~/.claude/skills/new-activity/SKILL.md" {
   run _run_make_install
   [ "$status" -eq 0 ]
   [ -f "$FAKE_HOME/.claude/skills/new-activity/SKILL.md" ]
