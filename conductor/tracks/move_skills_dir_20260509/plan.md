@@ -26,9 +26,9 @@
 
 ## Phase 3: Regression & Final Verification
 
-- [ ] Task: Run full test suite (`bash tests/run_tests.sh tests/shell/*.bats`) and confirm
-  all 40 tests pass
-- [ ] Task: Confirm no remaining references to `.claude/skills/` in tracked files
-  (excluding `conductor/archive/`)
+- [x] Task: Run full test suite (`bash tests/run_tests.sh tests/shell/*.bats`) and confirm
+  all 40 tests pass [1830b61]
+- [x] Task: Confirm no remaining references to `.claude/skills/` in tracked files
+  (excluding `conductor/archive/`) [1830b61]
 - [ ] Task: Conductor - User Manual Verification 'Phase 3: Regression & Final Verification'
   (Protocol in workflow.md)
