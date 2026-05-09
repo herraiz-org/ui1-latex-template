@@ -24,11 +24,11 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 2: Implement Changes (Green Phase)'
   (Protocol in workflow.md) [869916e]
 
-## Phase 3: Regression & Final Verification
+## Phase 3: Regression & Final Verification [checkpoint: d4919b9]
 
 - [x] Task: Run full test suite (`bash tests/run_tests.sh tests/shell/*.bats`) and confirm
   all 40 tests pass [1830b61]
 - [x] Task: Confirm no remaining references to `.claude/skills/` in tracked files
   (excluding `conductor/archive/`) [1830b61]
-- [ ] Task: Conductor - User Manual Verification 'Phase 3: Regression & Final Verification'
-  (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 3: Regression & Final Verification'
+  (Protocol in workflow.md) [d4919b9]
