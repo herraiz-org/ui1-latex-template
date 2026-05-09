@@ -18,8 +18,8 @@
   `.claude/skills/new-activity.md` to `skills/new-activity/SKILL.md` [a03c2e5]
 - [x] Task: Update `README.md` — replace `.claude/skills/new-activity.md` with
   `skills/new-activity/SKILL.md` in Project Structure section [15e2bc8]
-- [ ] Task: Update `conductor/tech-stack.md` — replace repo-side `.claude/skills/`
-  reference with `skills/`
+- [x] Task: Update `conductor/tech-stack.md` — replace repo-side `.claude/skills/`
+  reference with `skills/` [da402da]
 - [ ] Task: Run test suite and confirm all tests pass (Green)
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Implement Changes (Green Phase)'
   (Protocol in workflow.md)
