@@ -1,14 +1,14 @@
 # Plan: Move Skills Directory to Top-Level `skills/`
 
-## Phase 1: Update Tests (Red Phase)
+## Phase 1: Update Tests (Red Phase) [checkpoint: d38a2ff]
 
 - [x] Task: Update `tests/shell/install.bats` — change all assertions referencing
   `.claude/skills/new-activity.md` to `skills/new-activity/SKILL.md` [41953f3]
 - [x] Task: Update `tests/shell/test_install_gemini_skill.bats` — change all assertions
   referencing `.claude/skills/` to `skills/new-activity/SKILL.md` [79d92f4]
 - [x] Task: Run test suite and confirm updated tests now fail as expected (Red) [0bb237c]
-- [ ] Task: Conductor - User Manual Verification 'Phase 1: Update Tests (Red Phase)'
-  (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 1: Update Tests (Red Phase)'
+  (Protocol in workflow.md) [d38a2ff]
 
 ## Phase 2: Implement Changes (Green Phase)
 
