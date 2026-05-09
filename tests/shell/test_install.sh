@@ -3,6 +3,9 @@
 # Run from the project root: bash tests/test_install.sh
 
 set -euo pipefail
+GREEN='\033[0;32m'
+RED='\033[0;31m'
+RESET='\033[0m'
 PASS=0
 FAIL=0
 PROJECT_ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
@@ -18,10 +21,10 @@ check() {
     local desc="$1"
     local condition="$2"
     if eval "$condition"; then
-        echo "PASS: $desc"
+        echo -e "${GREEN}PASS${RESET}: $desc"
         PASS=$((PASS + 1))
     else
-        echo "FAIL: $desc"
+        echo -e "${RED}FAIL${RESET}: $desc"
         FAIL=$((FAIL + 1))
     fi
 }
@@ -55,5 +58,5 @@ check "uninstall removes symlink for ui1activity.cls" "[ ! -e '${TEXMF_TARGET}/u
 check "uninstall removes symlink for imgs directory" "[ ! -e '${TEXMF_TARGET}/imgs' ]"
 
 echo ""
-echo "Results: $PASS passed, $FAIL failed"
+echo -e "Results: ${GREEN}$PASS passed${RESET}, ${RED}$FAIL failed${RESET}"
 [ "$FAIL" -eq 0 ]

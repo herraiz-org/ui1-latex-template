@@ -5,6 +5,9 @@
 # Run from the project root: bash tests/test_helvetica_cover.sh
 
 set -euo pipefail
+GREEN='\033[0;32m'
+RED='\033[0;31m'
+RESET='\033[0m'
 PASS=0
 FAIL=0
 CLS="ui1activity.cls"
@@ -13,10 +16,10 @@ check() {
     local desc="$1"
     local pattern="$2"
     if grep -qP "$pattern" "$CLS"; then
-        echo "PASS: $desc"
+        echo -e "${GREEN}PASS${RESET}: $desc"
         PASS=$((PASS + 1))
     else
-        echo "FAIL: $desc"
+        echo -e "${RED}FAIL${RESET}: $desc"
         echo "      Expected pattern not found: $pattern"
         FAIL=$((FAIL + 1))
     fi
@@ -36,13 +39,13 @@ echo ""
 echo "Compiling tests/test_cover.tex ..."
 pdflatex -interaction=nonstopmode tests/latex/test_cover.tex > /dev/null 2>&1
 if [ -f test_cover.pdf ]; then
-    echo "PASS: test_cover.tex compiles to PDF"
+    echo -e "${GREEN}PASS${RESET}: test_cover.tex compiles to PDF"
     PASS=$((PASS + 1))
 else
-    echo "FAIL: test_cover.tex did not produce a PDF"
+    echo -e "${RED}FAIL${RESET}: test_cover.tex did not produce a PDF"
     FAIL=$((FAIL + 1))
 fi
 
 echo ""
-echo "Results: $PASS passed, $FAIL failed"
+echo -e "Results: ${GREEN}$PASS passed${RESET}, ${RED}$FAIL failed${RESET}"
 [ "$FAIL" -eq 0 ]
