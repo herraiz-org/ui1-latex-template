@@ -38,6 +38,7 @@
 ## Build Tools
 - `Makefile`: Automates multi-pass compilation for table alignment and bibliographic references; provides `install`/`uninstall` targets to manage symlinks in the user's local texmf tree, copy the `new-activity` CLI to `~/bin/` with idempotent `~/.zshrc` PATH setup, and install the `new-activity` skill to `~/.claude/skills/new-activity/SKILL.md` (Claude Code) and `~/.gemini/skills/new-activity/SKILL.md` (Gemini CLI) for global availability across all project directories.
 - `bin/new-activity`: A POSIX-compatible Bash CLI script that scaffolds new activity directories. Flags: `--asignatura`, `--alumno` (required); `--grado`, `--curso`, `--unidad`, `--fecha`, `--options` (optional with defaults).
+- `skills/new-activity/SKILL.md`: AI skill definition for the `new-activity` CLI; lives at the repo root (top-level `skills/` directory) and is installed by `make install` to `~/.claude/skills/new-activity/SKILL.md` (Claude Code) and `~/.gemini/skills/new-activity/SKILL.md` (Gemini CLI).
 
 ## Testing
 - **BATS (bats-core):** Bash Automated Testing System, added as a git submodule under `tests/bats`. Shell test files live in `tests/shell/`; LaTeX fixture files live in `tests/latex/`; run via `bash tests/run_tests.sh tests/shell/*.bats`.
