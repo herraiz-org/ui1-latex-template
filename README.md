@@ -68,10 +68,12 @@ ui1_template/
 │   ├── archive/              # Completed and archived tracks
 │   ├── code_styleguides/     # Coding style guidelines
 │   ├── tracks/               # Active track specs and plans
-│   ├── tracks.md             # Track registry
-│   ├── product.md            # Product vision and goals
+│   ├── index.md              # Conductor index / entry point
 │   ├── product-guidelines.md # Design and quality guidelines
-│   └── tech-stack.md         # Technology stack reference
+│   ├── product.md            # Product vision and goals
+│   ├── tech-stack.md         # Technology stack reference
+│   ├── tracks.md             # Track registry
+│   └── workflow.md           # Development workflow reference
 ├── examples/
 │   ├── plantilla.tex         # Example LaTeX source using ui1activity
 │   └── referencias.bib       # Example bibliography file
@@ -125,11 +127,20 @@ Inside `<directory>/`:
 
 ## Running the Test Suite
 
+**BATS tests** (argument parsing, file generation, install/uninstall, PDF metadata, etc.):
+
 ```bash
 bash tests/run_tests.sh tests/shell/*.bats
 ```
 
-All 40 tests should pass. The suite covers argument parsing, file generation, bibliography spacing, install/uninstall behavior (Claude Code and Gemini CLI skills), PDF metadata and bookmark verification, and a smoke test for the BATS harness.
+All 40 tests should pass.
+
+**Shell tests** (Makefile install/uninstall targets and cover page formatting):
+
+```bash
+bash tests/shell/test_install.sh
+bash tests/shell/test_helvetica_cover.sh
+```
 
 ---
 
