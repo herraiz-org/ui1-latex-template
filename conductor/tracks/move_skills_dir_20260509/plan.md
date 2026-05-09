@@ -21,7 +21,7 @@
 - [x] Task: Update `conductor/tech-stack.md` — replace repo-side `.claude/skills/`
   reference with `skills/` [da402da]
 - [x] Task: Run test suite and confirm all tests pass (Green) [4ceb7c3]
-- [ ] Task: Conductor - User Manual Verification 'Phase 2: Implement Changes (Green Phase)'
+- [~] Task: Conductor - User Manual Verification 'Phase 2: Implement Changes (Green Phase)'
   (Protocol in workflow.md)
 
 ## Phase 3: Regression & Final Verification
