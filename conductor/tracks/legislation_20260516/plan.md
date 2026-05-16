@@ -71,13 +71,13 @@
 - [x] Sub-task: Run test — confirm it fails (Red phase)
 
 ### Task 2.2: Implement Commented Legislation Example in `bin/new-activity`
-- [ ] Sub-task: Locate the `referencias.bib` generation block in `bin/new-activity`
-- [ ] Sub-task: Append the commented-out `@legislation` example block after the
+- [x] Sub-task: Locate the `referencias.bib` generation block in `bin/new-activity`
+- [x] Sub-task: Append the commented-out `@legislation` example block after the
       existing content (see spec FR-5 for exact text)
-- [ ] Sub-task: Run the BATS test — confirm it passes (Green phase)
+- [x] Sub-task: Run the BATS test — confirm it passes (Green phase)
 
 ### Task 2.3: Run Full Test Suite and Verify No Regressions
-- [ ] Sub-task: Run `bash tests/run_tests.sh tests/shell/*.bats`
-- [ ] Sub-task: Confirm all tests pass
+- [x] Sub-task: Run `bash tests/run_tests.sh tests/shell/*.bats`
+- [x] Sub-task: Confirm all tests pass
 
 - [ ] Task: Conductor - User Manual Verification 'Phase 2' (Protocol in workflow.md)

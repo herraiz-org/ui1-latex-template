@@ -146,7 +146,15 @@ cat > "$TARGET_DIR/${BASENAME}.tex" <<TEX
 \\end{document}
 TEX
 
-touch "$TARGET_DIR/referencias.bib"
+cat > "$TARGET_DIR/referencias.bib" <<'BIB'
+% @legislation{lott1987,
+%   title  = {Ley 16/1987, de 30 de julio, de Ordenación de los
+%              Transportes Terrestres},
+%   number = {182},
+%   eid    = {23546},
+%   year   = {1987},
+% }
+BIB
 
 cat > "$TARGET_DIR/Makefile" <<'MAKEFILE'
 MAIN    := $(shell basename $(CURDIR))
