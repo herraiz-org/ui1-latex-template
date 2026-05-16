@@ -15,12 +15,12 @@
 - [x] Sub-task: Confirm fixture fails or produces wrong output before implementation
 
 ### Task 1.3: Write Failing BATS Test — Legislation Feature in `.cls`
-- [ ] Sub-task: Add `tests/shell/legislation.bats` with tests that:
+- [x] Sub-task: Add `tests/shell/legislation.bats` with tests that:
       - Assert `ui1activity.cls` contains `DeclareBibliographyDriver{legislation}`
       - Assert `test_legislation.tex` compiles without errors under `pdflatex` + `biber`
       - Assert output PDF contains the string "BOE número"
       - Assert output PDF contains "Legislación" (Spanish babel active)
-- [ ] Sub-task: Run `bash tests/run_tests.sh tests/shell/legislation.bats` —
+- [x] Sub-task: Run `bash tests/run_tests.sh tests/shell/legislation.bats` —
       confirm tests fail (Red phase)
 
 ### Task 1.4: Implement `legislation` Driver in `ui1activity.cls`
