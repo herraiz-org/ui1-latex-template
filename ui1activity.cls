@@ -68,7 +68,52 @@
   (\printfield{year})%
   \usebibmacro{finentry}}
 
-\defbibfilter{notlegislation}{not type=legislation}
+% Jurisprudencia: remap .bib field names to biblatex user fields via source map.
+% biber discards fields not in its data model; source maps run before that check.
+\DeclareSourcemap{
+  \maps[datatype=bibtex]{
+    \map{
+      \pertype{jurisprudencia}
+      \step[fieldsource=kind,       fieldtarget=usera]
+      \step[fieldsource=court,      fieldtarget=userb]
+      \step[fieldsource=shortcourt, fieldtarget=userc]
+      \step[fieldsource=chamber,    fieldtarget=userd]
+      \step[fieldsource=fdate,      fieldtarget=usere]
+      \step[fieldsource=ecli,       fieldtarget=userf]
+    }
+  }
+}
+
+\DeclareFieldFormat[jurisprudencia]{usera}{#1}
+\DeclareFieldFormat[jurisprudencia]{userb}{#1}
+\DeclareFieldFormat[jurisprudencia]{userc}{#1}
+\DeclareFieldFormat[jurisprudencia]{number}{#1}
+\DeclareFieldFormat[jurisprudencia]{userd}{#1}
+\DeclareFieldFormat[jurisprudencia]{usere}{#1}
+\DeclareFieldFormat[jurisprudencia]{userf}{#1}
+
+\DeclareBibliographyDriver{jurisprudencia}{%
+  \usebibmacro{bibindex}%
+  \usebibmacro{begentry}%
+  \printfield{usera}\addspace
+  \printfield{userb}\addspace
+  \printfield{number}\addspace
+  (\printfield{userd}),\addspace
+  de \printfield{usere}.\addspace
+  ECLI:\printfield{userf}\addspace
+  \printfield{url}%
+  \usebibmacro{finentry}}
+
+\DeclareCiteCommand{\parencite}[\mkbibparens]
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+   \ifentrytype{jurisprudencia}
+     {\printfield{userc}\addnbspace\printfield{number}}
+     {\usebibmacro{cite}}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+\defbibfilter{notlegislationorjuris}{not type=legislation and not type=jurisprudencia}
 
 % Page layout -- margins converted from docx twips (1 twip = 1/1440 inch)
 \RequirePackage[
@@ -165,11 +210,12 @@
 	}%
 }
 
-% Encapsulate bibliography — legislation first, then main references
+% Encapsulate bibliography — jurisprudencia, then legislation, then main references
 \newcommand{\ui@legistitle}{\iflanguage{spanish}{Legislaci\'on}{Legislation}}
 \newcommand{\makebibliography}{%
+	\printbibliography[type=jurisprudencia, heading=bibintoc, title={Jurisprudencia}]%
 	\printbibliography[type=legislation, heading=bibintoc, title={\ui@legistitle}]%
-	\printbibliography[filter=notlegislation, heading=bibintoc]%
+	\printbibliography[filter=notlegislationorjuris, heading=bibintoc]%
 }
 
 % Full-page background: portada on page 1, interior on pages 2+
