@@ -60,7 +60,7 @@
 
 ---
 
-## Phase 2: CLI Scaffold Update (`bin/new-activity`)
+## Phase 2: CLI Scaffold Update (`bin/new-activity`) [checkpoint: effc7f8]
 
 ### Task 2.1: Write Failing BATS Test — Legislation Sample in `referencias.bib` [324aea5]
 - [x] Sub-task: Add test to `tests/shell/file_generation.bats` (or a new
@@ -80,4 +80,4 @@
 - [x] Sub-task: Run `bash tests/run_tests.sh tests/shell/*.bats`
 - [x] Sub-task: Confirm all tests pass
 
-- [ ] Task: Conductor - User Manual Verification 'Phase 2' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 2' (Protocol in workflow.md)
