@@ -8,7 +8,7 @@
 
 ## Formatting & Layout
 - `geometry`: Used for strict margin control (Top: 7mm, Left: 27.5mm, Right: 25mm, Bottom: 20mm).
-- `babel`: Configured for Spanish localization (`es-tabla`) to ensure correct hyphenation and labels.
+- `babel`: Configured for Spanish localization (`es-tabla`) with English also loaded; Spanish is the document default. The dual-language setup enables `\selectlanguage{english}` in documents and powers the automatic `iflanguage`-based heading for the legislation bibliography section.
 - `icomma`: Intelligently handles decimal commas in math mode.
 - `eso-pic`: Handles the full-page background underlays (`imgs/portada.png` and `imgs/interior.png`).
 - `fancyhdr`: Manages custom headers and footers (page numbering).
@@ -37,7 +37,7 @@
 
 ## Build Tools
 - `Makefile`: Automates multi-pass compilation for table alignment and bibliographic references; provides `install`/`uninstall` targets to manage symlinks in the user's local texmf tree, copy the `new-activity` CLI to `~/bin/` with idempotent `~/.zshrc` PATH setup, and install the `new-activity` skill to `~/.claude/skills/new-activity/SKILL.md` (Claude Code) and `~/.gemini/skills/new-activity/SKILL.md` (Gemini CLI) for global availability across all project directories.
-- `bin/new-activity`: A POSIX-compatible Bash CLI script that scaffolds new activity directories. Flags: `--asignatura`, `--alumno` (required); `--grado`, `--curso`, `--unidad`, `--fecha`, `--options` (optional with defaults).
+- `bin/new-activity`: A POSIX-compatible Bash CLI script that scaffolds new activity directories. Flags: `--asignatura`, `--alumno` (required); `--grado`, `--curso`, `--unidad`, `--fecha`, `--options` (optional with defaults). The generated `referencias.bib` includes a commented-out `@legislation` entry showing all required fields (`title`, `number`, `eid`, `year`).
 - `skills/new-activity/SKILL.md`: AI skill definition for the `new-activity` CLI; lives at the repo root (top-level `skills/` directory) and is installed by `make install` to `~/.claude/skills/new-activity/SKILL.md` (Claude Code) and `~/.gemini/skills/new-activity/SKILL.md` (Gemini CLI).
 
 ## Testing
