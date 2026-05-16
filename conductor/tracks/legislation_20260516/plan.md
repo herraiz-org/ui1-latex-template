@@ -2,17 +2,17 @@
 
 ## Phase 1: Legislation Driver and Bibliography List in `ui1activity.cls`
 
-### Task 1.1: Write Failing LaTeX Fixture — Legislation Entry Rendering
-- [ ] Sub-task: Create `tests/latex/test_legislation.tex` — a minimal document
+### Task 1.1: Write Failing LaTeX Fixture — Legislation Entry Rendering [497c49c]
+- [x] Sub-task: Create `tests/latex/test_legislation.tex` — a minimal document
       using `ui1activity` with one `@legislation` entry in a `.bib` file
-- [ ] Sub-task: Create `tests/latex/test_legislation.bib` with a sample entry
+- [x] Sub-task: Create `tests/latex/test_legislation.bib` with a sample entry
       (`Ley 16/1987...`, number=182, eid=23546, year=1987)
-- [ ] Sub-task: Confirm fixture fails to compile (driver not yet defined)
+- [x] Sub-task: Confirm fixture fails to compile (driver not yet defined)
 
-### Task 1.2: Write Failing LaTeX Fixture — Empty Legislation Guard
-- [ ] Sub-task: Create `tests/latex/test_legislation_empty.tex` — a document
+### Task 1.2: Write Failing LaTeX Fixture — Empty Legislation Guard [497c49c]
+- [x] Sub-task: Create `tests/latex/test_legislation_empty.tex` — a document
       with no `@legislation` entries; confirm no empty section is emitted
-- [ ] Sub-task: Confirm fixture fails or produces wrong output before implementation
+- [x] Sub-task: Confirm fixture fails or produces wrong output before implementation
 
 ### Task 1.3: Write Failing BATS Test — Legislation Feature in `.cls`
 - [ ] Sub-task: Add `tests/shell/legislation.bats` with tests that:
