@@ -62,7 +62,7 @@
 
 ## Phase 2: CLI Scaffold Update (`bin/new-activity`)
 
-### Task 2.1: Write Failing BATS Test — Legislation Sample in `referencias.bib`
+### Task 2.1: Write Failing BATS Test — Legislation Sample in `referencias.bib` [324aea5]
 - [x] Sub-task: Add test to `tests/shell/file_generation.bats` (or a new
       `legislation_scaffold.bats`) that:
       - Runs `new-activity` with required flags
