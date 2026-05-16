@@ -63,12 +63,12 @@
 ## Phase 2: CLI Scaffold Update (`bin/new-activity`)
 
 ### Task 2.1: Write Failing BATS Test — Legislation Sample in `referencias.bib`
-- [ ] Sub-task: Add test to `tests/shell/file_generation.bats` (or a new
+- [x] Sub-task: Add test to `tests/shell/file_generation.bats` (or a new
       `legislation_scaffold.bats`) that:
       - Runs `new-activity` with required flags
       - Asserts `referencias.bib` contains `% @legislation{`
       - Asserts the commented entry contains `title`, `number`, `eid`, `year` fields
-- [ ] Sub-task: Run test — confirm it fails (Red phase)
+- [x] Sub-task: Run test — confirm it fails (Red phase)
 
 ### Task 2.2: Implement Commented Legislation Example in `bin/new-activity`
 - [ ] Sub-task: Locate the `referencias.bib` generation block in `bin/new-activity`

@@ -61,3 +61,18 @@ teardown() {
   [ "$status" -eq 0 ]
   grep -q "^open" "$TMPDIR/my-dir/Makefile"
 }
+
+@test "referencias.bib contains commented-out @legislation example" {
+  run "$SCRIPT" --asignatura "Matemáticas" --alumno "Israel" "$TMPDIR/my-dir"
+  [ "$status" -eq 0 ]
+  grep -q "% @legislation{" "$TMPDIR/my-dir/referencias.bib"
+}
+
+@test "referencias.bib legislation example contains required fields" {
+  run "$SCRIPT" --asignatura "Matemáticas" --alumno "Israel" "$TMPDIR/my-dir"
+  [ "$status" -eq 0 ]
+  grep -q "title" "$TMPDIR/my-dir/referencias.bib"
+  grep -q "number" "$TMPDIR/my-dir/referencias.bib"
+  grep -q "eid" "$TMPDIR/my-dir/referencias.bib"
+  grep -q "year" "$TMPDIR/my-dir/referencias.bib"
+}
