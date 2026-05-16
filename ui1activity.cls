@@ -91,6 +91,7 @@
 \DeclareFieldFormat[jurisprudencia]{userd}{#1}
 \DeclareFieldFormat[jurisprudencia]{usere}{#1}
 \DeclareFieldFormat[jurisprudencia]{userf}{#1}
+\DeclareFieldFormat[jurisprudencia]{url}{\url{#1}}
 
 \DeclareBibliographyDriver{jurisprudencia}{%
   \usebibmacro{bibindex}%
@@ -100,8 +101,8 @@
   \printfield{number}\addspace
   (\printfield{userd}),\addspace
   de \printfield{usere}.\addspace
-  ECLI:\printfield{userf}\addspace
-  \printfield{url}%
+  ECLI:\printfield{userf}%
+  \iffieldundef{url}{}{\addperiod\addspace\printfield{url}}%
   \usebibmacro{finentry}}
 
 \DeclareCiteCommand{\parencite}[\mkbibparens]
