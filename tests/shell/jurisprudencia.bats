@@ -71,3 +71,27 @@ compile_with_biber() {
   run pdftotext test.pdf -
   echo "$output" | grep -qv "Jurisprudencia"
 }
+
+SCRIPT="$REPO_ROOT/bin/new-activity"
+
+@test "referencias.bib contains commented-out @jurisprudencia example" {
+  TMPDIR_LOCAL=$(mktemp -d)
+  "$SCRIPT" --asignatura "Matemáticas" --alumno "Israel" "$TMPDIR_LOCAL/act"
+  grep -q "% @jurisprudencia{" "$TMPDIR_LOCAL/act/referencias.bib"
+  rm -rf "$TMPDIR_LOCAL"
+}
+
+@test "referencias.bib jurisprudencia example contains required fields" {
+  TMPDIR_LOCAL=$(mktemp -d)
+  "$SCRIPT" --asignatura "Matemáticas" --alumno "Israel" "$TMPDIR_LOCAL/act"
+  BIB="$TMPDIR_LOCAL/act/referencias.bib"
+  grep -q "kind"       "$BIB"
+  grep -q "court"      "$BIB"
+  grep -q "shortcourt" "$BIB"
+  grep -q "number"     "$BIB"
+  grep -q "chamber"    "$BIB"
+  grep -q "fdate"      "$BIB"
+  grep -q "ecli"       "$BIB"
+  grep -q "url"        "$BIB"
+  rm -rf "$TMPDIR_LOCAL"
+}
