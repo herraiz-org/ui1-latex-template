@@ -60,7 +60,7 @@
 - [x] Sub-task: Run `bash tests/run_tests.sh tests/shell/*.bats`
 - [x] Sub-task: Confirm all tests pass with no regressions
 
-- [ ] Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md) [checkpoint: 8bd4712]
 
 ---
 
