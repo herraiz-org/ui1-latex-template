@@ -40,7 +40,7 @@
 
 \titlespacing*{\section}{0pt}{3.5ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 
-\RequirePackage[spanish,es-tabla]{babel}
+\RequirePackage[english,spanish,es-tabla]{babel}
 \RequirePackage{icomma}
 
 \RequirePackage{amsmath}
@@ -55,6 +55,20 @@
 	\setlength{\bibhang}{0pt}
 \fi
 \let\cite\parencite
+
+\DeclareFieldFormat[legislation]{number}{#1}
+\DeclareFieldFormat[legislation]{eid}{#1}
+
+\DeclareBibliographyDriver{legislation}{%
+  \usebibmacro{bibindex}%
+  \usebibmacro{begentry}%
+  \printfield{title}\addperiod\addspace
+  BOE n\'{u}mero \printfield{number}\addspace
+  \S\addnbspace\printfield{eid}\addspace
+  (\printfield{year})%
+  \usebibmacro{finentry}}
+
+\defbibfilter{notlegislation}{not type=legislation}
 
 % Page layout -- margins converted from docx twips (1 twip = 1/1440 inch)
 \RequirePackage[
@@ -151,9 +165,11 @@
 	}%
 }
 
-% Encapsulate bibliography
+% Encapsulate bibliography — legislation first, then main references
+\newcommand{\ui@legistitle}{\iflanguage{spanish}{Legislaci\'on}{Legislation}}
 \newcommand{\makebibliography}{%
-	\printbibliography[heading=bibintoc]
+	\printbibliography[type=legislation, heading=bibintoc, title={\ui@legistitle}]%
+	\printbibliography[filter=notlegislation, heading=bibintoc]%
 }
 
 % Full-page background: portada on page 1, interior on pages 2+

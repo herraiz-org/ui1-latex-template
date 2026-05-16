@@ -44,3 +44,27 @@ compile_with_biber() {
   compile_with_biber
   pdftotext test.pdf - | grep -q "Legislaci"
 }
+
+@test "English document renders heading as Legislation" {
+  cp "$REPO_ROOT/tests/latex/test_legislation_english.tex" test.tex
+  pdflatex -interaction=nonstopmode test.tex > /dev/null 2>&1
+  biber test > /dev/null 2>&1
+  pdflatex -interaction=nonstopmode test.tex > /dev/null 2>&1
+  pdflatex -interaction=nonstopmode test.tex > /dev/null 2>&1
+  pdftotext test.pdf - | grep -q "^Legislation$"
+}
+
+@test "Legislación section appears before Referencias when both are present" {
+  cp "$REPO_ROOT/tests/latex/test_legislation_mixed.tex" test.tex
+  cp "$REPO_ROOT/tests/latex/test_legislation_mixed.bib" test_legislation_mixed.bib
+  pdflatex -interaction=nonstopmode test.tex > /dev/null 2>&1
+  biber test > /dev/null 2>&1
+  pdflatex -interaction=nonstopmode test.tex > /dev/null 2>&1
+  pdflatex -interaction=nonstopmode test.tex > /dev/null 2>&1
+  PDF_TEXT=$(pdftotext test.pdf -)
+  LEG_POS=$(echo "$PDF_TEXT" | grep -n "Legislaci" | head -1 | cut -d: -f1)
+  REF_POS=$(echo "$PDF_TEXT" | grep -n "Referencias" | head -1 | cut -d: -f1)
+  [ -n "$LEG_POS" ]
+  [ -n "$REF_POS" ]
+  [ "$LEG_POS" -lt "$REF_POS" ]
+}
