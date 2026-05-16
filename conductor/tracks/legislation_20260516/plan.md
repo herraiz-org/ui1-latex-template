@@ -14,7 +14,7 @@
       with no `@legislation` entries; confirm no empty section is emitted
 - [x] Sub-task: Confirm fixture fails or produces wrong output before implementation
 
-### Task 1.3: Write Failing BATS Test — Legislation Feature in `.cls`
+### Task 1.3: Write Failing BATS Test — Legislation Feature in `.cls` [3da00b8]
 - [x] Sub-task: Add `tests/shell/legislation.bats` with tests that:
       - Assert `ui1activity.cls` contains `DeclareBibliographyDriver{legislation}`
       - Assert `test_legislation.tex` compiles without errors under `pdflatex` + `biber`
