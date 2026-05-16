@@ -1,6 +1,6 @@
 # Plan: Custom Legislation Bibliography Support
 
-## Phase 1: Legislation Driver and Bibliography List in `ui1activity.cls`
+## Phase 1: Legislation Driver and Bibliography List in `ui1activity.cls` [checkpoint: b47b35f]
 
 ### Task 1.1: Write Failing LaTeX Fixture — Legislation Entry Rendering [497c49c]
 - [x] Sub-task: Create `tests/latex/test_legislation.tex` — a minimal document
@@ -56,7 +56,7 @@
 - [x] Sub-task: Run `bash tests/run_tests.sh tests/shell/*.bats`
 - [x] Sub-task: Confirm all tests pass with no regressions
 
-- [ ] Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md)
 
 ---
 
