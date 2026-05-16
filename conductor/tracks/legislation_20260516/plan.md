@@ -23,38 +23,38 @@
 - [x] Sub-task: Run `bash tests/run_tests.sh tests/shell/legislation.bats` —
       confirm tests fail (Red phase)
 
-### Task 1.4: Implement `legislation` Driver in `ui1activity.cls`
-- [ ] Sub-task: Add `\DeclareBibliographyDriver{legislation}{...}` block to
+### Task 1.4: Implement `legislation` Driver in `ui1activity.cls` [917f682]
+- [x] Sub-task: Add `\DeclareBibliographyDriver{legislation}{...}` block to
       `ui1activity.cls` using the driver format from the spec
-- [ ] Sub-task: Run failing tests — confirm driver-related tests now pass
+- [x] Sub-task: Run failing tests — confirm driver-related tests now pass
 
-### Task 1.5: Implement Dedicated Legislation Bibliography Category
-- [ ] Sub-task: Declare a `biblatex` bibliography category `legislation` via
+### Task 1.5: Implement Dedicated Legislation Bibliography Category [917f682]
+- [x] Sub-task: Declare a `biblatex` bibliography category `legislation` via
       `\DeclareBibliographyCategory` in `ui1activity.cls`
-- [ ] Sub-task: Add `\addtocategory{legislation}{*}` assignment for all
+- [x] Sub-task: Add `\addtocategory{legislation}{*}` assignment for all
       `@legislation` type entries (using `\AtEveryBibitem` or equivalent filter)
-- [ ] Sub-task: Define `\defbibfilter{legislation}` or use category-based
+- [x] Sub-task: Define `\defbibfilter{legislation}` or use category-based
       `\printbibliography[category=legislation, ...]` approach
-- [ ] Sub-task: Run tests — confirm legislation entries are isolated correctly
+- [x] Sub-task: Run tests — confirm legislation entries are isolated correctly
 
-### Task 1.6: Implement Localized Heading via Babel
-- [ ] Sub-task: Define `\iflanguage{spanish}` (and variants) to set the
+### Task 1.6: Implement Localized Heading via Babel [917f682]
+- [x] Sub-task: Define `\iflanguage{spanish}` (and variants) to set the
       legislation list title to "Legislación" or "Legislation"
-- [ ] Sub-task: Create `tests/latex/test_legislation_english.tex` — same fixture
+- [x] Sub-task: Create `tests/latex/test_legislation_english.tex` — same fixture
       with `\usepackage[english]{babel}` — verify heading becomes "Legislation"
-- [ ] Sub-task: Add assertion to `legislation.bats` for English heading
-- [ ] Sub-task: Run full BATS suite — confirm localization tests pass
+- [x] Sub-task: Add assertion to `legislation.bats` for English heading
+- [x] Sub-task: Run full BATS suite — confirm localization tests pass
 
-### Task 1.7: Implement Print Order — Legislation Before Main Bibliography
-- [ ] Sub-task: Ensure the legislation `\printbibliography` call is emitted
+### Task 1.7: Implement Print Order — Legislation Before Main Bibliography [917f682]
+- [x] Sub-task: Ensure the legislation `\printbibliography` call is emitted
       before the main `\printbibliography` call within the class
-- [ ] Sub-task: Add BATS assertion: in the compiled PDF text stream, "Legislación"
+- [x] Sub-task: Add BATS assertion: in the compiled PDF text stream, "Legislación"
       appears before "Referencias" (or the main heading)
-- [ ] Sub-task: Run full BATS suite — all tests green
+- [x] Sub-task: Run full BATS suite — all tests green
 
-### Task 1.8: Run Full Test Suite and Verify
-- [ ] Sub-task: Run `bash tests/run_tests.sh tests/shell/*.bats`
-- [ ] Sub-task: Confirm all tests pass with no regressions
+### Task 1.8: Run Full Test Suite and Verify [917f682]
+- [x] Sub-task: Run `bash tests/run_tests.sh tests/shell/*.bats`
+- [x] Sub-task: Confirm all tests pass with no regressions
 
 - [ ] Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md)
 
