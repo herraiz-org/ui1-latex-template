@@ -11,12 +11,12 @@ The main advantage of this LaTeX template over the original Word document is **C
 
 ## Key Features
 To support a wide range of academic assignments, the template includes:
-- **Activity Scaffolding CLI:** A `new-activity` Bash script that generates a ready-to-compile LaTeX activity directory (`.tex` pre-filled with metadata, `referencias.bib` pre-seeded with a commented `@legislation` example, and a `Makefile` with `pdf`/`clean`/`open` targets) from a single command. Companion AI skills enable easy invocation from within Claude Code and Gemini CLI sessions.
+- **Activity Scaffolding CLI:** A `new-activity` Bash script that generates a ready-to-compile LaTeX activity directory (`.tex` pre-filled with metadata, `referencias.bib` pre-seeded with commented `@legislation` and `@jurisprudencia` examples, and a `Makefile` with `pdf`/`clean`/`open` targets) from a single command. Companion AI skills enable easy invocation from within Claude Code and Gemini CLI sessions.
 - **Modular Document Class:** Encapsulates complex logic into `ui1activity.cls`, allowing for clean and minimal implementation files.
 - **Branded Visual Identity:** Strict enforcement of university colors, fonts, and backgrounds.
 - **Configurable Typography:** Support for Palatino (default) and Times New Roman for body text, paired with Helvetica sans-serif headers.
 - **Math Support:** Pre-configured `amsmath` and math font support for complex equations.
-- **Bibliography Management:** Integrated `biblatex` support for academic citations and references (APA style) with paragraph-like spacing between entries and configurable hanging indents. Dedicated legislation bibliography section: `@legislation` entries (Spanish BOE format) are automatically separated from the main references, printed first under a localized "Legislación" / "Legislation" heading, with the heading language detected via `babel`.
+- **Bibliography Management:** Integrated `biblatex` support for academic citations and references (APA style) with paragraph-like spacing between entries and configurable hanging indents. Dedicated bibliography sections for Spanish legal sources: `@jurisprudencia` entries (court rulings, rendered with ECLI identifier and optional URL) are printed first under a fixed "Jurisprudencia" heading (Spanish-only); `@legislation` entries (Spanish BOE format) follow under a localized "Legislación" / "Legislation" heading detected via `babel`. Both sections are conditional — they only appear when at least one matching entry is cited.
 - **Code Listings:** Styled `listings` environments for high-quality source code snippets.
 - **Spanish Language Support:** Full localization for hyphenation, table labels ("Tabla"), and math decimal separators (comma).
 - **Easy Installation:** A `make install` / `make uninstall` workflow creates and removes symlinks in the user's local texmf tree, making the class globally available to any LaTeX document on the system without moving files.
