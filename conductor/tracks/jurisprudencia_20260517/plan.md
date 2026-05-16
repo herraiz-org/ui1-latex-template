@@ -67,21 +67,21 @@
 ## Phase 2: CLI Scaffold Update (`bin/new-activity`)
 
 ### Task 2.1: Write Failing BATS Test — Jurisprudencia Sample in `referencias.bib`
-- [ ] Sub-task: Add test to `tests/shell/jurisprudencia.bats` (or a new file) that:
+- [x] Sub-task: Add test to `tests/shell/jurisprudencia.bats` (or a new file) that:
       - Runs `new-activity` with required flags
       - Asserts `referencias.bib` contains `% @jurisprudencia{`
       - Asserts the commented entry contains `kind`, `court`, `shortcourt`,
         `number`, `chamber`, `date`, `ecli`, `url` fields
-- [ ] Sub-task: Run test — confirm it fails (Red phase)
+- [x] Sub-task: Run test — confirm it fails (Red phase)
 
 ### Task 2.2: Implement Commented Jurisprudencia Example in `bin/new-activity`
-- [ ] Sub-task: Locate the `referencias.bib` generation block in `bin/new-activity`
-- [ ] Sub-task: Append the commented-out `@jurisprudencia` example block after the
+- [x] Sub-task: Locate the `referencias.bib` generation block in `bin/new-activity`
+- [x] Sub-task: Append the commented-out `@jurisprudencia` example block after the
       existing `@legislation` example (see spec FR-7 for exact text)
-- [ ] Sub-task: Run the BATS test — confirm it passes (Green phase)
+- [x] Sub-task: Run the BATS test — confirm it passes (Green phase)
 
 ### Task 2.3: Run Full Test Suite and Verify No Regressions
-- [ ] Sub-task: Run `bash tests/run_tests.sh tests/shell/*.bats`
-- [ ] Sub-task: Confirm all tests pass
+- [x] Sub-task: Run `bash tests/run_tests.sh tests/shell/*.bats`
+- [x] Sub-task: Confirm all tests pass
 
 - [ ] Task: Conductor - User Manual Verification 'Phase 2' (Protocol in workflow.md)
