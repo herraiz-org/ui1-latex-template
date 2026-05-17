@@ -1,6 +1,6 @@
 # Plan: Formato corto de citas en texto para @legislation
 
-## Phase 1: Red Phase — Failing Tests
+## Phase 1: Red Phase — Failing Tests [checkpoint: cd8945b]
 
 - [x] Task 1: Crear fixtures LaTeX para los tests de citas inline
   - [x] Crear `tests/latex/test_legislation_cite.tex` con `\parencite` y
