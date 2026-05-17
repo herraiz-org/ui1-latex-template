@@ -16,12 +16,12 @@
         in-text citation (e.g., via `pdftotext` grep).
   - [x] Sub-task: Test that the compilation log contains no warnings about empty
         jurisprudencia or legislation sections.
-- [x] Task: Run the new BATS test and confirm it FAILS (Red phase).
-- [ ] Task: Conductor - User Manual Verification 'Phase 1: Diagnose & Write Failing Test' (Protocol in workflow.md)
+- [x] Task: Run the new BATS test and confirm it FAILS (Red phase). [d18e1b5]
+- [x] Task: Conductor - User Manual Verification 'Phase 1: Diagnose & Write Failing Test' (Protocol in workflow.md)
 
 ## Phase 2: Fix & Green Phase
 
-- [ ] Task: Fix the `\parencite` override in `ui1activity.cls`
+- [~] Task: Fix the `\parencite` override in `ui1activity.cls`
   - [ ] Sub-task: Replace `\usebibmacro{cite}` in the else branch with the correct
         APA cite macros (e.g., `\usebibmacro{cite:author}` +
         `\usebibmacro{cite:year+labelyear}`) or remove the override and use
