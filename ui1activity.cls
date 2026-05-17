@@ -106,15 +106,24 @@
   \usebibmacro{finentry}}
 
 \DeclareCiteCommand{\parencite}[\mkbibparens]
-  {\usebibmacro{prenote}}
+  {\usebibmacro{cite:init}%
+   \usebibmacro{prenote}%
+   \toggletrue{apa:inpcite}}
   {\usebibmacro{citeindex}%
    \ifentrytype{jurisprudencia}
      {\printfield{userc}\addnbspace\printfield{number}}
-     {\usebibmacro{cite}}}
-  {\multicitedelim}
-  {\usebibmacro{postnote}}
+     {\usebibmacro{cite}%
+      \usebibmacro{cite:post}}}
+  {}
+  {\usebibmacro{postnote}%
+   \togglefalse{apa:inpcite}}
 
 \defbibfilter{notlegislationorjuris}{not type=legislation and not type=jurisprudencia}
+
+\newbool{ui@hasjuris}
+\newbool{ui@hasleg}
+\AtDataInput[jurisprudencia]{\global\booltrue{ui@hasjuris}}
+\AtDataInput[legislation]{\global\booltrue{ui@hasleg}}
 
 % Page layout -- margins converted from docx twips (1 twip = 1/1440 inch)
 \RequirePackage[
@@ -214,8 +223,12 @@
 % Encapsulate bibliography — jurisprudencia, then legislation, then main references
 \newcommand{\ui@legistitle}{\iflanguage{spanish}{Legislaci\'on}{Legislation}}
 \newcommand{\makebibliography}{%
-	\printbibliography[type=jurisprudencia, heading=bibintoc, title={Jurisprudencia}]%
-	\printbibliography[type=legislation, heading=bibintoc, title={\ui@legistitle}]%
+	\ifbool{ui@hasjuris}{%
+		\printbibliography[type=jurisprudencia, heading=bibintoc, title={Jurisprudencia}]%
+	}{}%
+	\ifbool{ui@hasleg}{%
+		\printbibliography[type=legislation, heading=bibintoc, title={\ui@legistitle}]%
+	}{}%
 	\printbibliography[filter=notlegislationorjuris, heading=bibintoc]%
 }
 

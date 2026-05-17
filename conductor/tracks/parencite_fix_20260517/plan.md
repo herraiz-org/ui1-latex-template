@@ -21,19 +21,19 @@
 
 ## Phase 2: Fix & Green Phase
 
-- [~] Task: Fix the `\parencite` override in `ui1activity.cls`
-  - [ ] Sub-task: Replace `\usebibmacro{cite}` in the else branch with the correct
-        APA cite macros (e.g., `\usebibmacro{cite:author}` +
-        `\usebibmacro{cite:year+labelyear}`) or remove the override and use
-        `\DeclareMultiCiteCommand` / `\AtEveryBibitem` to handle jurisprudencia
-        inline-cite formatting without replacing the full `\parencite` command.
-- [ ] Task: Fix empty-section warnings
-  - [ ] Sub-task: Wrap `\printbibliography[type=jurisprudencia]` and
-        `\printbibliography[type=legislation]` in conditional checks so they
-        only render when at least one matching entry is cited.
-- [ ] Task: Run the new BATS test and confirm it PASSES (Green phase).
-- [ ] Task: Run full BATS test suite (`bash tests/run_tests.sh tests/shell/*.bats`)
-      and confirm no regressions.
-- [ ] Task: Commit the fix with message
+- [x] Task: Fix the `\parencite` override in `ui1activity.cls`
+  - [x] Sub-task: Added `\usebibmacro{cite:init}`, `\toggletrue{apa:inpcite}`,
+        `\usebibmacro{cite:post}`, and empty multicite delimiter to match the
+        original APA \parencite structure. Without cite:init, \cbx@lasthash was
+        not reset between separate \parencite calls causing compact-cite mode.
+- [x] Task: Fix empty-section warnings
+  - [x] Sub-task: Added `\newbool{ui@hasjuris}` / `\newbool{ui@hasleg}` set via
+        `\AtDataInput[jurisprudencia]` / `\AtDataInput[legislation]`. `\makebibliography`
+        now conditionally calls `\printbibliography` only when entries of those
+        types are cited.
+- [x] Task: Run the new BATS test and confirm it PASSES (Green phase).
+- [x] Task: Run full BATS test suite (`bash tests/run_tests.sh tests/shell/*.bats`)
+      and confirm no regressions. [62 tests, 0 failures]
+- [~] Task: Commit the fix with message
       `fix(cls): Restore APA author display in parencite for standard entries`.
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Fix & Green Phase' (Protocol in workflow.md)
