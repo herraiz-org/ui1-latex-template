@@ -24,7 +24,7 @@
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Red Phase'
       (Protocol in workflow.md)
 
-## Phase 2: Green Phase — Implement Short Title
+## Phase 2: Green Phase — Implement Short Title [checkpoint: 7b9c9d2]
 
 - [x] Task 4: Implementar biber sourcemap para auto-derivar `shorttitle`
   - [x] Añadir `\DeclareSourcemap` en `ui1activity.cls` con regex Perl que
@@ -50,5 +50,5 @@
   - [x] Commit: `feat(legislation): Use short title in @legislation in-text citations`
   - [x] Adjuntar git note con resumen de tarea
 
-- [ ] Task: Conductor - User Manual Verification 'Phase 2: Green Phase'
+- [x] Task: Conductor - User Manual Verification 'Phase 2: Green Phase'
       (Protocol in workflow.md)
