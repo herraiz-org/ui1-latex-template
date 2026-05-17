@@ -34,6 +34,6 @@
 - [x] Task: Run the new BATS test and confirm it PASSES (Green phase).
 - [x] Task: Run full BATS test suite (`bash tests/run_tests.sh tests/shell/*.bats`)
       and confirm no regressions. [62 tests, 0 failures]
-- [~] Task: Commit the fix with message
-      `fix(cls): Restore APA author display in parencite for standard entries`.
+- [x] Task: Commit the fix with message
+      `fix(cls): Restore APA author display in parencite for standard entries`. [2e937a7]
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Fix & Green Phase' (Protocol in workflow.md)
