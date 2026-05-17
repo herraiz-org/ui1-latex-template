@@ -69,6 +69,7 @@
   \usebibmacro{finentry}}
 
 % Jurisprudencia: remap .bib field names to biblatex user fields via source map.
+% Legislation: derive shorttitle by stripping law number and date from title.
 % biber discards fields not in its data model; source maps run before that check.
 \DeclareSourcemap{
   \maps[datatype=bibtex]{
@@ -80,6 +81,14 @@
       \step[fieldsource=chamber,    fieldtarget=userd]
       \step[fieldsource=fdate,      fieldtarget=usere]
       \step[fieldsource=ecli,       fieldtarget=userf]
+    }
+    \map{
+      \pertype{legislation}
+      \step[fieldsource=title]
+      \step[fieldset=shorttitle, origfieldval]
+      \step[fieldsource=shorttitle,
+            match=\regexp{^(.*?)\s+\d+/\d\d\d\d,?\s*(?:de\s\d\d?\sde\s(?:enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre)(?:,\s*de\s\d\d\d\d)?,?\s*)?((?:de\s|sobre\s|por\s|relativo\s|que\s|del\s|en\s|a\s).*)$},
+            replace={$1 $2}]
     }
   }
 }
