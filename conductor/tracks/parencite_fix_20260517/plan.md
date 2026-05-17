@@ -19,7 +19,7 @@
 - [x] Task: Run the new BATS test and confirm it FAILS (Red phase). [d18e1b5]
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Diagnose & Write Failing Test' (Protocol in workflow.md)
 
-## Phase 2: Fix & Green Phase
+## Phase 2: Fix & Green Phase [checkpoint: 9acaace]
 
 - [x] Task: Fix the `\parencite` override in `ui1activity.cls`
   - [x] Sub-task: Added `\usebibmacro{cite:init}`, `\toggletrue{apa:inpcite}`,
@@ -36,4 +36,4 @@
       and confirm no regressions. [62 tests, 0 failures]
 - [x] Task: Commit the fix with message
       `fix(cls): Restore APA author display in parencite for standard entries`. [2e937a7]
-- [ ] Task: Conductor - User Manual Verification 'Phase 2: Fix & Green Phase' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 2: Fix & Green Phase' (Protocol in workflow.md)
