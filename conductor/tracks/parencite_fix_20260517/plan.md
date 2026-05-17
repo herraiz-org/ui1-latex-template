@@ -1,6 +1,6 @@
 # Plan: Bug Fix — Autor ausente en citas normales
 
-## Phase 1: Diagnose & Write Failing Test
+## Phase 1: Diagnose & Write Failing Test [checkpoint: 6eab75b]
 
 - [x] Task: Analyze `\DeclareCiteCommand{\parencite}` in `ui1activity.cls` (lines 108–115)
   - [x] Sub-task: Confirm that `\usebibmacro{cite}` in the else branch omits the author
