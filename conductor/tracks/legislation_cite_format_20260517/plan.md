@@ -26,29 +26,29 @@
 
 ## Phase 2: Green Phase — Implement Short Title
 
-- [ ] Task 4: Implementar biber sourcemap para auto-derivar `shorttitle`
-  - [ ] Añadir `\DeclareSourcemap` en `ui1activity.cls` con regex Perl que
+- [x] Task 4: Implementar biber sourcemap para auto-derivar `shorttitle`
+  - [x] Añadir `\DeclareSourcemap` en `ui1activity.cls` con regex Perl que
         detecte el patrón `número/año` + expresión de fecha y derive `shorttitle`
-  - [ ] Cubrir variantes: `Ley`, `Ley Orgánica`, `Real Decreto`, `Real Decreto-ley`
-  - [ ] Garantizar que si el título no encaja, `shorttitle` no se establece
+  - [x] Cubrir variantes: `Ley`, `Ley Orgánica`, `Real Decreto`, `Real Decreto-ley`
+  - [x] Garantizar que si el título no encaja, `shorttitle` no se establece
         (fallback silencioso)
 
-- [ ] Task 5: Modificar el driver de cita de `@legislation`
-  - [ ] Localizar el citation driver de `@legislation` en `ui1activity.cls`
-  - [ ] Cambiar el renderizado del título en citas para usar `shorttitle` si
+- [x] Task 5: Modificar el driver de cita de `@legislation`
+  - [x] Localizar el citation driver de `@legislation` en `ui1activity.cls`
+  - [x] Cambiar el renderizado del título en citas para usar `shorttitle` si
         está presente, o `title` como fallback
-  - [ ] Verificar que el bibliography driver permanece inalterado
+  - [x] Verificar que el bibliography driver permanece inalterado
 
-- [ ] Task 6: Ejecutar tests y confirmar fase Green (tests pasando)
-  - [ ] Ejecutar: `bash tests/run_tests.sh tests/shell/legislation_cite.bats`
-  - [ ] Confirmar que todos los tests nuevos pasan
-  - [ ] Ejecutar suite completa: `bash tests/run_tests.sh tests/shell/*.bats`
-  - [ ] Confirmar que no hay regresiones
+- [x] Task 6: Ejecutar tests y confirmar fase Green (tests pasando)
+  - [x] Ejecutar: `bash tests/run_tests.sh tests/shell/legislation_cite.bats`
+  - [x] Confirmar que todos los tests nuevos pasan
+  - [x] Ejecutar suite completa: `bash tests/run_tests.sh tests/shell/*.bats`
+  - [x] Confirmar que no hay regresiones
 
-- [ ] Task 7: Commit de la implementación
-  - [ ] Stage: `ui1activity.cls`, fixtures de test, `legislation_cite.bats`
-  - [ ] Commit: `feat(legislation): Use short title in @legislation in-text citations`
-  - [ ] Adjuntar git note con resumen de tarea
+- [x] Task 7: Commit de la implementación [5dacf64]
+  - [x] Stage: `ui1activity.cls`, fixtures de test, `legislation_cite.bats`
+  - [x] Commit: `feat(legislation): Use short title in @legislation in-text citations`
+  - [x] Adjuntar git note con resumen de tarea
 
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Green Phase'
       (Protocol in workflow.md)
