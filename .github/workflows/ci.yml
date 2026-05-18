@@ -27,8 +27,8 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Install ncurses (required by BATS pretty formatter)
-        run: apk add --no-cache ncurses
+      - name: Install runtime dependencies
+        run: apk add --no-cache ncurses poppler-utils
 
       - name: Run BATS shell tests
         env:
