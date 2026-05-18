@@ -12,11 +12,11 @@
 
 ## Phase 2: Green Phase — Implement CI Workflow
 
-- [ ] Task: Create `.github/workflows/ci.yml` with correct `on:` triggers (`push`, `pull_request`)
-- [ ] Task: Add `shellcheck` step — runs `shellcheck bin/*` inside the Docker container
-- [ ] Task: Add BATS step — initialises git submodules and runs `bash tests/run_tests.sh tests/shell/*.bats`
-- [ ] Task: Add LaTeX step — runs `make test` and fails on non-zero exit
-- [ ] Task: Run `bash tests/run_tests.sh tests/shell/test_ci_workflow.bats` and confirm all tests **pass** (Green)
+- [x] Task: Create `.github/workflows/ci.yml` with correct `on:` triggers (`push`, `pull_request`) (3eee0d6)
+- [x] Task: Add `shellcheck` step — runs `shellcheck bin/*` inside the Docker container (3eee0d6)
+- [x] Task: Add BATS step — initialises git submodules and runs `bash tests/run_tests.sh tests/shell/*.bats` (3eee0d6)
+- [x] Task: Add LaTeX step — runs `make test` and fails on non-zero exit (3eee0d6)
+- [x] Task: Run `bash tests/run_tests.sh tests/shell/test_ci_workflow.bats` and confirm all tests **pass** (Green) (3eee0d6)
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Green Phase' (Protocol in workflow.md)
 
 ## Phase 3: Validate on GitHub
