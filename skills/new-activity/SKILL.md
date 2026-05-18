@@ -39,11 +39,43 @@ Collect these from the user before running:
 
 | Flag | Description | Default |
 |------|-------------|---------|
-| `--grado` | Degree program | "Grado en Administración y Dirección de Empresas" |
+| `--grado` | Degree program (see list below) | "Grado en Administración y Dirección de Empresas" |
 | `--curso` | Academic year | *(empty)* |
 | `--unidad` | Didactic unit | *(empty)* |
 | `--fecha` | Date in Spanish format | Today's date |
 | `--options` | Document class options | "palatino,nohangbib" |
+
+## UI1 degree programs (`--grado`)
+
+This template is for **Universidad Isabel I (UI1)**, an online university in Spain. Use the exact degree name below for `--grado`:
+
+**Ciencias Jurídicas y Económicas**
+- `Grado en Administración y Dirección de Empresas`
+- `Grado en Derecho`
+- `Grado en Filosofía, Política y Economía`
+
+**Ciencias y Tecnología**
+- `Grado en Ingeniería Informática`
+
+**Ciencias de la Seguridad y Criminología**
+- `Grado en Ciencias de la Seguridad`
+- `Grado en Criminología`
+
+**Humanidades y Ciencias Sociales**
+- `Grado en Educación Infantil`
+- `Grado en Educación Primaria`
+- `Grado en Historia, Geografía e Historia del Arte`
+- `Grado en Marketing, Publicidad y Relaciones Públicas`
+- `Grado en Pedagogía`
+- `Grado en Periodismo`
+
+**Ciencias de la Salud**
+- `Grado en Ciencias de la Actividad Física y del Deporte`
+- `Grado en Logopedia`
+- `Grado en Nutrición Humana y Dietética`
+- `Grado en Psicología`
+
+If the user doesn't specify a degree, ask or default to `Grado en Administración y Dirección de Empresas` (the most common one for this template).
 
 ## Example invocations
 
