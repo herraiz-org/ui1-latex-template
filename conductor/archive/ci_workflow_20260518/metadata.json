@@ -1,0 +1,8 @@
+{
+  "track_id": "ci_workflow_20260518",
+  "type": "chore",
+  "status": "new",
+  "created_at": "2026-05-18T00:00:00Z",
+  "updated_at": "2026-05-18T00:00:00Z",
+  "description": "Configure a GitHub Actions workflow to test the repo on every push and pull request"
+}
