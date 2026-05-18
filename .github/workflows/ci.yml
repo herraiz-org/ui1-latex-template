@@ -27,6 +27,9 @@ jobs:
         with:
           submodules: recursive
 
+      - name: Install ncurses (required by BATS pretty formatter)
+        run: apk add --no-cache ncurses
+
       - name: Run BATS shell tests
         run: bash tests/run_tests.sh tests/shell/*.bats
 
