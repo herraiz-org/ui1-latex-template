@@ -1,6 +1,6 @@
 # Plan: GitHub Actions CI Workflow
 
-## Phase 1: Red Phase — Write Failing CI Config Tests
+## Phase 1: Red Phase — Write Failing CI Config Tests [checkpoint: 319cf00]
 
 - [x] Task: Write BATS test `tests/shell/test_ci_workflow.bats` — assert `.github/workflows/ci.yml` exists (3550a4c)
 - [x] Task: Extend test — assert workflow triggers on `push` and `pull_request` (3550a4c)
@@ -8,7 +8,7 @@
 - [x] Task: Extend test — assert BATS test job/step is present in the workflow (3550a4c)
 - [x] Task: Extend test — assert LaTeX `make test` job/step is present in the workflow (3550a4c)
 - [x] Task: Run `bash tests/run_tests.sh tests/shell/test_ci_workflow.bats` and confirm all tests **fail** (Red) (3550a4c)
-- [ ] Task: Conductor - User Manual Verification 'Phase 1: Red Phase' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 1: Red Phase' (Protocol in workflow.md) (319cf00)
 
 ## Phase 2: Green Phase — Implement CI Workflow
 
