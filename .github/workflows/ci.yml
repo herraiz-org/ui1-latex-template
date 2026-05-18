@@ -28,7 +28,7 @@ jobs:
           submodules: recursive
 
       - name: Install runtime dependencies
-        run: apk add --no-cache ncurses poppler-utils
+        run: apk add --no-cache ncurses poppler-utils py3-pypdf
 
       - name: Run BATS shell tests
         env:
