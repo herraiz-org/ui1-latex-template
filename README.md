@@ -62,6 +62,9 @@ make pdf
 
 ```
 ui1_template/
+├── .github/
+│   └── workflows/
+│       └── ci.yml            # GitHub Actions: shellcheck + BATS + LaTeX tests
 ├── bin/
 │   └── new-activity          # CLI script — scaffolds a new activity directory
 ├── conductor/                # Spec-driven development workflow (Conductor)
@@ -133,7 +136,7 @@ Inside `<directory>/`:
 bash tests/run_tests.sh tests/shell/*.bats
 ```
 
-All 40 tests should pass.
+All 72 tests should pass.
 
 **Shell tests** (Makefile install/uninstall targets and cover page formatting):
 
@@ -141,6 +144,16 @@ All 40 tests should pass.
 bash tests/shell/test_install.sh
 bash tests/shell/test_helvetica_cover.sh
 ```
+
+---
+
+## Continuous Integration
+
+A GitHub Actions workflow (`.github/workflows/ci.yml`) runs on every push and pull request:
+
+- **shellcheck** — lints all shell scripts in `bin/` (runs on `ubuntu-latest`)
+- **BATS tests** — runs the full BATS suite inside the `ghcr.io/xu-cheng/texlive-full` container
+- **LaTeX tests** — compiles all test documents via `make test`
 
 ---
 
