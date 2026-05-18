@@ -10,14 +10,14 @@
 - [x] Task: Run `bash tests/run_tests.sh tests/shell/test_ci_workflow.bats` and confirm all tests **fail** (Red) (3550a4c)
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Red Phase' (Protocol in workflow.md) (319cf00)
 
-## Phase 2: Green Phase — Implement CI Workflow
+## Phase 2: Green Phase — Implement CI Workflow [checkpoint: ff41a8e]
 
 - [x] Task: Create `.github/workflows/ci.yml` with correct `on:` triggers (`push`, `pull_request`) (3eee0d6)
 - [x] Task: Add `shellcheck` step — runs `shellcheck bin/*` inside the Docker container (3eee0d6)
 - [x] Task: Add BATS step — initialises git submodules and runs `bash tests/run_tests.sh tests/shell/*.bats` (3eee0d6)
 - [x] Task: Add LaTeX step — runs `make test` and fails on non-zero exit (3eee0d6)
 - [x] Task: Run `bash tests/run_tests.sh tests/shell/test_ci_workflow.bats` and confirm all tests **pass** (Green) (3eee0d6)
-- [ ] Task: Conductor - User Manual Verification 'Phase 2: Green Phase' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 2: Green Phase' (Protocol in workflow.md) (ff41a8e)
 
 ## Phase 3: Validate on GitHub
 
