@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    name: Test Suite
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/xu-cheng/texlive-full:latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Lint shell scripts with shellcheck
+        run: shellcheck bin/*
+
+      - name: Run BATS shell tests
+        run: bash tests/run_tests.sh tests/shell/*.bats
+
+      - name: Compile LaTeX test documents
+        run: make test
