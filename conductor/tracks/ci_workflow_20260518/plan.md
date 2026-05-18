@@ -19,8 +19,8 @@
 - [x] Task: Run `bash tests/run_tests.sh tests/shell/test_ci_workflow.bats` and confirm all tests **pass** (Green) (3eee0d6)
 - [x] Task: Conductor - User Manual Verification 'Phase 2: Green Phase' (Protocol in workflow.md) (ff41a8e)
 
-## Phase 3: Validate on GitHub
+## Phase 3: Validate on GitHub [checkpoint: a03ed4a]
 
 - [x] Task: Commit and push the workflow file to trigger the first real CI run (e7bc755)
 - [x] Task: Confirm all three jobs pass on GitHub Actions (green build on `main`) (e7bc755)
-- [ ] Task: Conductor - User Manual Verification 'Phase 3: Validate on GitHub' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 3: Validate on GitHub' (Protocol in workflow.md) (a03ed4a)
