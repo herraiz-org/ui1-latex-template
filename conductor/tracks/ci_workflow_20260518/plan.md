@@ -21,6 +21,6 @@
 
 ## Phase 3: Validate on GitHub
 
-- [ ] Task: Commit and push the workflow file to trigger the first real CI run
-- [ ] Task: Confirm all three jobs pass on GitHub Actions (green build on `main`)
+- [x] Task: Commit and push the workflow file to trigger the first real CI run (e7bc755)
+- [x] Task: Confirm all three jobs pass on GitHub Actions (green build on `main`) (e7bc755)
 - [ ] Task: Conductor - User Manual Verification 'Phase 3: Validate on GitHub' (Protocol in workflow.md)
