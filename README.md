@@ -157,6 +157,73 @@ A GitHub Actions workflow (`.github/workflows/ci.yml`) runs on every push and pu
 
 ---
 
+## Bibliography
+
+The class uses **biblatex + biber** with the APA style and adds two custom entry types for Spanish legal writing.
+
+### `\makebibliography`
+
+Use this command instead of `\printbibliography` at the end of your document. It automatically prints three sections in order — only the sections that have entries are included:
+
+1. **Jurisprudencia** — court rulings
+2. **Legislación / Legislation** — statutes and regulations
+3. **References** — everything else (books, articles, …)
+
+### Entry type: `jurisprudencia`
+
+| Field | Description |
+|-------|-------------|
+| `kind` | Type of ruling (e.g. `Sentencia`) |
+| `court` | Full court name |
+| `shortcourt` | Abbreviated court name — used in inline citations |
+| `chamber` | Chamber or section (e.g. `Sala de lo Civil`) |
+| `fdate` | Date of the ruling (e.g. `12 de marzo de 2020`) |
+| `ecli` | ECLI identifier |
+| `url` | Optional URL to the official text |
+| `year` | Year — required by biblatex |
+
+Inline citations (`\cite{key}`) render as `shortcourt number`.
+
+Example:
+
+```bibtex
+@jurisprudencia{sts2020,
+  kind       = {Sentencia},
+  court      = {Tribunal Supremo},
+  shortcourt = {STS},
+  number     = {123/2020},
+  chamber    = {Sala de lo Civil},
+  fdate      = {12 de marzo de 2020},
+  ecli       = {ECLI:ES:TS:2020:123},
+  year       = {2020},
+}
+```
+
+### Entry type: `legislation`
+
+| Field | Description |
+|-------|-------------|
+| `title` | Full official title of the statute |
+| `number` | BOE issue number |
+| `eid` | Section identifier within the BOE |
+| `year` | Year of publication |
+
+The class automatically derives `shorttitle` by stripping the law number and date from `title`, so no manual `shorttitle` field is needed.
+
+Example:
+
+```bibtex
+@legislation{lsc2010,
+  title  = {Ley de Sociedades de Capital, Real Decreto Legislativo 1/2010,
+            de 2 de julio, por el que se aprueba el texto refundido},
+  number = {161},
+  eid    = {A},
+  year   = {2010},
+}
+```
+
+---
+
 ## Contributing
 
 - Keep all functional behavior in `ui1activity.cls` unchanged unless intentional.
