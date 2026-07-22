@@ -26,3 +26,11 @@ CI_WORKFLOW="$REPO_ROOT/.github/workflows/ci.yml"
 @test "workflow includes LaTeX make test step" {
   grep -q "make test" "$CI_WORKFLOW"
 }
+
+@test "both checkout steps use actions/checkout v6" {
+  [ "$(grep -c 'uses: actions/checkout@v6' "$CI_WORKFLOW")" -eq 2 ]
+}
+
+@test "workflow does not use deprecated actions/checkout v4" {
+  ! grep -q 'uses: actions/checkout@v4' "$CI_WORKFLOW"
+}
