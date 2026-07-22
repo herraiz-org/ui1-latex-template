@@ -72,8 +72,8 @@
   - [ ] Test: `make install` creates symlink for `ui1beamer.sty` in the local
         texmf tree.
   - [ ] Test: `make install` copies `new-slides` to `~/bin/`.
-  - [ ] Test: `make install` installs skill files to `~/.claude/skills/` and
-        `~/.gemini/skills/`.
+  - [ ] Test: `make install` installs the canonical skill and creates all
+        configured compatibility links.
   - [ ] Test: `make uninstall` removes all of the above.
   - [ ] Run BATS and confirm new tests fail.
 - [ ] Task: Update `Makefile` install/uninstall targets
@@ -81,8 +81,8 @@
         `ui1activity.cls`).
   - [ ] Add `bin/new-slides` copy to `~/bin/` (idempotent `~/.zshrc` PATH
         entry already exists from `new-activity`).
-  - [ ] Add `skills/new-slides/SKILL.md` install to `~/.claude/skills/` and
-        `~/.gemini/skills/`.
+  - [ ] Add `skills/new-slides/SKILL.md` to the shared canonical skill install
+        and compatibility-link loop.
   - [ ] Mirror all additions in the `uninstall` target.
   - [ ] Run BATS and confirm all tests pass.
 - [ ] Task: Conductor - User Manual Verification 'Phase 4: Makefile Integration' (Protocol in workflow.md)

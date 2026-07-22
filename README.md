@@ -23,7 +23,7 @@ The class (`ui1activity.cls`) enforces the university's visual identity (cover p
 make install
 ```
 
-This creates symlinks in your local texmf tree so `ui1activity.cls` is available to any LaTeX document on the system, copies the `new-activity` script to `~/bin/`, and installs the `new-activity` skill to `~/.claude/skills/` (Claude Code) and `~/.gemini/skills/` (Gemini CLI).
+This creates symlinks in your local texmf tree so `ui1activity.cls` is available to any LaTeX document on the system, copies the `new-activity` script to `~/bin/`, and installs the `new-activity` Agent Skill globally. The canonical skill lives at `~/.agents/skills/new-activity`; compatibility links make it available to Codex, Claude Code, Gemini CLI, and Antigravity CLI without maintaining harness-specific copies.
 
 To remove:
 
@@ -92,8 +92,24 @@ ui1_template/
 ├── Makefile                  # Build, install, and test targets
 └── skills/
     └── new-activity/
-        └── SKILL.md          # AI skill for invoking the CLI (Claude Code + Gemini CLI)
+        └── SKILL.md          # Portable Agent Skill for invoking the CLI
 ```
+
+---
+
+## Agent Skill Installation
+
+The repository keeps one portable skill source at `skills/new-activity/SKILL.md`. `make install` copies it to the open Agent Skills user directory and creates compatibility links in the discovery paths used by supported coding agents:
+
+| Agent | Discovery path |
+|-------|----------------|
+| Codex | `~/.agents/skills/new-activity` |
+| Claude Code | `~/.claude/skills/new-activity` |
+| Gemini CLI | `~/.gemini/skills/new-activity` |
+| Antigravity | `~/.gemini/config/skills/new-activity` |
+| Antigravity CLI | `~/.gemini/antigravity-cli/skills/new-activity` |
+
+The canonical directory can be changed with `INSTALL_AGENT_SKILLS`, and the complete space-separated compatibility destination list can be changed with `SKILL_COMPAT_DIRS`. The older `INSTALL_SKILLS` and `INSTALL_GEMINI_SKILLS` overrides remain supported.
 
 ---
 

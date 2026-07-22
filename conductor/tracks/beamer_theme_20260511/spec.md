@@ -61,18 +61,19 @@ and AI skill for scaffolding new presentations, integrated into the existing
     background images resolve at compile time.
 
 ### FR7: AI Skill (`skills/new-slides/SKILL.md`)
-- Skill definition enabling `new-slides` CLI invocation from Claude Code and
-  Gemini CLI sessions.
+- Portable Agent Skill definition enabling `new-slides` CLI invocation from
+  Codex, Claude Code, Gemini CLI, and Antigravity CLI sessions.
 - Lives at `skills/new-slides/SKILL.md` in the repo root (same structure as
   `skills/new-activity/SKILL.md`).
-- Installed by `make install` to `~/.claude/skills/new-slides/SKILL.md` and
-  `~/.gemini/skills/new-slides/SKILL.md`.
+- Installed by the shared Agent Skill installer to the canonical
+  `~/.agents/skills/new-slides/` directory and exposed through the configured
+  compatibility destinations.
 
 ### FR8: Makefile Integration
 - `make install` installs `ui1beamer.sty` to the user's local texmf tree
   (alongside `ui1activity.cls`), runs `texhash`/`mktexlsr`, copies
   `bin/new-slides` to `~/bin/` (idempotent PATH setup in `~/.zshrc`), and
-  installs both skill files.
+  installs both canonical skills and their compatibility links.
 - `make uninstall` reverses all of the above.
 
 ## Non-Functional Requirements
@@ -94,8 +95,8 @@ and AI skill for scaffolding new presentations, integrated into the existing
    (section name left), uigray footer band (title left, slide number right).
 4. All slide text uses Helvetica; frame titles are uired bold.
 5. `make install` installs the theme to the local texmf tree, `new-slides`
-   to `~/bin/`, and skill files to `~/.claude/skills/` and
-   `~/.gemini/skills/`.
+   to `~/bin/`, and its portable skill through the shared Agent Skill
+   installer.
 6. `bin/new-slides --titulo "Foo" --autor "Bar"` scaffolds a directory that
    compiles to a valid PDF with `make pdf`.
 7. All BATS tests for the new CLI pass.

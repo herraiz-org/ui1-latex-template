@@ -33,6 +33,7 @@ _run_make_uninstall() {
 @test "make install creates new-activity/SKILL.md under INSTALL_GEMINI_SKILLS" {
   run _run_make_install
   [ "$status" -eq 0 ]
+  [ -L "$FAKE_GEMINI_SKILLS/new-activity" ]
   [ -f "$FAKE_GEMINI_SKILLS/new-activity/SKILL.md" ]
 }
 
@@ -55,5 +56,17 @@ _run_make_uninstall() {
   rm -rf "$FAKE_GEMINI_SKILLS"
   run _run_make_install
   [ "$status" -eq 0 ]
+  [ -f "$FAKE_GEMINI_SKILLS/new-activity/SKILL.md" ]
+}
+
+@test "make install migrates a legacy copied Gemini skill" {
+  mkdir -p "$FAKE_GEMINI_SKILLS/new-activity"
+  cp "$PROJECT_ROOT/skills/new-activity/SKILL.md" \
+    "$FAKE_GEMINI_SKILLS/new-activity/SKILL.md"
+
+  run _run_make_install
+
+  [ "$status" -eq 0 ]
+  [ -L "$FAKE_GEMINI_SKILLS/new-activity" ]
   [ -f "$FAKE_GEMINI_SKILLS/new-activity/SKILL.md" ]
 }

@@ -8,6 +8,8 @@ TEXMF_DIR ?= $(HOME)/texmf/tex/latex/ui1_template
 INSTALL_BIN ?= $(HOME)/bin
 INSTALL_SKILLS ?= $(HOME)/.claude/skills
 INSTALL_GEMINI_SKILLS ?= $(HOME)/.gemini/skills
+INSTALL_AGENT_SKILLS ?= $(HOME)/.agents/skills
+SKILL_COMPAT_DIRS ?= $(INSTALL_SKILLS) $(INSTALL_GEMINI_SKILLS) $(HOME)/.gemini/config/skills $(HOME)/.gemini/antigravity-cli/skills
 ZSHRC ?= $(HOME)/.zshrc
 
 .PHONY: all clean install uninstall open
@@ -38,17 +40,49 @@ install:
 	@if ! grep -qF 'export PATH="$$HOME/bin:$$PATH"' "$(ZSHRC)" 2>/dev/null; then \
 		echo 'export PATH="$$HOME/bin:$$PATH"' >> "$(ZSHRC)"; \
 	fi
-	mkdir -p "$(INSTALL_SKILLS)/new-activity"
-	cp "$(PROJECT_ROOT)/skills/new-activity/SKILL.md" "$(INSTALL_SKILLS)/new-activity/SKILL.md"
-	mkdir -p "$(INSTALL_GEMINI_SKILLS)/new-activity"
-	cp "$(PROJECT_ROOT)/skills/new-activity/SKILL.md" "$(INSTALL_GEMINI_SKILLS)/new-activity/SKILL.md"
+	mkdir -p "$(INSTALL_AGENT_SKILLS)/new-activity"
+	cp "$(PROJECT_ROOT)/skills/new-activity/SKILL.md" "$(INSTALL_AGENT_SKILLS)/new-activity/SKILL.md"
+	@canonical="$(INSTALL_AGENT_SKILLS)/new-activity"; \
+	for skills_dir in $(SKILL_COMPAT_DIRS); do \
+		target="$$skills_dir/new-activity"; \
+		[ "$$target" = "$$canonical" ] && continue; \
+		mkdir -p "$$skills_dir"; \
+		if [ -L "$$target" ]; then \
+			if [ "$$(readlink "$$target")" != "$$canonical" ]; then \
+				echo "Error: refusing to replace skill symlink '$$target'" >&2; exit 1; \
+			fi; \
+			rm -f "$$target"; \
+		elif [ -d "$$target" ]; then \
+			entries=$$(find "$$target" -mindepth 1 -maxdepth 1 -print | wc -l); \
+			if [ "$$entries" -ne 1 ] || [ ! -f "$$target/SKILL.md" ]; then \
+				echo "Error: refusing to replace non-managed skill directory '$$target'" >&2; exit 1; \
+			fi; \
+			rm -f "$$target/SKILL.md"; rmdir "$$target"; \
+		elif [ -e "$$target" ]; then \
+			echo "Error: refusing to replace '$$target'" >&2; exit 1; \
+		fi; \
+		ln -s "$$canonical" "$$target"; \
+	done
 
 uninstall:
 	rm -f "$(TEXMF_DIR)/ui1activity.cls"
 	rm -f "$(TEXMF_DIR)/imgs"
 	rm -f "$(INSTALL_BIN)/new-activity"
-	rm -rf "$(INSTALL_SKILLS)/new-activity"
-	rm -rf "$(INSTALL_GEMINI_SKILLS)/new-activity"
+	@canonical="$(INSTALL_AGENT_SKILLS)/new-activity"; \
+	for skills_dir in $(SKILL_COMPAT_DIRS); do \
+		target="$$skills_dir/new-activity"; \
+		[ "$$target" = "$$canonical" ] && continue; \
+		if [ -L "$$target" ] && [ "$$(readlink "$$target")" = "$$canonical" ]; then \
+			rm -f "$$target"; \
+		elif [ -d "$$target" ] && [ -f "$$target/SKILL.md" ]; then \
+			entries=$$(find "$$target" -mindepth 1 -maxdepth 1 -print | wc -l); \
+			if [ "$$entries" -eq 1 ]; then \
+				rm -f "$$target/SKILL.md"; rmdir "$$target"; \
+			fi; \
+		fi; \
+	done
+	rm -f "$(INSTALL_AGENT_SKILLS)/new-activity/SKILL.md"
+	-rmdir "$(INSTALL_AGENT_SKILLS)/new-activity" 2>/dev/null
 
 open: $(MAIN).pdf
 	xdg-open $(MAIN).pdf
