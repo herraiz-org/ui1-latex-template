@@ -272,3 +272,15 @@ Example:
 - Use `git mv` for file moves to preserve history.
 - Follow the [Conductor](conductor/) spec-driven workflow for non-trivial
   changes.
+
+---
+
+## License
+
+Copyright 2026 Israel Herraiz \<isra@herraiz.org\>
+
+Licensed under the Apache License, Version 2.0. See [LICENSE](LICENSE) for the
+full text.
+
+The Universidad Isabel I image assets in `imgs/` are excluded from that grant —
+see [NOTICE](NOTICE).
