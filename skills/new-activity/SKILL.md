@@ -127,3 +127,8 @@ Inside `<directory>/`:
 2. Optionally ask for `--curso` and `--unidad` (common useful fields).
 3. Run `new-activity` with the collected arguments.
 4. Confirm the directory was created and show the next steps.
+
+---
+
+Copyright 2026 Israel Herraiz <isra@herraiz.org>
+Licensed under the Apache License, Version 2.0.
