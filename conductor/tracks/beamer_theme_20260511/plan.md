@@ -63,7 +63,7 @@
   - [x] Run BATS and confirm all new tests pass.
   - [ ] Confirm `shellcheck bin/*` is clean — shellcheck is not installed on
         this machine; the CI lint job is the first place it runs.
-- [~] Task: Conductor - User Manual Verification 'Phase 2: CLI Scaffolding' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 2: CLI Scaffolding' (Protocol in workflow.md)
 
 ## [x] Phase 3: AI Skill [checkpoint: c7560ed]
 
