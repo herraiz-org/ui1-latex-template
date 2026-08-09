@@ -150,3 +150,72 @@ _run_make_uninstall() {
   [ -f "$FAKE_HOME/custom-compat/new-activity/SKILL.md" ]
   [ -f "$FAKE_HOME/custom-compat/new-activity/custom-file" ]
 }
+
+@test "make install symlinks ui1beamer.sty into the texmf tree" {
+  run make -C "$PROJECT_ROOT" install \
+    HOME="$FAKE_HOME" \
+    INSTALL_BIN="$FAKE_HOME/bin" \
+    ZSHRC="$FAKE_HOME/.zshrc" \
+    TEXMF_DIR="$FAKE_HOME/texmf/tex/latex/ui1_template"
+  [ "$status" -eq 0 ]
+  [ -L "$FAKE_HOME/texmf/tex/latex/ui1_template/beamerthemeui1beamer.sty" ]
+  [ -f "$FAKE_HOME/texmf/tex/latex/ui1_template/beamerthemeui1beamer.sty" ]
+  # The theme resolves imgs/ through the same tree as ui1activity.cls.
+  [ -L "$FAKE_HOME/texmf/tex/latex/ui1_template/imgs" ]
+}
+
+@test "make uninstall removes ui1beamer.sty from the texmf tree" {
+  make -C "$PROJECT_ROOT" install \
+    HOME="$FAKE_HOME" INSTALL_BIN="$FAKE_HOME/bin" ZSHRC="$FAKE_HOME/.zshrc" \
+    TEXMF_DIR="$FAKE_HOME/texmf/tex/latex/ui1_template"
+  run make -C "$PROJECT_ROOT" uninstall \
+    HOME="$FAKE_HOME" INSTALL_BIN="$FAKE_HOME/bin" \
+    TEXMF_DIR="$FAKE_HOME/texmf/tex/latex/ui1_template"
+  [ "$status" -eq 0 ]
+  [ ! -e "$FAKE_HOME/texmf/tex/latex/ui1_template/beamerthemeui1beamer.sty" ]
+}
+
+@test "make install copies new-slides to ~/bin/ and makes it executable" {
+  run _run_make_install
+  [ "$status" -eq 0 ]
+  [ -f "$FAKE_HOME/bin/new-slides" ]
+  [ -x "$FAKE_HOME/bin/new-slides" ]
+}
+
+@test "make uninstall removes new-slides from ~/bin/" {
+  _run_make_install
+  run _run_make_uninstall
+  [ "$status" -eq 0 ]
+  [ ! -f "$FAKE_HOME/bin/new-slides" ]
+}
+
+@test "make install installs the new-slides skill and its compatibility links" {
+  run _run_make_install
+  [ "$status" -eq 0 ]
+  [ -f "$FAKE_HOME/.agents/skills/new-slides/SKILL.md" ]
+  [ -L "$FAKE_HOME/.claude/skills/new-slides" ]
+  [ -f "$FAKE_HOME/.claude/skills/new-slides/SKILL.md" ]
+  [ -L "$FAKE_HOME/.gemini/config/skills/new-slides" ]
+  [ -L "$FAKE_HOME/.gemini/antigravity-cli/skills/new-slides" ]
+  diff "$PROJECT_ROOT/skills/new-slides/SKILL.md" \
+    "$FAKE_HOME/.agents/skills/new-slides/SKILL.md"
+}
+
+@test "make uninstall removes the new-slides skill everywhere" {
+  _run_make_install
+  [ -f "$FAKE_HOME/.claude/skills/new-slides/SKILL.md" ]
+  run _run_make_uninstall
+  [ "$status" -eq 0 ]
+  [ ! -d "$FAKE_HOME/.claude/skills/new-slides" ]
+  [ ! -d "$FAKE_HOME/.agents/skills/new-slides" ]
+}
+
+@test "make install still refuses to replace a non-managed new-slides directory" {
+  mkdir -p "$FAKE_HOME/.claude/skills/new-slides"
+  touch "$FAKE_HOME/.claude/skills/new-slides/custom-file"
+
+  run _run_make_install
+
+  [ "$status" -ne 0 ]
+  [ -f "$FAKE_HOME/.claude/skills/new-slides/custom-file" ]
+}
