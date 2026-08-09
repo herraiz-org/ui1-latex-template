@@ -61,7 +61,8 @@
   - [x] Scaffold output directory: `.tex` and `Makefile` (pdf/clean/open
         targets). Images resolve through the texmf tree, so no symlink.
   - [x] Run BATS and confirm all new tests pass.
-  - [x] Confirm `shellcheck bin/*` is clean.
+  - [ ] Confirm `shellcheck bin/*` is clean — shellcheck is not installed on
+        this machine; the CI lint job is the first place it runs.
 - [~] Task: Conductor - User Manual Verification 'Phase 2: CLI Scaffolding' (Protocol in workflow.md)
 
 ## [ ] Phase 3: AI Skill
