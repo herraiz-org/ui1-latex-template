@@ -2,11 +2,12 @@
 
 ## [ ] Phase 1: Theme Foundation
 
-- [ ] Task: Write failing LaTeX compilation test for `\usetheme{ui1beamer}`
-  - [ ] Create `tests/latex/test_beamer_loads.tex` — minimal Beamer doc that
+- [x] Task: Write failing LaTeX compilation test for `\usetheme{ui1beamer}` 738bdc6
+  - [x] Create `tests/latex/test_beamer_loads.tex` — minimal Beamer doc that
         loads the theme and compiles; verify it fails without the theme file.
-- [ ] Task: Implement `ui1beamer.sty` skeleton
-  - [ ] Create `ui1beamer.sty` declaring colors (`uired`, `uigray`), setting
+- [~] Task: Implement `ui1beamer.sty` skeleton
+  - [ ] Create `beamerthemeui1beamer.sty` (beamer resolves `\usetheme{ui1beamer}`
+        to this filename) declaring colors (`uired`, `uigray`), setting
         `\sfdefault` (Helvetica), and loading `amsmath`, `babel` (spanish),
         `icomma`.
   - [ ] Warn when the document is not 16:9; `aspectratio=169` is a beamer
