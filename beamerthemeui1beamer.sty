@@ -83,6 +83,9 @@
   \ui@headerh=0.10\paperheight
   \ui@footerh=0.055\paperheight
   \ui@pad=0.02\paperwidth
+  % Keep the body clear of the decorative ring.
+  \setbeamersize{text margin left=\dimexpr\ui@inset+\ui@pad\relax,
+                 text margin right=\dimexpr\ui@inset+\ui@pad\relax}%
 }
 
 % The UI1 logo, cropped out of imgs/portada.png. The trim values are the
@@ -154,5 +157,56 @@
     \par}%
   \vfill
   \vskip0.03\paperheight}
+
+% ---------------------------------------------------------------------------
+% Content slides: uired header band, uigray footer band
+%
+% The bands are drawn by the headline and footline templates, so beamer both
+% reserves the right amount of vertical space for them and omits them on
+% [plain] frames such as the title slide.
+% ---------------------------------------------------------------------------
+\setbeamercolor{ui1 header}{bg=uired,fg=white}
+\setbeamercolor{ui1 footer}{bg=uigray,fg=black}
+
+\setbeamertemplate{headline}{%
+  \vskip\ui@inset
+  \hbox{%
+    \hskip\ui@inset
+    \begin{beamercolorbox}[wd=\dimexpr\paperwidth-2\ui@inset\relax,
+                           ht=0.55\ui@headerh,dp=0.45\ui@headerh,
+                           leftskip=\ui@pad,rightskip=\ui@pad]{ui1 header}
+      \bfseries\small\insertsectionhead\hfill\textbf{Universidad Isabel I}%
+    \end{beamercolorbox}}}
+
+\setbeamertemplate{footline}{%
+  \hbox{%
+    \hskip\ui@inset
+    \begin{beamercolorbox}[wd=\dimexpr\paperwidth-2\ui@inset\relax,
+                           ht=0.6\ui@footerh,dp=0.4\ui@footerh,
+                           leftskip=\ui@pad,rightskip=\ui@pad]{ui1 footer}
+      \scriptsize\inserttitle\hfill\insertframenumber%
+    \end{beamercolorbox}}%
+  \vskip\ui@inset}
+
+% Frame titles and body elements
+\setbeamercolor{frametitle}{fg=uired,bg=}
+\setbeamerfont{frametitle}{series=\bfseries,size=\large}
+\setbeamertemplate{frametitle}{%
+  \vskip0.02\paperheight
+  {\usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}\insertframetitle\par}%
+  \vskip0.01\paperheight}
+
+\setbeamercolor{structure}{fg=uired}
+\setbeamercolor{itemize item}{fg=uired}
+\setbeamercolor{itemize subitem}{fg=uired}
+\setbeamercolor{enumerate item}{fg=uired}
+
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\setbeamercolor{block title}{bg=uired,fg=white}
+\setbeamercolor{block body}{bg=uiframegray,fg=black}
+\setbeamercolor{block title example}{bg=uigray,fg=black}
+\setbeamercolor{block body example}{bg=uiframegray,fg=black}
+\setbeamercolor{block title alerted}{bg=uired!65!black,fg=white}
+\setbeamercolor{block body alerted}{bg=uiframegray,fg=black}
 
 \mode<all>

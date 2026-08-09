@@ -117,7 +117,9 @@ assert_color() {
 
 @test "content slides carry a uired header band" {
   compile_fixture test_beamer_content
-  run page_pixel 1 0.5 0.06
+  # The band spans from \ui@inset (0.036 x paperwidth = 0.064 x paperheight)
+  # down by \ui@headerh (0.10 x paperheight); sample its middle.
+  run page_pixel 1 0.5 0.114
   [ "$status" -eq 0 ]
   # uired = #E4004F
   assert_color "$output" 228 0 79
@@ -125,7 +127,8 @@ assert_color() {
 
 @test "content slides carry a uigray footer band" {
   compile_fixture test_beamer_content
-  run page_pixel 1 0.5 0.955
+  # The band ends \ui@inset above the bottom edge and is \ui@footerh tall.
+  run page_pixel 1 0.5 0.908
   [ "$status" -eq 0 ]
   # uigray = #BFBFBF
   assert_color "$output" 191 191 191
