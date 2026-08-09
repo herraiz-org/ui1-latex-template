@@ -13,6 +13,7 @@
 # permissions and limitations under the License.
 
 MAIN = examples/plantilla
+SLIDES = examples/presentacion
 MAIN_DIR = examples
 LATEX = pdflatex
 FLAGS = -interaction=nonstopmode
@@ -32,7 +33,7 @@ ZSHRC ?= $(HOME)/.zshrc
 CLI_SCRIPTS = new-activity new-slides
 SKILLS = new-activity new-slides
 
-.PHONY: all clean install uninstall open
+.PHONY: all clean install uninstall open slides open-slides
 
 TESTS = $(wildcard tests/latex/*.tex)
 TEST_PDFS = $(patsubst tests/latex/%.tex, %.pdf, $(TESTS))
@@ -44,6 +45,17 @@ test: $(TEST_PDFS)
 $(MAIN).pdf: $(MAIN).tex imgs/portada.png imgs/interior.png
 	$(LATEX) -output-directory $(MAIN_DIR) $(FLAGS) $<
 	if grep -q "addbibresource" $<; then (cd $(MAIN_DIR) && biber $(notdir $(basename $<))); $(LATEX) -output-directory $(MAIN_DIR) $(FLAGS) $<; $(LATEX) -output-directory $(MAIN_DIR) $(FLAGS) $<; fi
+
+slides: $(SLIDES).pdf
+
+# Two passes so the section headers in the header band and the slide count
+# settle.
+$(SLIDES).pdf: $(SLIDES).tex beamerthemeui1beamer.sty imgs/portada.png
+	$(LATEX) -output-directory $(MAIN_DIR) $(FLAGS) $<
+	$(LATEX) -output-directory $(MAIN_DIR) $(FLAGS) $<
+
+open-slides: $(SLIDES).pdf
+	xdg-open $(SLIDES).pdf
 
 %.pdf: tests/latex/%.tex
 	$(LATEX) $(FLAGS) $<

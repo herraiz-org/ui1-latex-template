@@ -1,0 +1,113 @@
+% aspectratio=169 must stay on \documentclass: it is a Beamer class option
+% and cannot be set by the theme.
+\documentclass[aspectratio=169]{beamer}
+\usetheme{ui1beamer}
+
+% ==============================================================
+% FILL IN YOUR DETAILS BELOW
+% ==============================================================
+\title{Valoración de inversiones}
+\subtitle{Métodos VAN y TIR}
+\asignatura{Matemáticas Financieras}
+\author{Israel Herraiz Tabernero}
+\date{9 de agosto de 2026}
+% ==============================================================
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\section{Introducción}
+
+\begin{frame}{Objetivos de la sesión}
+  \begin{itemize}
+    \item Repasar el concepto de flujo de caja.
+    \item Calcular el valor actual neto (VAN) de un proyecto.
+    \item Interpretar la tasa interna de retorno (TIR).
+    \item Comparar proyectos con horizontes temporales distintos.
+  \end{itemize}
+
+  \begin{block}{Idea principal}
+    Un euro de hoy vale más que un euro de mañana: toda la valoración de
+    inversiones se deriva de esta observación.
+  \end{block}
+\end{frame}
+
+\begin{frame}{Estructura de la unidad}
+  \begin{enumerate}
+    \item Flujos de caja y descuento.
+    \item Criterios de decisión.
+    \item Casos prácticos.
+  \end{enumerate}
+\end{frame}
+
+\section{Criterios de decisión}
+
+\begin{frame}{Valor actual neto}
+  El VAN descuenta cada flujo de caja \(F_t\) a la tasa \(k\):
+
+  \begin{equation*}
+    \mathrm{VAN} = -F_0 + \sum_{t=1}^{n} \frac{F_t}{(1+k)^t}
+  \end{equation*}
+
+  \begin{itemize}
+    \item \(\mathrm{VAN} > 0\): el proyecto crea valor.
+    \item \(\mathrm{VAN} < 0\): el proyecto destruye valor.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Tasa interna de retorno}
+  \begin{columns}[T]
+    \begin{column}{0.5\textwidth}
+      La TIR es la tasa que anula el VAN:
+      \begin{equation*}
+        -F_0 + \sum_{t=1}^{n} \frac{F_t}{(1+\mathrm{TIR})^t} = 0
+      \end{equation*}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{exampleblock}{Regla de decisión}
+        Aceptar el proyecto si la TIR supera el coste de capital.
+      \end{exampleblock}
+    \end{column}
+  \end{columns}
+
+  \begin{alertblock}{Cuidado}
+    Con flujos de signo alternante puede haber varias TIR, o ninguna.
+  \end{alertblock}
+\end{frame}
+
+\section{Caso práctico}
+
+\begin{frame}{Comparación de dos proyectos}
+  \begin{center}
+    \begin{tabular}{lrr}
+      \textbf{Año} & \textbf{Proyecto A} & \textbf{Proyecto B} \\
+      \hline
+      0 & $-10\,000$ & $-10\,000$ \\
+      1 & $6\,000$    & $2\,000$    \\
+      2 & $5\,000$    & $4\,000$    \\
+      3 & $1\,000$    & $8\,000$    \\
+      \hline
+      VAN (k = 8\,\%) & $1\,005$ & $1\,318$ \\
+    \end{tabular}
+  \end{center}
+
+  A igualdad de inversión inicial, B crea más valor pese a recuperar la
+  inversión más tarde.
+\end{frame}
+
+\begin{frame}{Resumen}
+  \begin{itemize}
+    \item El VAN mide creación de valor en euros de hoy.
+    \item La TIR mide rentabilidad relativa, pero es frágil.
+    \item Ante conflicto entre criterios, prevalece el VAN.
+  \end{itemize}
+
+  \begin{block}{Para la próxima sesión}
+    Resolver los ejercicios 1 a 5 de la unidad didáctica.
+  \end{block}
+\end{frame}
+
+\end{document}

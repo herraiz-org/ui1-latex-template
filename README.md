@@ -109,6 +109,7 @@ ui1_template/
 │   └── workflow.md           # Development workflow reference
 ├── examples/
 │   ├── plantilla.tex         # Example LaTeX source using ui1activity
+│   ├── presentacion.tex      # Example presentation using ui1beamer
 │   └── referencias.bib       # Example bibliography file
 ├── imgs/
 │   ├── portada.png           # Cover page background (A4, branded)
@@ -235,6 +236,15 @@ tree next to the theme.
 - The logo is cropped out of `imgs/portada.png` rather than stretched: those
   assets are A4 portrait, and scaling them to 16:9 would deform the logo and
   the interior footer text.
+
+`examples/presentacion.tex` is a seven-slide example covering the title slide,
+sections, lists, math, two-column layouts, all three block types and a table.
+Build it with:
+
+```bash
+make slides        # compiles examples/presentacion.pdf
+make open-slides   # compiles and opens it
+```
 
 ---
 
