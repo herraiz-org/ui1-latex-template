@@ -108,6 +108,14 @@ ui1_template/
 ├── imgs/
 │   ├── portada.png           # Cover page background (A4, branded)
 │   └── interior.png          # Interior pages background (A4, branded)
+├── specs/                    # Reference docs for each subsystem
+│   ├── product.md            # What the template is for, and for whom
+│   ├── product-guidelines.md # Branding, language, inherited .docx constraints
+│   ├── tech-stack.md         # Every package loaded, and why
+│   ├── bibliography.md       # biblatex source maps, drivers, citations
+│   ├── cover-and-pagination.md # Cover table, page counter, backgrounds
+│   ├── beamer-theme.md       # Slide frame geometry, logo crop, bands
+│   └── install-and-skills.md # make install and Agent Skill distribution
 ├── tests/
 │   ├── bats/                 # BATS test framework (git submodule)
 │   ├── latex/                # LaTeX fixture files for make test
@@ -271,7 +279,7 @@ metadata, etc.):
 bash tests/run_tests.sh tests/shell/*.bats
 ```
 
-All 121 tests should pass.
+All 129 tests should pass.
 
 **Shell tests** (Makefile install/uninstall targets and cover page formatting):
 
@@ -314,7 +322,7 @@ entries are included:
 | Field        | Description                                       |
 |--------------|---------------------------------------------------|
 | `kind`       | Type of ruling (e.g. `Sentencia`)                 |
-| `court`      | Full court name                                   |
+| `court`      | Full court name, **with its Spanish preposition** — `del Tribunal Supremo` |
 | `shortcourt` | Abbreviated court name — used in inline citations |
 | `chamber`    | Chamber or section (e.g. `Sala de lo Civil`)      |
 | `fdate`      | Date of the ruling (e.g. `12 de marzo de 2020`)   |
@@ -329,7 +337,7 @@ Example:
 ```bibtex
 @jurisprudencia{sts2020,
   kind       = {Sentencia},
-  court      = {Tribunal Supremo},
+  court      = {del Tribunal Supremo},
   shortcourt = {STS},
   number     = {123/2020},
   chamber    = {Sala de lo Civil},
@@ -372,8 +380,11 @@ Example:
 - Run the full test suite before submitting changes.
 - Use `git mv` for file moves to preserve history.
 - Read [CLAUDE.md](CLAUDE.md) before changing the class or the theme — it
-  records the design constraints inherited from the original template and the
-  reasoning behind the package choices.
+  records the constraints inherited from the original template and indexes
+  [specs/](specs/), which explains each subsystem in depth.
+- Keep [specs/](specs/) true. `tests/shell/docs_consistency.bats` checks the
+  factual claims (margins, cover width, colors, package inventory) against the
+  source, so a change that outdates a document fails the suite.
 
 ---
 
