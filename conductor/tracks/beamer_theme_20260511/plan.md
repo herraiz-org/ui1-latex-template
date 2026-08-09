@@ -96,11 +96,14 @@
 
 ## [ ] Phase 5: Regression & Final Verification
 
-- [ ] Task: Run full test suite
-  - [ ] Execute `bash tests/run_tests.sh tests/shell/*.bats` and confirm no
-        regressions in existing `new-activity` tests.
-  - [ ] Compile all LaTeX test fixtures and confirm no new errors.
-- [ ] Task: Compile example presentation end-to-end
-  - [ ] Run `bin/new-slides --titulo "Prueba" --autor "Estudiante"` and
-        confirm `make pdf` produces a valid, visually correct PDF.
-- [ ] Task: Conductor - User Manual Verification 'Phase 5: Regression & Final Verification' (Protocol in workflow.md)
+- [x] Task: Run full test suite 1f653b5
+  - [x] Execute `bash tests/run_tests.sh tests/shell/*.bats` and confirm no
+        regressions in existing `new-activity` tests — 111 tests, 0 failures.
+  - [x] Compile all LaTeX test fixtures and confirm no new errors —
+        `make test` exits 0; the legacy shell tests pass 8/8 and 6/6.
+- [x] Task: Compile example presentation end-to-end 1f653b5
+  - [x] Installed into a sandbox HOME with `make install`, scaffolded with
+        `new-slides`, and compiled with `make pdf` — 2 pages, 453.5 x 255.1 pt,
+        no LaTeX errors, images resolved through the texmf tree with no local
+        `imgs` symlink. `make uninstall` left nothing behind.
+- [~] Task: Conductor - User Manual Verification 'Phase 5: Regression & Final Verification' (Protocol in workflow.md)
