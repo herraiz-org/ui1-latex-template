@@ -13,18 +13,18 @@
   - [x] Warn when the document is not 16:9; `aspectratio=169` is a beamer
         *class* option supplied by the document, not by the theme.
   - [x] Confirm compilation test now passes.
-- [~] Task: Write failing test for the title slide decoration
-  - [ ] Add a test fixture that calls `\titlepage` and inspect the resulting
+- [x] Task: Write failing test for the title slide decoration cbdded8
+  - [x] Add a test fixture that calls `\titlepage` and inspect the resulting
         PDF for the cropped logo XObject and 16:9 page geometry.
-- [ ] Task: Implement title slide (decorative frame + cropped logo + layout)
-  - [ ] Draw the gray border and red accent bars natively with `eso-pic`
+- [x] Task: Implement title slide (decorative frame + cropped logo + layout) 5286064
+  - [x] Draw the gray border and red accent bars natively with TikZ
         rectangles; place the UI1 logo cropped from `imgs/portada.png` via
         `\includegraphics[trim=…,clip]` so its aspect ratio is preserved.
-  - [ ] Style `\title`, `\subtitle`, `\author`, `\date` placeholders in
+  - [x] Style `\title`, `\subtitle`, `\author`, `\date` placeholders in
         Helvetica; title colored uired, remaining text appropriately legible.
-  - [ ] Add optional `\asignatura` command.
-  - [ ] Confirm title slide test passes.
-- [ ] Task: Write failing tests for content slide header/footer bands
+  - [x] Add optional `\asignatura` command.
+  - [x] Confirm title slide test passes.
+- [~] Task: Write failing tests for content slide header/footer bands
   - [ ] Fixture with a regular content frame; assert uired header band and
         uigray footer band appear (via PDF color inspection or visual diff
         against a reference PDF).
