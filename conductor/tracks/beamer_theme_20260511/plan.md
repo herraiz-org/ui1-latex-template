@@ -67,32 +67,32 @@
 
 ## [ ] Phase 3: AI Skill
 
-- [ ] Task: Create `skills/new-slides/SKILL.md`
-  - [ ] Model it on `skills/new-activity/SKILL.md`.
-  - [ ] Document all flags, describe scaffolded output, and provide example
+- [x] Task: Create `skills/new-slides/SKILL.md` 0e88eaa
+  - [x] Model it on `skills/new-activity/SKILL.md`.
+  - [x] Document all flags, describe scaffolded output, and provide example
         invocations for Claude Code and Gemini CLI.
-- [ ] Task: Conductor - User Manual Verification 'Phase 3: AI Skill' (Protocol in workflow.md)
+- [~] Task: Conductor - User Manual Verification 'Phase 3: AI Skill' (Protocol in workflow.md)
 
 ## [ ] Phase 4: Makefile Integration
 
-- [ ] Task: Write failing BATS tests for install/uninstall targets
-  - [ ] Test: `make install` creates symlink for `ui1beamer.sty` in the local
-        texmf tree.
-  - [ ] Test: `make install` copies `new-slides` to `~/bin/`.
-  - [ ] Test: `make install` installs the canonical skill and creates all
+- [x] Task: Write failing BATS tests for install/uninstall targets 6d4a4e3
+  - [x] Test: `make install` creates symlink for `beamerthemeui1beamer.sty`
+        in the local texmf tree.
+  - [x] Test: `make install` copies `new-slides` to `~/bin/`.
+  - [x] Test: `make install` installs the canonical skill and creates all
         configured compatibility links.
-  - [ ] Test: `make uninstall` removes all of the above.
-  - [ ] Run BATS and confirm new tests fail.
-- [ ] Task: Update `Makefile` install/uninstall targets
-  - [ ] Add `ui1beamer.sty` to the texmf install step (alongside
+  - [x] Test: `make uninstall` removes all of the above.
+  - [x] Run BATS and confirm new tests fail.
+- [x] Task: Update `Makefile` install/uninstall targets 72ba8e8
+  - [x] Add `ui1beamer.sty` to the texmf install step (alongside
         `ui1activity.cls`).
-  - [ ] Add `bin/new-slides` copy to `~/bin/` (idempotent `~/.zshrc` PATH
+  - [x] Add `bin/new-slides` copy to `~/bin/` (idempotent `~/.zshrc` PATH
         entry already exists from `new-activity`).
-  - [ ] Add `skills/new-slides/SKILL.md` to the shared canonical skill install
+  - [x] Add `skills/new-slides/SKILL.md` to the shared canonical skill install
         and compatibility-link loop.
-  - [ ] Mirror all additions in the `uninstall` target.
-  - [ ] Run BATS and confirm all tests pass.
-- [ ] Task: Conductor - User Manual Verification 'Phase 4: Makefile Integration' (Protocol in workflow.md)
+  - [x] Mirror all additions in the `uninstall` target.
+  - [x] Run BATS and confirm all tests pass.
+- [~] Task: Conductor - User Manual Verification 'Phase 4: Makefile Integration' (Protocol in workflow.md)
 
 ## [ ] Phase 5: Regression & Final Verification
 
