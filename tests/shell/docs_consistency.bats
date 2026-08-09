@@ -69,6 +69,16 @@ packages_in() {
   grep -qF "$TRIM" "$SPECS/beamer-theme.md"
 }
 
+@test "every image the theme includes exists in imgs/" {
+  FILES=$(grep -oE '\\includegraphics(\[[^]]*\])?\{imgs/[a-z-]+(\.png)?\}' "$STY" |
+    sed -E 's/.*\{(imgs\/[a-z-]+)(\.png)?\}/\1/' | sort -u)
+  [ -n "$FILES" ]
+  for img in $FILES; do
+    # The theme writes the paths without an extension, as graphicx expects.
+    [ -f "$REPO_ROOT/$img.png" ]
+  done
+}
+
 @test "hyperref is the last package the class loads" {
   LAST=$(grep -oE '\\RequirePackage(\[[^]]*\])?\{[a-z0-9-]+\}' "$CLS" |
     sed -E 's/.*\{([a-z0-9-]+)\}/\1/' | tail -1)

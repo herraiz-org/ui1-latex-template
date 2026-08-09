@@ -50,7 +50,7 @@ slides: $(SLIDES).pdf
 
 # Two passes so the section headers in the header band and the slide count
 # settle.
-$(SLIDES).pdf: $(SLIDES).tex beamerthemeui1beamer.sty imgs/portada.png
+$(SLIDES).pdf: $(SLIDES).tex beamerthemeui1beamer.sty imgs/portada.png imgs/logo-blanco.png
 	$(LATEX) -output-directory $(MAIN_DIR) $(FLAGS) $<
 	$(LATEX) -output-directory $(MAIN_DIR) $(FLAGS) $<
 

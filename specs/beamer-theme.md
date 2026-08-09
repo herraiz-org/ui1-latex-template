@@ -1,6 +1,6 @@
 # Beamer theme
 
-**Source of truth:** `beamerthemeui1beamer.sty` (212 lines).
+**Source of truth:** `beamerthemeui1beamer.sty` (226 lines).
 **Tests:** `tests/shell/beamer_theme.bats`, with `tests/pixel_probe.py` sampling rendered
 slide colors.
 **Example:** `examples/presentacion.tex`, seven slides covering every element.
@@ -43,7 +43,34 @@ of `imgs/portada.png`.** Replace or re-export that asset and the crop must be
 re-measured; `tests/shell/docs_consistency.bats` asserts the values here match the source,
 but nothing can detect that the asset itself moved underneath them.
 
-No new image assets were introduced, and no asset is distorted.
+No background asset is stretched, and none is distorted.
+
+## The negative logo
+
+The header band is `uired`, and the colour logo cannot be read on it: the rosette is
+`#E5004C`, all but the band's own red, and the wordmark is `#4C565C`, dark on dark. The
+header therefore uses a second asset, `imgs/logo-blanco.png` (296 × 94 px, RGBA), drawn by
+`\ui@logoneg`. It is the *same* crop with its alpha channel preserved and every visible
+pixel set to white, so anti-aliased edges still blend against the red:
+
+```python
+from PIL import Image
+im = Image.open("imgs/portada.png").convert("RGBA")
+s = 1240 / 595.2                                   # px per bp
+crop = im.crop((round(70.6*s), round(70.6*s),
+                round(1240 - 382.6*s), round(1754 - 726.2*s)))
+white = Image.new("RGBA", crop.size, (255, 255, 255, 255))
+white.putalpha(crop.getchannel("A"))
+white.save("imgs/logo-blanco.png")
+```
+
+That box is the `trim` values above expressed in pixels, so **the asset shares their
+dependency on `imgs/portada.png`**: re-export the cover artwork and this file has to be
+regenerated along with the trim. Because it is pre-cropped, `\ui@logoneg` takes a height
+and no `trim`.
+
+`imgs/logo-blanco.png` is a derivative of the university's artwork and sits under the same
+carve-out as the rest of `imgs/` — see [`NOTICE`](../NOTICE).
 
 ## Frame geometry
 
@@ -60,6 +87,7 @@ Dimensions are assigned in `\AtBeginDocument`, after the paper size is known:
 | `\ui@headerh` | `0.10\paperheight` | Header band height |
 | `\ui@footerh` | `0.055\paperheight` | Footer band height |
 | `\ui@pad` | `0.02\paperwidth` | Horizontal text padding inside the bands |
+| `\ui@hlogoh` | `0.055\paperheight` | Negative logo height in the header band |
 
 The same hook sets beamer's `text margin left`/`right` to `\ui@inset + \ui@pad`, keeping
 body text clear of the ring. Proportions were taken from the printed template's border.
@@ -79,8 +107,12 @@ is deliberate: templates make beamer reserve vertical space for the bands *and* 
 on `[plain]` frames, which is how the title slide gets a clean canvas without a special
 case.
 
-- **Header** — `uired`, white bold text: the current `\insertsectionhead` on the left,
-  `Universidad Isabel I` on the right.
+- **Header** — `uired`, white bold text: the current `\insertsectionhead` on the left, the
+  negative logo on the right. The logo is centred in the band by a `\raisebox` of
+  `0.05\ui@headerh - 0.5\ui@hlogoh` — the colorbox's baseline sits `0.55\ui@headerh` below
+  the band's top and its midpoint `0.50\ui@headerh` — and is given zero height and depth
+  so the space beamer reserves for the band is unchanged. The university's name is
+  consequently no longer extractable text on content slides.
 - **Footer** — `uigray`, dark text: `\inserttitle` on the left, `\insertframenumber` on
   the right.
 

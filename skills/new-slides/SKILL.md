@@ -90,7 +90,7 @@ No `imgs/` symlink is needed: `make install` links the images into the texmf tre
 
 - The slides are 16:9. `aspectratio=169` is a Beamer **class** option, so it stays on `\documentclass[aspectratio=169]{beamer}` in the generated file — the theme cannot set it and will warn if it is removed.
 - `\asignatura{...}` is an addition of this theme; it prints a subject line on the title slide and may be left empty.
-- Content frames get a red header band with the current `\section` name and a gray footer band with the presentation title and slide number. Use `\section{...}` between frames so the header band is meaningful.
+- Content frames get a red header band with the current `\section` name on the left and the UI1 logo in white on the right, and a gray footer band with the presentation title and slide number. Use `\section{...}` between frames so the header band is meaningful.
 - `[plain]` frames (like the title frame) drop the bands.
 
 ## Workflow

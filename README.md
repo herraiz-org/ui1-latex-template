@@ -107,7 +107,8 @@ ui1_template/
 │   └── referencias.bib       # Example bibliography file
 ├── imgs/
 │   ├── portada.png           # Cover page background (A4, branded)
-│   └── interior.png          # Interior pages background (A4, branded)
+│   ├── interior.png          # Interior pages background (A4, branded)
+│   └── logo-blanco.png       # White logo for the slide header band
 ├── specs/                    # Reference docs for each subsystem
 │   ├── product.md            # What the template is for, and for whom
 │   ├── product-guidelines.md # Branding, language, inherited .docx constraints
@@ -252,12 +253,13 @@ tree next to the theme.
 - **Title slide** — the UI1 decorative frame with the logo, the title in UI1
   red, and optional `\subtitle`, `\asignatura`, `\author` and `\date`. Use a
   `[plain]` frame for it.
-- **Content slides** — a red header band with the current `\section` name, a
-  gray footer band with the presentation title and slide number, red bold frame
-  titles, and blocks in the UI1 palette.
+- **Content slides** — a red header band with the current `\section` name on the
+  left and the UI1 logo on the right, a gray footer band with the presentation
+  title and slide number, red bold frame titles, and blocks in the UI1 palette.
 - The logo is cropped out of `imgs/portada.png` rather than stretched: those
   assets are A4 portrait, and scaling them to 16:9 would deform the logo and
-  the interior footer text.
+  the interior footer text. The header band uses `imgs/logo-blanco.png`, the
+  same crop in white, because the colour logo is illegible on UI1 red.
 
 `examples/presentacion.tex` is a seven-slide example covering the title slide,
 sections, lists, math, two-column layouts, all three block types and a table.

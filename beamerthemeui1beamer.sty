@@ -72,6 +72,7 @@
 \newdimen\ui@headerh    % height of the uired header band
 \newdimen\ui@footerh    % height of the uigray footer band
 \newdimen\ui@pad        % horizontal padding of text inside the bands
+\newdimen\ui@hlogoh     % height of the negative logo in the header band
 
 \AtBeginDocument{%
   \ui@margin=0.018\paperwidth
@@ -83,6 +84,7 @@
   \ui@headerh=0.10\paperheight
   \ui@footerh=0.055\paperheight
   \ui@pad=0.02\paperwidth
+  \ui@hlogoh=0.055\paperheight
   % Keep the body clear of the decorative ring.
   \setbeamersize{text margin left=\dimexpr\ui@inset+\ui@pad\relax,
                  text margin right=\dimexpr\ui@inset+\ui@pad\relax}%
@@ -93,6 +95,12 @@
 % the crop keeps the logo's own aspect ratio: no distortion on 16:9 slides.
 \newcommand{\ui@logo}[1]{%
   \includegraphics[trim=70.6bp 726.2bp 382.6bp 70.6bp,clip,width=#1]{imgs/portada}}
+
+% The same logo in negative, for the uired header band, where the colour one is
+% unusable: its rosette is almost exactly the band's own red and its wordmark is
+% a dark gray. imgs/logo-blanco.png is that crop with its alpha channel kept and
+% every visible pixel set to white; it is already cropped, so no trim here.
+\newcommand{\ui@logoneg}[1]{\includegraphics[height=#1]{imgs/logo-blanco}}
 
 % Optional subject line on the title slide.
 \newcommand{\asignatura}[1]{\def\ui@asignatura{#1}}
@@ -175,7 +183,13 @@
     \begin{beamercolorbox}[wd=\dimexpr\paperwidth-2\ui@inset\relax,
                            ht=0.55\ui@headerh,dp=0.45\ui@headerh,
                            leftskip=\ui@pad,rightskip=\ui@pad]{ui1 header}
-      \bfseries\small\insertsectionhead\hfill\textbf{Universidad Isabel I}%
+      % The colorbox puts its baseline 0.55\ui@headerh below the band's top and
+      % the band's midpoint is 0.50\ui@headerh down, so the logo's centre must
+      % sit 0.05\ui@headerh above the baseline. Zero height and depth keep the
+      % vertical space beamer reserves for the band unchanged.
+      \bfseries\small\insertsectionhead\hfill
+      \raisebox{\dimexpr0.05\ui@headerh-0.5\ui@hlogoh\relax}[0pt][0pt]{%
+        \ui@logoneg{\ui@hlogoh}}%
     \end{beamercolorbox}}}
 
 \setbeamertemplate{footline}{%

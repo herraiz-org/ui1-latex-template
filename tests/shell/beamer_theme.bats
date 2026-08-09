@@ -91,19 +91,29 @@ assert_color() {
   [ "$(echo "$output" | grep -c "image")" -ge 1 ]
 }
 
-@test "the logo is drawn without horizontal or vertical distortion" {
-  compile_fixture test_beamer_title
-  # pdfimages reports the effective resolution of each placed image; equal
-  # x-ppi and y-ppi mean the image was scaled uniformly.
-  run bash -c "pdfimages -list test.pdf | awk '/image/ {print \$13, \$14}'"
-  [ "$status" -eq 0 ]
-  [ -n "$output" ]
+# Assert every image placed in test.pdf was scaled uniformly. pdfimages reports
+# the effective resolution of each placement; equal x-ppi and y-ppi mean no
+# horizontal or vertical stretching.
+assert_no_image_distortion() {
+  local ppis
+  ppis=$(pdfimages -list test.pdf | awk '/image/ {print $13, $14}')
+  [ -n "$ppis" ]
   while read -r xppi yppi; do
     [ -n "$xppi" ]
     # Allow one ppi of rounding slack in poppler's report.
     diff=$(awk -v a="$xppi" -v b="$yppi" 'BEGIN {d = a - b; print (d < 0 ? -d : d)}')
     [ "$(awk -v d="$diff" 'BEGIN {print (d <= 1) ? 1 : 0}')" -eq 1 ]
-  done <<< "$output"
+  done <<< "$ppis"
+}
+
+@test "the logo is drawn without horizontal or vertical distortion" {
+  compile_fixture test_beamer_title
+  assert_no_image_distortion
+}
+
+@test "the header logo is drawn without horizontal or vertical distortion" {
+  compile_fixture test_beamer_content
+  assert_no_image_distortion
 }
 
 @test "content slides show the section name, presentation title and slide number" {
@@ -113,6 +123,31 @@ assert_color() {
   grep -q "Primera Seccion" page2.txt
   grep -q "Presentacion de prueba" page2.txt
   grep -q "2" page2.txt
+}
+
+@test "the header band carries the logo, not the university name" {
+  compile_fixture test_beamer_content
+  pdftotext -f 2 -l 2 test.pdf page2.txt
+  # The name is drawn as the logo image now, so it is no longer extractable text.
+  run grep -c "Universidad" page2.txt
+  [ "$output" -eq 0 ]
+  run pdfimages -list -f 2 -l 2 test.pdf
+  [ "$status" -eq 0 ]
+  [ "$(echo "$output" | grep -c "image")" -ge 1 ]
+}
+
+@test "the header logo is the negative version, legible on uired" {
+  compile_fixture test_beamer_content
+  # The logo sits at the right end of the header band; the rest of that zone is
+  # a solid uired field, so every near-white pixel in it belongs to the logo.
+  run page_color_count 2 0.78 0.06 0.97 0.17 255 255 255
+  [ "$status" -eq 0 ]
+  [ "$output" -gt 500 ]
+  # imgs/portada.png's colour logo draws its wordmark in #4C565C, which is
+  # nearly illegible on uired. Not one pixel of it may appear here.
+  run page_color_count 2 0.78 0.06 0.97 0.17 76 86 92
+  [ "$status" -eq 0 ]
+  [ "$output" -eq 0 ]
 }
 
 @test "content slides carry a uired header band" {
