@@ -41,7 +41,7 @@
   - [x] Confirm content slide tests pass.
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Theme Foundation' (Protocol in workflow.md)
 
-## [ ] Phase 2: CLI Scaffolding (`bin/new-slides`)
+## [x] Phase 2: CLI Scaffolding (`bin/new-slides`) [checkpoint: c271a2b]
 
 - [x] Task: Write failing BATS tests for `bin/new-slides` 5c5fe7f
   - [x] Test: script exits non-zero when `--titulo`, `--autor`, or the
