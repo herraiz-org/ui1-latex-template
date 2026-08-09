@@ -5,15 +5,15 @@
 - [x] Task: Write failing LaTeX compilation test for `\usetheme{ui1beamer}` 738bdc6
   - [x] Create `tests/latex/test_beamer_loads.tex` — minimal Beamer doc that
         loads the theme and compiles; verify it fails without the theme file.
-- [~] Task: Implement `ui1beamer.sty` skeleton
-  - [ ] Create `beamerthemeui1beamer.sty` (beamer resolves `\usetheme{ui1beamer}`
+- [x] Task: Implement `ui1beamer.sty` skeleton 2e2ce99
+  - [x] Create `beamerthemeui1beamer.sty` (beamer resolves `\usetheme{ui1beamer}`
         to this filename) declaring colors (`uired`, `uigray`), setting
         `\sfdefault` (Helvetica), and loading `amsmath`, `babel` (spanish),
         `icomma`.
-  - [ ] Warn when the document is not 16:9; `aspectratio=169` is a beamer
+  - [x] Warn when the document is not 16:9; `aspectratio=169` is a beamer
         *class* option supplied by the document, not by the theme.
-  - [ ] Confirm compilation test now passes.
-- [ ] Task: Write failing test for the title slide decoration
+  - [x] Confirm compilation test now passes.
+- [~] Task: Write failing test for the title slide decoration
   - [ ] Add a test fixture that calls `\titlepage` and inspect the resulting
         PDF for the cropped logo XObject and 16:9 page geometry.
 - [ ] Task: Implement title slide (decorative frame + cropped logo + layout)
