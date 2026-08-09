@@ -65,13 +65,13 @@
         this machine; the CI lint job is the first place it runs.
 - [~] Task: Conductor - User Manual Verification 'Phase 2: CLI Scaffolding' (Protocol in workflow.md)
 
-## [ ] Phase 3: AI Skill
+## [x] Phase 3: AI Skill [checkpoint: c7560ed]
 
 - [x] Task: Create `skills/new-slides/SKILL.md` 0e88eaa
   - [x] Model it on `skills/new-activity/SKILL.md`.
   - [x] Document all flags, describe scaffolded output, and provide example
         invocations for Claude Code and Gemini CLI.
-- [~] Task: Conductor - User Manual Verification 'Phase 3: AI Skill' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 3: AI Skill' (Protocol in workflow.md)
 
 ## [ ] Phase 4: Makefile Integration
 
