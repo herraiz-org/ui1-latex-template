@@ -7,17 +7,18 @@
         loads the theme and compiles; verify it fails without the theme file.
 - [ ] Task: Implement `ui1beamer.sty` skeleton
   - [ ] Create `ui1beamer.sty` declaring colors (`uired`, `uigray`), setting
-        `\sfdefault` (Helvetica), loading `amsmath`, `babel` (spanish),
-        `icomma`, and configuring the 16:9 aspect ratio via
-        `\RequirePackage[aspectratio=169]{beamer}` pass-through.
+        `\sfdefault` (Helvetica), and loading `amsmath`, `babel` (spanish),
+        `icomma`.
+  - [ ] Warn when the document is not 16:9; `aspectratio=169` is a beamer
+        *class* option supplied by the document, not by the theme.
   - [ ] Confirm compilation test now passes.
-- [ ] Task: Write failing test for title slide background
+- [ ] Task: Write failing test for the title slide decoration
   - [ ] Add a test fixture that calls `\titlepage` and inspect the resulting
-        PDF for presence of `portada.png` background (via `pdfinfo` or
-        checking for image XObject in the PDF).
-- [ ] Task: Implement title slide (`portada.png` background + layout)
-  - [ ] Set `portada.png` as the full-page background on frames using the
-        `plain` or `title` Beamer frame option.
+        PDF for the cropped logo XObject and 16:9 page geometry.
+- [ ] Task: Implement title slide (decorative frame + cropped logo + layout)
+  - [ ] Draw the gray border and red accent bars natively with `eso-pic`
+        rectangles; place the UI1 logo cropped from `imgs/portada.png` via
+        `\includegraphics[trim=…,clip]` so its aspect ratio is preserved.
   - [ ] Style `\title`, `\subtitle`, `\author`, `\date` placeholders in
         Helvetica; title colored uired, remaining text appropriately legible.
   - [ ] Add optional `\asignatura` command.
@@ -27,9 +28,9 @@
         uigray footer band appear (via PDF color inspection or visual diff
         against a reference PDF).
 - [ ] Task: Implement content slide layout
-  - [ ] Set `interior.png` as full-page background for all non-title frames.
+  - [ ] Draw the decorative frame on all non-title frames.
   - [ ] Implement uired header band: section name (left, white bold Helvetica)
-        and UI1 branding placeholder (right).
+        and the cropped UI1 logo (right).
   - [ ] Implement uigray footer band: presentation title (left) + slide
         number (right).
   - [ ] Style frame titles: bold Helvetica, uired color.
@@ -41,21 +42,24 @@
 ## [ ] Phase 2: CLI Scaffolding (`bin/new-slides`)
 
 - [ ] Task: Write failing BATS tests for `bin/new-slides`
-  - [ ] Test: script exits non-zero when `--titulo` or `--autor` are missing.
-  - [ ] Test: script creates the expected directory structure with `.tex`,
-        `Makefile`, and `imgs` symlink.
-  - [ ] Test: generated `.tex` contains `\usetheme{ui1beamer}` and the
-        supplied `--titulo` and `--autor` values.
-  - [ ] Test: script is idempotent — re-running with same args warns and does
-        not overwrite.
+  - [ ] Test: script exits non-zero when `--titulo`, `--autor`, or the
+        positional directory are missing.
+  - [ ] Test: script creates the expected directory structure with `.tex`
+        and `Makefile`.
+  - [ ] Test: generated `.tex` contains `\documentclass[aspectratio=169]{beamer}`,
+        `\usetheme{ui1beamer}`, and the supplied `--titulo` and `--autor` values.
+  - [ ] Test: script aborts with a non-zero status when the target directory
+        already exists, leaving it untouched.
   - [ ] Run BATS and confirm all new tests fail.
 - [ ] Task: Implement `bin/new-slides`
   - [ ] Write POSIX-compatible Bash script modelled on `bin/new-activity`.
   - [ ] Parse flags: `--titulo` (required), `--autor` (required),
-        `--asignatura`, `--subtitulo`, `--fecha` (optional with defaults).
-  - [ ] Scaffold output directory: `.tex`, `Makefile` (pdf/clean/open
-        targets), and `imgs` symlink pointing back to the repo's `imgs/`.
+        `--asignatura`, `--subtitulo`, `--fecha` (optional with defaults),
+        plus `--dry-run` and `--help`.
+  - [ ] Scaffold output directory: `.tex` and `Makefile` (pdf/clean/open
+        targets). Images resolve through the texmf tree, so no symlink.
   - [ ] Run BATS and confirm all new tests pass.
+  - [ ] Confirm `shellcheck bin/*` is clean.
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: CLI Scaffolding' (Protocol in workflow.md)
 
 ## [ ] Phase 3: AI Skill

@@ -2,21 +2,35 @@
 
 ## Overview
 Create a Beamer presentation theme (`ui1beamer.sty`) that mirrors the visual
-identity of `ui1activity.cls` — same background images (`imgs/portada.png`,
-`imgs/interior.png`), UI1 colors, and Helvetica typography — adapted for
-landscape slide format (16:9). Accompany it with a `new-slides` CLI script
-and AI skill for scaffolding new presentations, integrated into the existing
-`Makefile` install workflow.
+identity of `ui1activity.cls` — same UI1 logo, colors, decorative frame, and
+Helvetica typography — adapted for landscape slide format (16:9). Accompany it
+with a `new-slides` CLI script and AI skill for scaffolding new presentations,
+integrated into the existing `Makefile` install workflow.
+
+### Design note (2026-08-09): portrait assets, landscape slides
+`imgs/portada.png` and `imgs/interior.png` are A4 portrait (1240×1754 px at
+150 dpi = 595.2 bp × 841.9 bp). Scaling them to fill a 16:9 slide stretches
+their content ~26% horizontally, which visibly deforms the round UI1 logo and
+the address line at the foot of `interior.png`. The theme therefore **redraws**
+the decorative frame (gray border, red accent bars) natively with `eso-pic`
+rectangles in `uired`/`uigray`, and reuses only the logo, cropped out of
+`imgs/portada.png` with `\includegraphics[trim=…,clip]` so its aspect ratio is
+preserved. No new image assets are introduced and no asset is distorted.
 
 ## Functional Requirements
 
 ### FR1: Theme File
 - A Beamer outer/inner/color theme package (`ui1beamer.sty`) loaded via
   `\usetheme{ui1beamer}` in a standard `\documentclass{beamer}` document.
-- Reuses `imgs/portada.png` and `imgs/interior.png` without duplicating assets.
+- 16:9 is selected by the document, not the theme:
+  `\documentclass[aspectratio=169]{beamer}`. `aspectratio` is a beamer class
+  option and cannot be set from a theme file. The theme issues a package
+  warning when the paper is not 16:9.
+- Reuses `imgs/portada.png` (logo region only) without duplicating assets.
 
 ### FR2: Title Slide
-- Full-page `imgs/portada.png` background.
+- Decorative frame drawn in UI1 colors, with the UI1 logo in the upper-left,
+  matching the proportions of the `ui1activity.cls` cover.
 - Standard Beamer layout: presentation title (prominent, centered or upper
   area), subtitle below, then author + date in smaller text toward the bottom.
 - All text in Helvetica; title colored uired (#E4004F), remaining text white
@@ -25,11 +39,10 @@ and AI skill for scaffolding new presentations, integrated into the existing
   `\asignatura` for subject line.
 
 ### FR3: Content Slides
-- Full-page `imgs/interior.png` background on all non-title frames.
+- Decorative frame drawn natively on all non-title frames (see design note).
 - **Header band:** Solid uired (#E4004F) strip across the top.
   - Left: current section name (Helvetica, white, bold).
-  - Right: UI1 branding (logo/wordmark if a standalone logo file is available,
-    otherwise rely on the background image's built-in decoration).
+  - Right: UI1 logo cropped from `imgs/portada.png`.
 - **Footer band:** Solid uigray (#BFBFBF) strip across the bottom.
   - Left: presentation title (small, Helvetica, dark).
   - Right: slide number (small, Helvetica, dark).
@@ -49,16 +62,19 @@ and AI skill for scaffolding new presentations, integrated into the existing
   `\hypersetup` for any extra configuration.
 
 ### FR6: `bin/new-slides` CLI
-- POSIX-compatible Bash script, following the same patterns as `bin/new-activity`.
+- POSIX-compatible Bash script, following the same patterns as `bin/new-activity`:
+  positional target directory, `--dry-run`, `--help`, and abort with a non-zero
+  status if the target directory already exists.
 - Required flags: `--titulo` (presentation title), `--autor` (author).
 - Optional flags: `--asignatura`, `--subtitulo`, `--fecha` (with sensible
   defaults).
 - Scaffolds a new directory containing:
-  - A `.tex` file pre-filled with preamble, `\usetheme{ui1beamer}`, title
-    frame, and one sample content frame.
+  - A `.tex` file pre-filled with `\documentclass[aspectratio=169]{beamer}`,
+    `\usetheme{ui1beamer}`, title frame, and one sample content frame.
   - A `Makefile` with `pdf`, `clean`, and `open` targets.
-  - A symlink to `imgs/` (relative, pointing back to the repo root) so the
-    background images resolve at compile time.
+- No `imgs/` symlink is created: `make install` already symlinks `imgs/` into
+  the local texmf tree next to the theme, so `\includegraphics{imgs/portada}`
+  resolves through kpathsea exactly as it does for `ui1activity.cls`.
 
 ### FR7: AI Skill (`skills/new-slides/SKILL.md`)
 - Portable Agent Skill definition enabling `new-slides` CLI invocation from
@@ -82,17 +98,18 @@ and AI skill for scaffolding new presentations, integrated into the existing
   or LuaLaTeX dependency introduced).
 - No duplication of `imgs/` assets — the theme references them via a
   configurable path (defaulting to `imgs/`).
-- `new-slides` script is idempotent: running it twice with the same arguments
-  warns rather than overwrites.
+- `new-slides` never overwrites: running it against an existing directory
+  fails with a clear error and a non-zero exit status.
 
 ## Acceptance Criteria
 
-1. `\documentclass{beamer}` + `\usetheme{ui1beamer}` compiles without errors
-   using `pdflatex`.
-2. Title slide renders with `portada.png` background and correct UI1-styled
-   title/author/date layout.
-3. Content slides render with `interior.png` background, uired header band
-   (section name left), uigray footer band (title left, slide number right).
+1. `\documentclass[aspectratio=169]{beamer}` + `\usetheme{ui1beamer}` compiles
+   without errors using `pdflatex`, producing 16:9 pages.
+2. Title slide renders with the UI1 decorative frame, an undistorted logo, and
+   correct UI1-styled title/author/date layout.
+3. Content slides render with the decorative frame, uired header band
+   (section name left, logo right), uigray footer band (title left, slide
+   number right).
 4. All slide text uses Helvetica; frame titles are uired bold.
 5. `make install` installs the theme to the local texmf tree, `new-slides`
    to `~/bin/`, and its portable skill through the shared Agent Skill
