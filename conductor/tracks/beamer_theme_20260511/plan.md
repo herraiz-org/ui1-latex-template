@@ -73,7 +73,7 @@
         invocations for Claude Code and Gemini CLI.
 - [x] Task: Conductor - User Manual Verification 'Phase 3: AI Skill' (Protocol in workflow.md)
 
-## [ ] Phase 4: Makefile Integration
+## [x] Phase 4: Makefile Integration [checkpoint: cde6c0b]
 
 - [x] Task: Write failing BATS tests for install/uninstall targets 6d4a4e3
   - [x] Test: `make install` creates symlink for `beamerthemeui1beamer.sty`
@@ -92,7 +92,7 @@
         and compatibility-link loop.
   - [x] Mirror all additions in the `uninstall` target.
   - [x] Run BATS and confirm all tests pass.
-- [~] Task: Conductor - User Manual Verification 'Phase 4: Makefile Integration' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 4: Makefile Integration' (Protocol in workflow.md)
 
 ## [ ] Phase 5: Regression & Final Verification
 
