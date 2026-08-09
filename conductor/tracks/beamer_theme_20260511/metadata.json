@@ -1,7 +1,7 @@
 {
   "track_id": "beamer_theme_20260511",
   "type": "feature",
-  "status": "in_progress",
+  "status": "complete",
   "created_at": "2026-05-11T00:00:00Z",
   "updated_at": "2026-08-09T00:00:00Z",
   "description": "UI1 Beamer theme matching the visual identity of ui1activity.cls, with new-slides CLI and AI skill scaffolding"
