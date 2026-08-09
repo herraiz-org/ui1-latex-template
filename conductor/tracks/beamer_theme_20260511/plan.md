@@ -94,7 +94,7 @@
   - [x] Run BATS and confirm all tests pass.
 - [x] Task: Conductor - User Manual Verification 'Phase 4: Makefile Integration' (Protocol in workflow.md)
 
-## [ ] Phase 5: Regression & Final Verification
+## [x] Phase 5: Regression & Final Verification [checkpoint: 46c55dc]
 
 - [x] Task: Run full test suite 1f653b5
   - [x] Execute `bash tests/run_tests.sh tests/shell/*.bats` and confirm no
@@ -106,4 +106,4 @@
         `new-slides`, and compiled with `make pdf` — 2 pages, 453.5 x 255.1 pt,
         no LaTeX errors, images resolved through the texmf tree with no local
         `imgs` symlink. `make uninstall` left nothing behind.
-- [~] Task: Conductor - User Manual Verification 'Phase 5: Regression & Final Verification' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 5: Regression & Final Verification' (Protocol in workflow.md)
