@@ -29,6 +29,8 @@
 \renewcommand{\familydefault}{\sfdefault}
 
 \RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{tikz}
 
 % Colors
 \definecolor{uired}{HTML}{E4004F}
@@ -52,5 +54,105 @@
       Use \string\documentclass[aspectratio=169]{beamer}}
   \fi
 \fi
+
+% ---------------------------------------------------------------------------
+% Geometry of the decorative frame
+%
+% Proportions are taken from imgs/portada.png (1240x1754 px at 150 dpi): a
+% white outer margin, a gray border ring, and a red accent bar sitting on the
+% top and bottom segments of that ring, aligned with the logo. Band thickness
+% is expressed as a fraction of \paperwidth so it stays slim on a slide.
+% ---------------------------------------------------------------------------
+\newdimen\ui@margin     % white margin between paper edge and the gray ring
+\newdimen\ui@band       % thickness of the gray ring
+\newdimen\ui@inset      % distance from the paper edge to the content area
+\newdimen\ui@barx       % left edge of the red accent bar and of the logo
+\newdimen\ui@barw       % width of the red accent bar
+\newdimen\ui@logow      % width of the logo on the title slide
+\newdimen\ui@headerh    % height of the uired header band
+\newdimen\ui@footerh    % height of the uigray footer band
+\newdimen\ui@pad        % horizontal padding of text inside the bands
+
+\AtBeginDocument{%
+  \ui@margin=0.018\paperwidth
+  \ui@band=0.018\paperwidth
+  \ui@inset=\dimexpr\ui@margin+\ui@band\relax
+  \ui@barx=0.12\paperwidth
+  \ui@barw=0.24\paperwidth
+  \ui@logow=0.22\paperwidth
+  \ui@headerh=0.10\paperheight
+  \ui@footerh=0.055\paperheight
+  \ui@pad=0.02\paperwidth
+}
+
+% The UI1 logo, cropped out of imgs/portada.png. The trim values are the
+% measured margins of the logo inside the A4 artwork (595.2bp x 841.9bp), so
+% the crop keeps the logo's own aspect ratio: no distortion on 16:9 slides.
+\newcommand{\ui@logo}[1]{%
+  \includegraphics[trim=70.6bp 726.2bp 382.6bp 70.6bp,clip,width=#1]{imgs/portada}}
+
+% Optional subject line on the title slide.
+\newcommand{\asignatura}[1]{\def\ui@asignatura{#1}}
+\asignatura{}
+
+% ---------------------------------------------------------------------------
+% Background: gray ring with red accent bars, drawn on every slide
+% ---------------------------------------------------------------------------
+\setbeamertemplate{background}{%
+  \begin{tikzpicture}
+    \useasboundingbox (0,0) rectangle (\the\paperwidth,\the\paperheight);
+    % Gray ring: outer rectangle minus the content area.
+    \fill[uiframegray]
+      (\the\ui@margin,\the\ui@margin)
+      rectangle (\the\dimexpr\paperwidth-\ui@margin\relax,
+                 \the\dimexpr\paperheight-\ui@margin\relax);
+    \fill[white]
+      (\the\ui@inset,\the\ui@inset)
+      rectangle (\the\dimexpr\paperwidth-\ui@inset\relax,
+                 \the\dimexpr\paperheight-\ui@inset\relax);
+    % Red accent bars on the top and bottom segments of the ring.
+    \fill[uired]
+      (\the\ui@barx,\the\dimexpr\paperheight-\ui@inset\relax)
+      rectangle (\the\dimexpr\ui@barx+\ui@barw\relax,
+                 \the\dimexpr\paperheight-\ui@margin\relax);
+    \fill[uired]
+      (\the\ui@barx,\the\ui@margin)
+      rectangle (\the\dimexpr\ui@barx+\ui@barw\relax,\the\ui@inset);
+  \end{tikzpicture}}
+
+% Beamer's navigation symbols do not belong on the UI1 layout.
+\setbeamertemplate{navigation symbols}{}
+
+% ---------------------------------------------------------------------------
+% Title slide
+% ---------------------------------------------------------------------------
+\setbeamerfont{title}{series=\bfseries,size=\LARGE}
+\setbeamerfont{subtitle}{series=\mdseries,size=\large}
+\setbeamercolor{title}{fg=uired}
+\setbeamercolor{subtitle}{fg=black}
+\setbeamercolor{author}{fg=black}
+\setbeamercolor{date}{fg=black}
+
+\defbeamertemplate*{title page}{ui1beamer}{%
+  \vskip0.03\paperheight
+  \hspace*{\dimexpr\ui@barx-\beamer@leftmargin\relax}\ui@logo{\ui@logow}%
+  \vfill
+  {\centering
+    {\usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par}%
+    \ifx\insertsubtitle\@empty\else
+      \vskip0.02\paperheight
+      {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+    \fi
+    \ifx\ui@asignatura\@empty\else
+      \vskip0.03\paperheight
+      {\small\color{uired}\ui@asignatura\par}%
+    \fi
+    \vskip0.05\paperheight
+    {\small\usebeamercolor[fg]{author}\insertauthor\par}%
+    \vskip0.01\paperheight
+    {\small\color{gray}\insertdate\par}%
+    \par}%
+  \vfill
+  \vskip0.03\paperheight}
 
 \mode<all>
