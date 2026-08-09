@@ -33,6 +33,31 @@ compile_fixture() {
   pdflatex -interaction=nonstopmode -halt-on-error test.tex > compile.log 2>&1
 }
 
+# Print the RGB value of one pixel of a rendered page: page_pixel PAGE X Y,
+# with X and Y as fractions of the page measured from the top-left corner.
+page_pixel() {
+  pdftoppm -r 50 -f "$1" -l "$1" test.pdf page > /dev/null 2>&1
+  python3 "$PROJECT_ROOT/tests/pixel_probe.py" pixel "$(echo page-*.ppm)" "$2" "$3"
+}
+
+# Count pixels of a rendered page matching a color:
+# page_color_count PAGE X0 Y0 X1 Y1 R G B
+page_color_count() {
+  local page="$1"
+  shift
+  pdftoppm -r 150 -f "$page" -l "$page" test.pdf zone > /dev/null 2>&1
+  python3 "$PROJECT_ROOT/tests/pixel_probe.py" count "$(echo zone-*.ppm)" "$@"
+}
+
+# Assert an RGB triple is within tolerance of an expected color.
+assert_color() {
+  local actual="$1" er="$2" eg="$3" eb="$4"
+  read -r ar ag ab <<< "$actual"
+  awk -v ar="$ar" -v ag="$ag" -v ab="$ab" -v er="$er" -v eg="$eg" -v eb="$eb" '
+    function abs(v) { return v < 0 ? -v : v }
+    BEGIN { exit !(abs(ar-er) <= 12 && abs(ag-eg) <= 12 && abs(ab-eb) <= 12) }'
+}
+
 @test "theme loads with \\usetheme{ui1beamer} and compiles" {
   run compile_fixture test_beamer_loads
   [ "$status" -eq 0 ]
@@ -79,4 +104,38 @@ compile_fixture() {
     diff=$(awk -v a="$xppi" -v b="$yppi" 'BEGIN {d = a - b; print (d < 0 ? -d : d)}')
     [ "$(awk -v d="$diff" 'BEGIN {print (d <= 1) ? 1 : 0}')" -eq 1 ]
   done <<< "$output"
+}
+
+@test "content slides show the section name, presentation title and slide number" {
+  run compile_fixture test_beamer_content
+  [ "$status" -eq 0 ]
+  pdftotext -f 2 -l 2 test.pdf page2.txt
+  grep -q "Primera Seccion" page2.txt
+  grep -q "Presentacion de prueba" page2.txt
+  grep -q "2" page2.txt
+}
+
+@test "content slides carry a uired header band" {
+  compile_fixture test_beamer_content
+  run page_pixel 1 0.5 0.06
+  [ "$status" -eq 0 ]
+  # uired = #E4004F
+  assert_color "$output" 228 0 79
+}
+
+@test "content slides carry a uigray footer band" {
+  compile_fixture test_beamer_content
+  run page_pixel 1 0.5 0.955
+  [ "$status" -eq 0 ]
+  # uigray = #BFBFBF
+  assert_color "$output" 191 191 191
+}
+
+@test "frame titles are uired" {
+  compile_fixture test_beamer_content
+  # The frame title sits in the band of content just below the header, on the
+  # left half of the slide; its glyphs must be drawn in uired.
+  run page_color_count 1 0.05 0.14 0.60 0.26 228 0 79
+  [ "$status" -eq 0 ]
+  [ "$output" -gt 50 ]
 }
