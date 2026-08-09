@@ -26,6 +26,12 @@ INSTALL_AGENT_SKILLS ?= $(HOME)/.agents/skills
 SKILL_COMPAT_DIRS ?= $(INSTALL_SKILLS) $(INSTALL_GEMINI_SKILLS) $(HOME)/.gemini/config/skills $(HOME)/.gemini/antigravity-cli/skills
 ZSHRC ?= $(HOME)/.zshrc
 
+# CLI scripts copied to $(INSTALL_BIN) and skills installed under
+# $(INSTALL_AGENT_SKILLS), each with compatibility links in
+# $(SKILL_COMPAT_DIRS).
+CLI_SCRIPTS = new-activity new-slides
+SKILLS = new-activity new-slides
+
 .PHONY: all clean install uninstall open
 
 TESTS = $(wildcard tests/latex/*.tex)
@@ -46,57 +52,67 @@ $(MAIN).pdf: $(MAIN).tex imgs/portada.png imgs/interior.png
 install:
 	mkdir -p "$(TEXMF_DIR)"
 	ln -sf "$(PROJECT_ROOT)/ui1activity.cls" "$(TEXMF_DIR)/ui1activity.cls"
+	ln -sf "$(PROJECT_ROOT)/beamerthemeui1beamer.sty" "$(TEXMF_DIR)/beamerthemeui1beamer.sty"
 	rm -f "$(TEXMF_DIR)/imgs"
 	ln -s "$(PROJECT_ROOT)/imgs" "$(TEXMF_DIR)/imgs"
 	mkdir -p "$(INSTALL_BIN)"
-	cp "$(PROJECT_ROOT)/bin/new-activity" "$(INSTALL_BIN)/new-activity"
-	chmod +x "$(INSTALL_BIN)/new-activity"
+	@for script in $(CLI_SCRIPTS); do \
+		cp "$(PROJECT_ROOT)/bin/$$script" "$(INSTALL_BIN)/$$script"; \
+		chmod +x "$(INSTALL_BIN)/$$script"; \
+	done
 	@if ! grep -qF 'export PATH="$$HOME/bin:$$PATH"' "$(ZSHRC)" 2>/dev/null; then \
 		echo 'export PATH="$$HOME/bin:$$PATH"' >> "$(ZSHRC)"; \
 	fi
-	mkdir -p "$(INSTALL_AGENT_SKILLS)/new-activity"
-	cp "$(PROJECT_ROOT)/skills/new-activity/SKILL.md" "$(INSTALL_AGENT_SKILLS)/new-activity/SKILL.md"
-	@canonical="$(INSTALL_AGENT_SKILLS)/new-activity"; \
-	for skills_dir in $(SKILL_COMPAT_DIRS); do \
-		target="$$skills_dir/new-activity"; \
-		[ "$$target" = "$$canonical" ] && continue; \
-		mkdir -p "$$skills_dir"; \
-		if [ -L "$$target" ]; then \
-			if [ "$$(readlink "$$target")" != "$$canonical" ]; then \
-				echo "Error: refusing to replace skill symlink '$$target'" >&2; exit 1; \
+	@for skill in $(SKILLS); do \
+		mkdir -p "$(INSTALL_AGENT_SKILLS)/$$skill"; \
+		cp "$(PROJECT_ROOT)/skills/$$skill/SKILL.md" "$(INSTALL_AGENT_SKILLS)/$$skill/SKILL.md"; \
+		canonical="$(INSTALL_AGENT_SKILLS)/$$skill"; \
+		for skills_dir in $(SKILL_COMPAT_DIRS); do \
+			target="$$skills_dir/$$skill"; \
+			[ "$$target" = "$$canonical" ] && continue; \
+			mkdir -p "$$skills_dir"; \
+			if [ -L "$$target" ]; then \
+				if [ "$$(readlink "$$target")" != "$$canonical" ]; then \
+					echo "Error: refusing to replace skill symlink '$$target'" >&2; exit 1; \
+				fi; \
+				rm -f "$$target"; \
+			elif [ -d "$$target" ]; then \
+				entries=$$(find "$$target" -mindepth 1 -maxdepth 1 -print | wc -l); \
+				if [ "$$entries" -ne 1 ] || [ ! -f "$$target/SKILL.md" ]; then \
+					echo "Error: refusing to replace non-managed skill directory '$$target'" >&2; exit 1; \
+				fi; \
+				rm -f "$$target/SKILL.md"; rmdir "$$target"; \
+			elif [ -e "$$target" ]; then \
+				echo "Error: refusing to replace '$$target'" >&2; exit 1; \
 			fi; \
-			rm -f "$$target"; \
-		elif [ -d "$$target" ]; then \
-			entries=$$(find "$$target" -mindepth 1 -maxdepth 1 -print | wc -l); \
-			if [ "$$entries" -ne 1 ] || [ ! -f "$$target/SKILL.md" ]; then \
-				echo "Error: refusing to replace non-managed skill directory '$$target'" >&2; exit 1; \
-			fi; \
-			rm -f "$$target/SKILL.md"; rmdir "$$target"; \
-		elif [ -e "$$target" ]; then \
-			echo "Error: refusing to replace '$$target'" >&2; exit 1; \
-		fi; \
-		ln -s "$$canonical" "$$target"; \
+			ln -s "$$canonical" "$$target"; \
+		done; \
 	done
 
 uninstall:
 	rm -f "$(TEXMF_DIR)/ui1activity.cls"
+	rm -f "$(TEXMF_DIR)/beamerthemeui1beamer.sty"
 	rm -f "$(TEXMF_DIR)/imgs"
-	rm -f "$(INSTALL_BIN)/new-activity"
-	@canonical="$(INSTALL_AGENT_SKILLS)/new-activity"; \
-	for skills_dir in $(SKILL_COMPAT_DIRS); do \
-		target="$$skills_dir/new-activity"; \
-		[ "$$target" = "$$canonical" ] && continue; \
-		if [ -L "$$target" ] && [ "$$(readlink "$$target")" = "$$canonical" ]; then \
-			rm -f "$$target"; \
-		elif [ -d "$$target" ] && [ -f "$$target/SKILL.md" ]; then \
-			entries=$$(find "$$target" -mindepth 1 -maxdepth 1 -print | wc -l); \
-			if [ "$$entries" -eq 1 ]; then \
-				rm -f "$$target/SKILL.md"; rmdir "$$target"; \
-			fi; \
-		fi; \
+	@for script in $(CLI_SCRIPTS); do \
+		rm -f "$(INSTALL_BIN)/$$script"; \
 	done
-	rm -f "$(INSTALL_AGENT_SKILLS)/new-activity/SKILL.md"
-	-rmdir "$(INSTALL_AGENT_SKILLS)/new-activity" 2>/dev/null
+	@for skill in $(SKILLS); do \
+		canonical="$(INSTALL_AGENT_SKILLS)/$$skill"; \
+		for skills_dir in $(SKILL_COMPAT_DIRS); do \
+			target="$$skills_dir/$$skill"; \
+			[ "$$target" = "$$canonical" ] && continue; \
+			if [ -L "$$target" ] && [ "$$(readlink "$$target")" = "$$canonical" ]; then \
+				rm -f "$$target"; \
+			elif [ -d "$$target" ] && [ -f "$$target/SKILL.md" ]; then \
+				entries=$$(find "$$target" -mindepth 1 -maxdepth 1 -print | wc -l); \
+				if [ "$$entries" -eq 1 ]; then \
+					rm -f "$$target/SKILL.md"; rmdir "$$target"; \
+				fi; \
+			fi; \
+		done; \
+		rm -f "$$canonical/SKILL.md"; \
+		rmdir "$$canonical" 2>/dev/null || true; \
+	done
 
 open: $(MAIN).pdf
 	xdg-open $(MAIN).pdf
