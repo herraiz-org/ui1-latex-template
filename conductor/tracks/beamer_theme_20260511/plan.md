@@ -24,21 +24,22 @@
         Helvetica; title colored uired, remaining text appropriately legible.
   - [x] Add optional `\asignatura` command.
   - [x] Confirm title slide test passes.
-- [~] Task: Write failing tests for content slide header/footer bands
-  - [ ] Fixture with a regular content frame; assert uired header band and
+- [x] Task: Write failing tests for content slide header/footer bands e2e68ce
+  - [x] Fixture with a regular content frame; assert uired header band and
         uigray footer band appear (via PDF color inspection or visual diff
         against a reference PDF).
-- [ ] Task: Implement content slide layout
-  - [ ] Draw the decorative frame on all non-title frames.
-  - [ ] Implement uired header band: section name (left, white bold Helvetica)
-        and the cropped UI1 logo (right).
-  - [ ] Implement uigray footer band: presentation title (left) + slide
+- [x] Task: Implement content slide layout d1264e1
+  - [x] Draw the decorative frame on all non-title frames.
+  - [x] Implement uired header band: section name (left, white bold Helvetica)
+        and the UI1 wordmark (right, set as text: the logo artwork is dark
+        gray on transparent and is illegible over uired).
+  - [x] Implement uigray footer band: presentation title (left) + slide
         number (right).
-  - [ ] Style frame titles: bold Helvetica, uired color.
-  - [ ] Style Beamer block environments (block, exampleblock, alertblock)
+  - [x] Style frame titles: bold Helvetica, uired color.
+  - [x] Style Beamer block environments (block, exampleblock, alertblock)
         with UI1 colors.
-  - [ ] Confirm content slide tests pass.
-- [ ] Task: Conductor - User Manual Verification 'Phase 1: Theme Foundation' (Protocol in workflow.md)
+  - [x] Confirm content slide tests pass.
+- [~] Task: Conductor - User Manual Verification 'Phase 1: Theme Foundation' (Protocol in workflow.md)
 
 ## [ ] Phase 2: CLI Scaffolding (`bin/new-slides`)
 
