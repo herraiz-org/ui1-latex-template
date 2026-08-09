@@ -1,8 +1,0 @@
-{
-  "track_id": "nohangbib_20260503",
-  "type": "bug",
-  "status": "new",
-  "created_at": "2026-05-03T12:00:00Z",
-  "updated_at": "2026-05-03T12:00:00Z",
-  "description": "Align second line of references with the first line (disable hanging indent)"
-}

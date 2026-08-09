@@ -14,12 +14,16 @@ same identity onto 16:9 slides.
 
 ## Prerequisites
 
-- **TeX Live** (Linux) or **MacTeX** (macOS) with the following packages:
-  - `geometry`, `eso-pic`, `graphicx`, `raleway`, `xcolor`, `colortbl`,
-    `tabularx`
-  - `fancyhdr`, `ifthen`, `amsmath`, `biblatex`, `listings`, `babel` (Spanish)
+- **TeX Live** (Linux) or **MacTeX** (macOS). Loaded by the class and the theme:
+  - `geometry`, `eso-pic`, `graphicx`, `xcolor`, `colortbl`, `tabularx`
+  - `fancyhdr`, `ifthen`, `amsmath`, `icomma`, `parskip`, `titlesec`, `caption`
+  - `biblatex`, `csquotes`, `babel` (Spanish)
   - `beamer`, `tikz` — presentation theme
   - `hyperref` — PDF bookmarks and metadata
+- Loaded by *your* document when you need it, not by the class:
+  - `listings` — source code. `examples/plantilla.tex` sets up a branded style
+    for it, and `new-activity` writes the same block commented out in the
+    generated `.tex`.
 - **biber** — bibliography processor (included with TeX Live / MacTeX)
 - **BATS** — only needed to run the test suite (included as a git submodule at
   `tests/bats/`)
@@ -97,18 +101,8 @@ ui1_template/
 ├── bin/
 │   ├── new-activity          # CLI script — scaffolds a new activity directory
 │   └── new-slides            # CLI script — scaffolds a new presentation
-├── conductor/                # Spec-driven development workflow (Conductor)
-│   ├── archive/              # Completed and archived tracks
-│   ├── code_styleguides/     # Coding style guidelines
-│   ├── tracks/               # Active track specs and plans
-│   ├── index.md              # Conductor index / entry point
-│   ├── product-guidelines.md # Design and quality guidelines
-│   ├── product.md            # Product vision and goals
-│   ├── tech-stack.md         # Technology stack reference
-│   ├── tracks.md             # Track registry
-│   └── workflow.md           # Development workflow reference
 ├── examples/
-│   ├── plantilla.tex         # Example LaTeX source using ui1activity
+│   ├── plantilla.tex         # Worked example: figures, tables, math, code, citations
 │   ├── presentacion.tex      # Example presentation using ui1beamer
 │   └── referencias.bib       # Example bibliography file
 ├── imgs/
@@ -122,6 +116,7 @@ ui1_template/
 │   └── run_tests.sh          # Test runner wrapper
 ├── ui1activity.cls           # LaTeX document class
 ├── beamerthemeui1beamer.sty  # Beamer theme (\usetheme{ui1beamer})
+├── CLAUDE.md                 # Design constraints and conventions for contributors
 ├── Makefile                  # Build, install, and test targets
 └── skills/
     ├── new-activity/
@@ -180,9 +175,28 @@ overrides remain supported.
 ### Files created
 
 Inside `<directory>/`:
-- `<directory>.tex` — LaTeX source pre-filled with all metadata
-- `referencias.bib` — empty bibliography stub
+- `<directory>.tex` — LaTeX source pre-filled with all metadata, plus
+  commented-out examples (see below)
+- `referencias.bib` — commented-out `@legislation` and `@jurisprudencia`
+  entries showing every field each type needs
 - `Makefile` — with `pdf`, `clean`, and `open` targets
+
+### Commented-out examples
+
+The generated `.tex` carries two blocks delimited by
+`% --- BEGIN/END EJEMPLOS / EXAMPLES ---`: a `listings` setup for the preamble,
+and ready-made snippets for figures, branded tables, equations, code listings,
+and citations of the two legal entry types. They are inert, so the activity
+compiles as generated — uncomment what you need and delete the rest. Lines
+starting with `%%` are explanatory prose and stay comments either way.
+
+`examples/plantilla.tex` is the same material, live and compiled, if you would
+rather copy from a working document:
+
+```bash
+make            # compiles examples/plantilla.pdf
+make open       # compiles and opens it
+```
 
 ---
 
@@ -257,7 +271,7 @@ metadata, etc.):
 bash tests/run_tests.sh tests/shell/*.bats
 ```
 
-All 111 tests should pass.
+All 121 tests should pass.
 
 **Shell tests** (Makefile install/uninstall targets and cover page formatting):
 
@@ -357,8 +371,9 @@ Example:
   intentional.
 - Run the full test suite before submitting changes.
 - Use `git mv` for file moves to preserve history.
-- Follow the [Conductor](conductor/) spec-driven workflow for non-trivial
-  changes.
+- Read [CLAUDE.md](CLAUDE.md) before changing the class or the theme — it
+  records the design constraints inherited from the original template and the
+  reasoning behind the package choices.
 
 ---
 

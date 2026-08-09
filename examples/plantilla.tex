@@ -1,5 +1,22 @@
 \documentclass[12pt,palatino,nohangbib]{ui1activity}
 
+% El class carga lo que necesita toda actividad. Los paquetes que dependen del
+% contenido se añaden aquí, en el documento.
+% The class loads what every activity needs. Content-specific packages go here,
+% in the document itself.
+\usepackage{listings}
+\lstset{
+	basicstyle=\ttfamily\small,
+	keywordstyle=\color{uired}\bfseries,
+	commentstyle=\itshape\color{uigray!80!black},
+	stringstyle=\color{uired!70!black},
+	frame=single,
+	rulecolor=\color{uigray},
+	breaklines=true,
+	showstringspaces=false,
+	captionpos=b,
+}
+
 \addbibresource{referencias.bib}
 
 % ==============================================================
@@ -19,8 +36,74 @@
 \tableofcontents
 \newpage
 
-\section{Bibliography Test}
-As mentioned in \cite{sample} and \cite{knuth}, LaTeX is powerful.
+\section{Figuras}
+
+Las figuras usan \texttt{graphicx}, que ya carga el class. El pie va en
+cursiva pequeña con la etiqueta en negrita, y se aplica un margen lateral de
+1\,cm.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[trim=70.6bp 726.2bp 382.6bp 70.6bp,clip,width=0.4\linewidth]{imgs/portada}
+	\caption{Pie de figura descriptivo. / Descriptive figure caption.}
+	\label{fig:ejemplo}
+\end{figure}
+
+Como se aprecia en la Figura~\ref{fig:ejemplo}, las referencias cruzadas
+funcionan con \verb|\label| y \verb|\ref|.
+
+\section{Tablas}
+
+\texttt{tabularx} reparte el ancho sobrante entre las columnas \texttt{X}, y
+\texttt{colortbl} —que llega con \texttt{xcolor[table]}— colorea las filas con
+la paleta de la universidad.
+
+\begin{table}[htbp]
+	\centering
+	\begin{tabularx}{\linewidth}{|X|r|}
+		\hline
+		\rowcolor{uired}
+		\textcolor{white}{\textbf{Concepto}} & \textcolor{white}{\textbf{Importe}} \\
+		\hline
+		Ingresos                             & 1.250,00                           \\
+		\hline
+		\rowcolor{uigray!40} Gastos          & 780,50                             \\
+		\hline
+	\end{tabularx}
+	\caption{Pie de tabla descriptivo. / Descriptive table caption.}
+	\label{tab:ejemplo}
+\end{table}
+
+\section{Matemáticas}
+
+El tipo de descuento aplicado es del \(3,5\%\) anual: la coma decimal se
+escribe tal cual y \texttt{icomma} corrige el espaciado, sin necesidad de
+\verb|{,}|.
+
+\begin{equation}
+	\mathrm{VAN} = \sum_{t=0}^{n} \frac{F_t}{(1 + k)^{t}} - F_0
+	\label{eq:van}
+\end{equation}
+
+La ecuación~\eqref{eq:van} descuenta los flujos \(F_t\) a la tasa \(k\).
+
+\section{Código fuente}
+
+\texttt{listings} no lo carga el class: se añade en el preámbulo del documento
+cuando hace falta, con el estilo que se ve al principio de este archivo.
+
+\begin{lstlisting}[language=Python, caption={Cálculo del VAN. / Computing NPV.}]
+def van(flujos, k):
+    """Valor actual neto de una serie de flujos de caja."""
+    return sum(f / (1 + k) ** t for t, f in enumerate(flujos))
+\end{lstlisting}
+
+\section{Citas}
+
+El class define dos tipos de entrada propios para fuentes jurídicas españolas,
+además de los tipos habituales de \texttt{biblatex}. Según la legislación
+vigente \cite{lsc2010} y la doctrina del Tribunal Supremo \cite{sts2020},
+conviene citar también la bibliografía académica \cite{sample, knuth}.
 
 \makebibliography
 

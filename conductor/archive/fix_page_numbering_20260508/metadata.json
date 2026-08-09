@@ -1,8 +1,0 @@
-{
-  "track_id": "fix_page_numbering_20260508",
-  "type": "bug",
-  "status": "new",
-  "created_at": "2026-05-08T00:00:00Z",
-  "updated_at": "2026-05-08T00:00:00Z",
-  "description": "Fix page numbering so the first content page (after cover and TOC) shows page number 1 instead of 2"
-}

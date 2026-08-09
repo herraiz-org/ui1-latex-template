@@ -1,8 +1,0 @@
-{
-  "track_id": "structure_refactor_20260508",
-  "type": "chore",
-  "status": "new",
-  "created_at": "2026-05-08T00:00:00Z",
-  "updated_at": "2026-05-08T00:00:00Z",
-  "description": "Evaluate and reorganize the project structure following software engineering best practices"
-}

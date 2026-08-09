@@ -1,8 +1,0 @@
-{
-  "track_id": "legislation_20260516",
-  "type": "feature",
-  "status": "new",
-  "created_at": "2026-05-16T00:00:00Z",
-  "updated_at": "2026-05-16T00:00:00Z",
-  "description": "Custom legislation bibliography support: dedicated biblatex driver and separate section for legislative references"
-}

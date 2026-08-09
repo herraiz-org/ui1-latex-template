@@ -13,12 +13,6 @@ under it.
 --------------------------------------------------------------------
 Third-party content
 
-conductor/workflow.md and conductor/code_styleguides/general.md are
-derived from Conductor (https://github.com/fcoury/conductor),
-Copyright the Conductor authors, licensed under the Apache License,
-Version 2.0. conductor/workflow.md has been modified from the
-upstream template (procedure steps renumbered).
-
 The test suite depends on bats-core (https://github.com/bats-core/
 bats-core), Copyright (c) 2017 bats-core contributors, licensed under
 the MIT License. It is referenced as the git submodule at tests/bats

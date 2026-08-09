@@ -146,18 +146,104 @@ cat > "$TARGET_DIR/${BASENAME}.tex" <<TEX
 \\alumno{${ALUMNO}}
 \\fecha{${FECHA}}
 % ==============================================================
+TEX
 
-\\begin{document}
+# Static part, written literally: the class only loads what every activity
+# needs, so the packages a student may want on top (listings for source code)
+# and the branded snippets that use them ship commented out.
+cat >> "$TARGET_DIR/${BASENAME}.tex" <<'TEX'
 
-\\makecustomcover
-\\tableofcontents
-\\newpage
+% --- BEGIN EJEMPLOS / EXAMPLES (preámbulo / preamble) ---
+%% Para incluir código fuente, descomenta estas líneas.
+%% To typeset source code, uncomment these lines.
+%
+% \usepackage{listings}
+% \lstset{
+%   basicstyle=\ttfamily\small,
+%   keywordstyle=\color{uired}\bfseries,
+%   commentstyle=\itshape\color{uigray!80!black},
+%   stringstyle=\color{uired!70!black},
+%   frame=single,
+%   rulecolor=\color{uigray},
+%   breaklines=true,
+%   showstringspaces=false,
+%   captionpos=b,
+% }
+% --- END EJEMPLOS / EXAMPLES (preámbulo / preamble) ---
 
-\\section{Introducción}
+\begin{document}
 
-\\makebibliography
+\makecustomcover
+\tableofcontents
+\newpage
 
-\\end{document}
+\section{Introducción}
+
+% --- BEGIN EJEMPLOS / EXAMPLES (contenido / content) ---
+%% Ejemplos listos para usar: descomenta lo que necesites y borra el resto.
+%% Ready-made examples: uncomment what you need and delete the rest.
+%
+% \subsection{Figuras / Figures}
+%
+% \begin{figure}[htbp]
+%   \centering
+%   \includegraphics[width=0.6\linewidth]{mi-figura.png}
+%   \caption{Pie de figura descriptivo. / Descriptive figure caption.}
+%   \label{fig:ejemplo}
+% \end{figure}
+%
+% Como se aprecia en la Figura~\ref{fig:ejemplo}, ...
+%
+% \subsection{Tablas / Tables}
+%
+% \begin{table}[htbp]
+%   \centering
+%   \begin{tabularx}{\linewidth}{|X|r|}
+%     \hline
+%     \rowcolor{uired}
+%     \textcolor{white}{\textbf{Concepto}} & \textcolor{white}{\textbf{Importe}} \\
+%     \hline
+%     Ingresos             & 1.250,00 \\
+%     \hline
+%     \rowcolor{uigray!40} Gastos & 780,50 \\
+%     \hline
+%   \end{tabularx}
+%   \caption{Pie de tabla descriptivo. / Descriptive table caption.}
+%   \label{tab:ejemplo}
+% \end{table}
+%
+% \subsection{Matemáticas / Math}
+%
+% El tipo de descuento aplicado es del \(3,5\%\) anual: la coma decimal se
+% escribe tal cual y el espaciado se corrige solo.
+%
+% \begin{equation}
+%   \mathrm{VAN} = \sum_{t=0}^{n} \frac{F_t}{(1 + k)^{t}} - F_0
+%   \label{eq:van}
+% \end{equation}
+%
+% \subsection{Código / Source code}
+%
+%% Requiere descomentar el bloque de \texttt{listings} del preámbulo.
+%% Requires the \texttt{listings} block in the preamble.
+%
+% \begin{lstlisting}[language=Python, caption={Cálculo del VAN. / Computing NPV.}]
+% def van(flujos, k):
+%     return sum(f / (1 + k) ** t for t, f in enumerate(flujos))
+% \end{lstlisting}
+%
+% \subsection{Citas / Citations}
+%
+%% Descomenta también las entradas de referencias.bib para que estas citas
+%% resuelvan. / Uncomment the referencias.bib entries too.
+%
+% Según la legislación vigente \cite{lott1987} y la doctrina del Tribunal
+% Supremo \cite{sts751_1984}, ...
+% --- END EJEMPLOS / EXAMPLES (contenido / content) ---
+
+\makebibliography
+
+\end{document}
 TEX
 
 cat > "$TARGET_DIR/referencias.bib" <<'BIB'

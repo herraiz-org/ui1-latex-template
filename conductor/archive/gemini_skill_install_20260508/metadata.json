@@ -1,8 +1,0 @@
-{
-  "track_id": "gemini_skill_install_20260508",
-  "type": "chore",
-  "status": "new",
-  "created_at": "2026-05-08T00:00:00Z",
-  "updated_at": "2026-05-08T00:00:00Z",
-  "description": "Install new-activity Skill for Gemini CLI"
-}

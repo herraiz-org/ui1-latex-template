@@ -1,8 +1,0 @@
-{
-  "track_id": "legislation_cite_format_20260517",
-  "type": "feature",
-  "status": "new",
-  "created_at": "2026-05-17T00:00:00Z",
-  "updated_at": "2026-05-17T00:00:00Z",
-  "description": "Cambiar el formato de citas en texto de @legislation para mostrar título corto (sin número de ley ni fecha) en lugar del título completo"
-}
