@@ -1,0 +1,56 @@
+% Copyright 2026 Israel Herraiz <isra@herraiz.org>
+%
+% Licensed under the Apache License, Version 2.0 (the "License");
+% you may not use this file except in compliance with the License.
+% You may obtain a copy of the License at
+%
+%     http://www.apache.org/licenses/LICENSE-2.0
+%
+% Unless required by applicable law or agreed to in writing, software
+% distributed under the License is distributed on an "AS IS" BASIS,
+% WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+% implied. See the License for the specific language governing
+% permissions and limitations under the License.
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamerthemeui1beamer}[2026/08/09 UI1 Beamer Theme]
+% Loaded with \usetheme{ui1beamer}; beamer maps that name to this file.
+
+\mode<presentation>
+
+% Encoding and language
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[english,spanish,es-tabla]{babel}
+\RequirePackage{icomma}
+
+% Fonts -- Helvetica everywhere, as in ui1activity.cls
+\RequirePackage[scaled=0.95]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+\RequirePackage{amsmath}
+
+% Colors
+\definecolor{uired}{HTML}{E4004F}
+\definecolor{uigray}{HTML}{BFBFBF}
+% Lighter gray of the printed template's decorative border, sampled from
+% imgs/portada.png; distinct from uigray, which the footer band uses.
+\definecolor{uiframegray}{HTML}{E3E7E9}
+
+% 16:9 is a beamer class option (\documentclass[aspectratio=169]{beamer});
+% a theme cannot set it, so warn when the slides are a different shape.
+\newdimen\ui@expectedwidth
+\ui@expectedwidth=\dimexpr\paperheight*16/9\relax
+\ifdim\dimexpr\ui@expectedwidth-\paperwidth\relax>1pt
+  \PackageWarning{beamerthemeui1beamer}{%
+    This theme is designed for 16:9 slides.\MessageBreak
+    Use \string\documentclass[aspectratio=169]{beamer}}
+\else
+  \ifdim\dimexpr\paperwidth-\ui@expectedwidth\relax>1pt
+    \PackageWarning{beamerthemeui1beamer}{%
+      This theme is designed for 16:9 slides.\MessageBreak
+      Use \string\documentclass[aspectratio=169]{beamer}}
+  \fi
+\fi
+
+\mode<all>
