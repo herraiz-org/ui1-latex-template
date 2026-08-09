@@ -102,5 +102,5 @@ open: $(MAIN).pdf
 	xdg-open $(MAIN).pdf
 
 clean:
-	rm -f *.aux *.log *.out *.pdf *.bbl *.bcf *.blg *.run.xml *.toc
-	rm -f $(MAIN_DIR)/*.aux $(MAIN_DIR)/*.log $(MAIN_DIR)/*.out $(MAIN_DIR)/*.pdf $(MAIN_DIR)/*.bbl $(MAIN_DIR)/*.bcf $(MAIN_DIR)/*.blg $(MAIN_DIR)/*.run.xml $(MAIN_DIR)/*.toc
+	rm -f *.aux *.log *.out *.pdf *.bbl *.bcf *.blg *.run.xml *.toc *.nav *.snm *.vrb
+	rm -f $(MAIN_DIR)/*.aux $(MAIN_DIR)/*.log $(MAIN_DIR)/*.out $(MAIN_DIR)/*.pdf $(MAIN_DIR)/*.bbl $(MAIN_DIR)/*.bcf $(MAIN_DIR)/*.blg $(MAIN_DIR)/*.run.xml $(MAIN_DIR)/*.toc $(MAIN_DIR)/*.nav $(MAIN_DIR)/*.snm $(MAIN_DIR)/*.vrb

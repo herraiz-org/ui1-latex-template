@@ -10,5 +10,8 @@
 *-blx.bib
 *.synctex.gz
 *.toc
+*.nav
+*.snm
+*.vrb
 .*.~undo-tree~
 plantilla.dvi
