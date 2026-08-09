@@ -43,26 +43,26 @@
 
 ## [ ] Phase 2: CLI Scaffolding (`bin/new-slides`)
 
-- [ ] Task: Write failing BATS tests for `bin/new-slides`
-  - [ ] Test: script exits non-zero when `--titulo`, `--autor`, or the
+- [x] Task: Write failing BATS tests for `bin/new-slides` 5c5fe7f
+  - [x] Test: script exits non-zero when `--titulo`, `--autor`, or the
         positional directory are missing.
-  - [ ] Test: script creates the expected directory structure with `.tex`
+  - [x] Test: script creates the expected directory structure with `.tex`
         and `Makefile`.
-  - [ ] Test: generated `.tex` contains `\documentclass[aspectratio=169]{beamer}`,
+  - [x] Test: generated `.tex` contains `\documentclass[aspectratio=169]{beamer}`,
         `\usetheme{ui1beamer}`, and the supplied `--titulo` and `--autor` values.
-  - [ ] Test: script aborts with a non-zero status when the target directory
+  - [x] Test: script aborts with a non-zero status when the target directory
         already exists, leaving it untouched.
-  - [ ] Run BATS and confirm all new tests fail.
-- [ ] Task: Implement `bin/new-slides`
-  - [ ] Write POSIX-compatible Bash script modelled on `bin/new-activity`.
-  - [ ] Parse flags: `--titulo` (required), `--autor` (required),
+  - [x] Run BATS and confirm all new tests fail.
+- [x] Task: Implement `bin/new-slides` 4736d6c
+  - [x] Write POSIX-compatible Bash script modelled on `bin/new-activity`.
+  - [x] Parse flags: `--titulo` (required), `--autor` (required),
         `--asignatura`, `--subtitulo`, `--fecha` (optional with defaults),
         plus `--dry-run` and `--help`.
-  - [ ] Scaffold output directory: `.tex` and `Makefile` (pdf/clean/open
+  - [x] Scaffold output directory: `.tex` and `Makefile` (pdf/clean/open
         targets). Images resolve through the texmf tree, so no symlink.
-  - [ ] Run BATS and confirm all new tests pass.
-  - [ ] Confirm `shellcheck bin/*` is clean.
-- [ ] Task: Conductor - User Manual Verification 'Phase 2: CLI Scaffolding' (Protocol in workflow.md)
+  - [x] Run BATS and confirm all new tests pass.
+  - [x] Confirm `shellcheck bin/*` is clean.
+- [~] Task: Conductor - User Manual Verification 'Phase 2: CLI Scaffolding' (Protocol in workflow.md)
 
 ## [ ] Phase 3: AI Skill
 
