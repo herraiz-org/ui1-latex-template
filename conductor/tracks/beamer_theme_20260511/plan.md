@@ -1,6 +1,6 @@
 # Plan: UI1 Beamer Theme
 
-## [ ] Phase 1: Theme Foundation
+## [x] Phase 1: Theme Foundation [checkpoint: b525ccc]
 
 - [x] Task: Write failing LaTeX compilation test for `\usetheme{ui1beamer}` 738bdc6
   - [x] Create `tests/latex/test_beamer_loads.tex` — minimal Beamer doc that
@@ -39,7 +39,7 @@
   - [x] Style Beamer block environments (block, exampleblock, alertblock)
         with UI1 colors.
   - [x] Confirm content slide tests pass.
-- [~] Task: Conductor - User Manual Verification 'Phase 1: Theme Foundation' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 1: Theme Foundation' (Protocol in workflow.md)
 
 ## [ ] Phase 2: CLI Scaffolding (`bin/new-slides`)
 
