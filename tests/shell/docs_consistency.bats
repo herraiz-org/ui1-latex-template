@@ -69,6 +69,15 @@ packages_in() {
   grep -qF "$TRIM" "$SPECS/beamer-theme.md"
 }
 
+@test "every font size the theme sets is documented in specs/beamer-theme.md" {
+  SIZES=$(grep -oE '\\setbeamerfont\{[a-z ]+\}\{[^}]*size=\\[A-Za-z]+' "$STY" |
+    grep -oE 'size=\\[A-Za-z]+' | sed 's/size=//' | sort -u)
+  [ -n "$SIZES" ]
+  for size in $SIZES; do
+    grep -qF -- "$size" "$SPECS/beamer-theme.md"
+  done
+}
+
 @test "every image the theme includes exists in imgs/" {
   FILES=$(grep -oE '\\includegraphics(\[[^]]*\])?\{imgs/[a-z-]+(\.png)?\}' "$STY" |
     sed -E 's/.*\{(imgs\/[a-z-]+)(\.png)?\}/\1/' | sort -u)

@@ -1,6 +1,6 @@
 # Beamer theme
 
-**Source of truth:** `beamerthemeui1beamer.sty` (226 lines).
+**Source of truth:** `beamerthemeui1beamer.sty` (230 lines).
 **Tests:** `tests/shell/beamer_theme.bats`, with `tests/pixel_probe.py` sampling rendered
 slide colors.
 **Example:** `examples/presentacion.tex`, seven slides covering every element.
@@ -137,3 +137,8 @@ Frame titles are `uired` bold `\large` with no background. `structure`, itemize 
 enumerate markers are `uired`. Blocks are rounded, shadowless, and use the palette:
 standard blocks have a `uired` title bar, example blocks a `uigray` one, alert blocks
 `uired!65!black`; all three share a `uiframegray` body.
+
+Block titles are set at `\small`, against beamer's default of `\large`, which is the same
+size as the frame title and competes with it. Beamer makes the `block title alerted` and
+`block title example` fonts inherit from `block title`, so the one setting covers all
+three kinds of box.

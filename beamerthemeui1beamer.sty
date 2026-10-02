@@ -215,6 +215,10 @@
 \setbeamercolor{itemize subitem}{fg=uired}
 \setbeamercolor{enumerate item}{fg=uired}
 
+% Beamer's default block title is \large, which competes with the frame title
+% above it; \small keeps the coloured bar reading as a label. The example and
+% alert title fonts inherit from this one.
+\setbeamerfont{block title}{size=\small}
 \setbeamertemplate{blocks}[rounded][shadow=false]
 \setbeamercolor{block title}{bg=uired,fg=white}
 \setbeamercolor{block body}{bg=uiframegray,fg=black}
