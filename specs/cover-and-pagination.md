@@ -47,6 +47,7 @@ So the two concerns were separated (`git show
   ```latex
   \AddToHook{shipout/after}[ui1activity/coverreset]{%
     \setcounter{page}{0}%
+    \hypersetup{pageanchor=true}%
     \global\ui@coverpagefalse
     \RemoveFromHook{shipout/after}[ui1activity/coverreset]%
   }%

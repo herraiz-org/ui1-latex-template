@@ -54,7 +54,7 @@
 
 \titlespacing*{\section}{0pt}{3.5ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 
-\RequirePackage[english,spanish,es-tabla]{babel}
+\RequirePackage[english,spanish,es-tabla,es-noquoting]{babel}
 \RequirePackage{icomma}
 
 \RequirePackage{amsmath}
@@ -210,6 +210,7 @@
 
 % Encapsulate the custom cover page
 \newcommand{\makecustomcover}{%
+	\hypersetup{pageanchor=false}%
 	\thispagestyle{empty}
 	\vspace*{29mm}
 	{\centering
@@ -238,6 +239,7 @@
 		\par}
 	\AddToHook{shipout/after}[ui1activity/coverreset]{%
 		\setcounter{page}{0}%
+		\hypersetup{pageanchor=true}%
 		\global\ui@coverpagefalse
 		\RemoveFromHook{shipout/after}[ui1activity/coverreset]%
 	}%
