@@ -64,6 +64,7 @@
 \RequirePackage{caption}
 \captionsetup{font={small,it},labelfont=bf,margin=1cm}
 \RequirePackage[backend=biber,style=apa]{biblatex}
+\urlstyle{tt}
 \setlength{\bibitemsep}{\parskip}
 \ifui@nohangbib
 	\setlength{\bibhang}{0pt}

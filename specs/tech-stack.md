@@ -75,7 +75,9 @@ Anything else is passed through to `article`.
 
 - **`biblatex`** with `backend=biber, style=apa`, plus **`csquotes`** with
   `autostyle=true` (required by `biblatex`, and it follows the active `babel` language).
-  The customization on top is substantial — see [`bibliography.md`](bibliography.md).
+  `\urlstyle{tt}` overrides `biblatex-apa`'s default `\urlstyle{same}` so URLs render in
+  monospaced type. The customization on top is substantial — see
+  [`bibliography.md`](bibliography.md).
 
 ## PDF output
 

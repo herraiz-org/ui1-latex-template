@@ -38,3 +38,10 @@ teardown() {
   
   [ "$BIBSPACING" = "$PARSKIP" ]
 }
+
+@test "URLs use monospaced font" {
+  run pdflatex -interaction=nonstopmode test.tex
+  [ "$status" -eq 0 ]
+
+  echo "$output" | grep -q "URLFONT: macro:->\\\\ttfamily"
+}
